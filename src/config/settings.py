@@ -31,10 +31,24 @@ class DatabaseSettings(BaseSettings):
 
 class LoggingSettings(BaseSettings):
     """Logging configuration settings."""
-    
+
     level: str = Field(default="INFO", env="LOG_LEVEL")
     file_path: str = Field(default="logs/app.log", env="LOG_FILE")
-    
+
+    model_config = {
+        "env_file": ".env",
+        "case_sensitive": False,
+        "extra": "ignore"
+    }
+
+
+class N8NSettings(BaseSettings):
+    """n8n webhook configuration settings."""
+
+    webhook_url: str = Field(default="http://localhost:5678/webhook/nextflow", env="N8N_WEBHOOK_URL")
+    enabled: bool = Field(default=False, env="N8N_WEBHOOK_ENABLED")
+    secret: str = Field(default="", env="N8N_WEBHOOK_SECRET")
+
     model_config = {
         "env_file": ".env",
         "case_sensitive": False,
@@ -45,3 +59,4 @@ class LoggingSettings(BaseSettings):
 # Global settings instances
 db_settings = DatabaseSettings()
 logging_settings = LoggingSettings()
+n8n_settings = N8NSettings()

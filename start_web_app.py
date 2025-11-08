@@ -6,6 +6,10 @@ import os
 import subprocess
 import time
 
+# Fix encoding for Windows console
+if sys.platform == 'win32':
+    sys.stdout.reconfigure(encoding='utf-8')
+
 def check_dependencies():
     """Verificar que todas las dependencias estén instaladas."""
     required_packages = [

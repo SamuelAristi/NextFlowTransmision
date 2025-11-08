@@ -1,19 +1,172 @@
 /**
- * JavaScript para la aplicación web de gestión de datos
+ * JavaScript para la aplicación web de gestión de datos con WebSocket
  */
 
 // Variables globales
 let currentPage = 1;
 let currentFilters = {};
+let socket;
+let toastElement;
+let toast;
 
 // Inicialización
 document.addEventListener('DOMContentLoaded', function() {
+    // Inicializar Socket.IO
+    initializeWebSocket();
+
+    // Inicializar Toast para notificaciones
+    toastElement = document.getElementById('liveToast');
+    toast = new bootstrap.Toast(toastElement, {
+        autohide: true,
+        delay: 4000
+    });
+
+    // Cargar datos iniciales
     loadDashboardData();
     loadOrders();
 });
 
 // Variables globales para gestión de órdenes
 let currentEditingOrderId = null;
+
+// ===== WEBSOCKET =====
+
+function initializeWebSocket() {
+    // Conectar al servidor WebSocket
+    socket = io();
+
+    // Evento: Conexión establecida
+    socket.on('connect', function() {
+        console.log('✅ Conectado al servidor WebSocket');
+        updateConnectionStatus(true);
+        showToast('Conectado a NextFlow', 'Actualizaciones en tiempo real activas', 'success');
+    });
+
+    // Evento: Desconexión
+    socket.on('disconnect', function() {
+        console.log('❌ Desconectado del servidor WebSocket');
+        updateConnectionStatus(false);
+    });
+
+    // Evento: Respuesta de conexión
+    socket.on('connection_response', function(data) {
+        console.log('Respuesta del servidor:', data);
+    });
+
+    // Evento: Actualización del dashboard
+    socket.on('dashboard_update', function(data) {
+        console.log('📊 Dashboard actualizado', data);
+        updateDashboardWithData(data);
+    });
+
+    // Evento: Cambio en una orden
+    socket.on('order_changed', function(data) {
+        console.log('📝 Orden modificada:', data);
+        handleOrderChange(data);
+    });
+
+    // Evento: Notificación
+    socket.on('notification', function(data) {
+        console.log('🔔 Notificación:', data);
+        showToast('NextFlow', data.message, data.type);
+
+        // Si estamos en la página de órdenes, recargarlas
+        const currentSection = document.querySelector('.section:not([style*="display: none"])');
+        if (currentSection && currentSection.id === 'orders-section') {
+            loadOrders();
+        }
+    });
+
+    // Evento: Error
+    socket.on('error', function(data) {
+        console.error('❌ Error:', data);
+        showToast('Error', data.message, 'error');
+    });
+
+    // Solicitar actualización del dashboard cada 30 segundos
+    setInterval(function() {
+        if (socket.connected) {
+            socket.emit('request_dashboard_update');
+        }
+    }, 30000);
+}
+
+function updateConnectionStatus(connected) {
+    const statusBadge = document.getElementById('connection-status');
+    const statusText = document.getElementById('status-text');
+    const indicator = statusBadge.querySelector('.realtime-indicator');
+
+    if (connected) {
+        statusBadge.classList.remove('bg-danger');
+        statusBadge.classList.add('bg-success');
+        statusText.textContent = 'En Vivo';
+        indicator.style.backgroundColor = '#10b981';
+    } else {
+        statusBadge.classList.remove('bg-success');
+        statusBadge.classList.add('bg-danger');
+        statusText.textContent = 'Desconectado';
+        indicator.style.backgroundColor = '#ef4444';
+    }
+}
+
+function showToast(title, message, type = 'info') {
+    const toastTitle = document.getElementById('toast-title');
+    const toastMessage = document.getElementById('toast-message');
+    const toastIcon = document.getElementById('toast-icon');
+    const toastElement = document.getElementById('liveToast');
+
+    // Limpiar clases anteriores
+    toastElement.classList.remove('toast-success', 'toast-error', 'toast-warning', 'toast-info');
+
+    // Agregar clase según el tipo
+    toastElement.classList.add(`toast-${type}`);
+
+    // Actualizar contenido
+    toastTitle.textContent = title;
+    toastMessage.textContent = message;
+
+    // Actualizar icono según el tipo
+    const icons = {
+        'success': 'fa-check-circle',
+        'error': 'fa-exclamation-circle',
+        'warning': 'fa-exclamation-triangle',
+        'info': 'fa-info-circle'
+    };
+
+    toastIcon.className = `fas ${icons[type] || icons.info} me-2`;
+
+    // Mostrar toast
+    const toast = new bootstrap.Toast(toastElement, { autohide: true, delay: 4000 });
+    toast.show();
+}
+
+function handleOrderChange(data) {
+    const { order_id, action } = data;
+
+    // Actualizar la lista de órdenes si estamos en esa sección
+    const ordersSection = document.getElementById('orders-section');
+    if (ordersSection && ordersSection.style.display !== 'none') {
+        loadOrders();
+    }
+
+    // Actualizar el dashboard
+    loadDashboardData();
+}
+
+function updateDashboardWithData(data) {
+    // Actualizar estadísticas
+    if (data.total_orders !== undefined) {
+        document.getElementById('total-orders').textContent = data.total_orders.toLocaleString();
+    }
+
+    if (data.status_distribution && data.status_distribution['Order Finished']) {
+        document.getElementById('completed-orders').textContent = data.status_distribution['Order Finished'];
+    }
+
+    if (data.category_distribution) {
+        document.getElementById('categories').textContent = Object.keys(data.category_distribution).length;
+    }
+}
 
 // Navegación
 function showSection(sectionName) {
@@ -85,10 +238,12 @@ function createStatusChart(statusData) {
             datasets: [{
                 data: Object.values(statusData),
                 backgroundColor: [
-                    '#28a745',
-                    '#ffc107',
-                    '#dc3545'
-                ]
+                    '#a78bfa', // Lavanda claro
+                    '#8b5cf6', // Violeta medio
+                    '#6366f1'  // Indigo azulado
+                ],
+                borderColor: '#010001',
+                borderWidth: 2
             }]
         },
         options: {
@@ -96,7 +251,28 @@ function createStatusChart(statusData) {
             maintainAspectRatio: false,
             plugins: {
                 legend: {
-                    position: 'bottom'
+                    position: 'bottom',
+                    labels: {
+                        color: '#fbfbfb',
+                        font: {
+                            family: 'Inter',
+                            size: 13,
+                            weight: '500'
+                        },
+                        padding: 15,
+                        usePointStyle: true,
+                        pointStyle: 'circle'
+                    }
+                },
+                tooltip: {
+                    backgroundColor: '#1a1a1a',
+                    titleColor: '#fbfbfb',
+                    bodyColor: '#fbfbfb',
+                    borderColor: '#5638c3',
+                    borderWidth: 1,
+                    padding: 12,
+                    displayColors: true,
+                    boxPadding: 6
                 }
             }
         }
@@ -113,21 +289,72 @@ function createCategoryChart(categoryData) {
                 label: 'Ingresos ($)',
                 data: Object.values(categoryData),
                 backgroundColor: [
-                    '#007bff',
-                    '#28a745',
-                    '#ffc107'
-                ]
+                    '#c084fc', // Rosa lavanda
+                    '#7c3aed', // Violeta intenso
+                    '#818cf8'  // Azul lavanda
+                ],
+                borderColor: [
+                    '#a855f7',
+                    '#6d28d9',
+                    '#6366f1'
+                ],
+                borderWidth: 2,
+                borderRadius: 8,
+                barThickness: 50
             }]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: true,
+                    labels: {
+                        color: '#fbfbfb',
+                        font: {
+                            family: 'Inter',
+                            size: 13,
+                            weight: '500'
+                        }
+                    }
+                },
+                tooltip: {
+                    backgroundColor: '#1a1a1a',
+                    titleColor: '#fbfbfb',
+                    bodyColor: '#fbfbfb',
+                    borderColor: '#5638c3',
+                    borderWidth: 1,
+                    padding: 12
+                }
+            },
             scales: {
                 y: {
                     beginAtZero: true,
+                    grid: {
+                        color: 'rgba(251, 251, 251, 0.05)',
+                        drawBorder: false
+                    },
                     ticks: {
+                        color: '#fbfbfb',
+                        font: {
+                            family: 'Inter',
+                            size: 12
+                        },
                         callback: function(value) {
                             return '$' + value.toLocaleString();
+                        }
+                    }
+                },
+                x: {
+                    grid: {
+                        display: false
+                    },
+                    ticks: {
+                        color: '#fbfbfb',
+                        font: {
+                            family: 'Inter',
+                            size: 12,
+                            weight: '500'
                         }
                     }
                 }
@@ -145,26 +372,74 @@ function createYearlyChart(yearlyData) {
             datasets: [{
                 label: 'Órdenes',
                 data: yearlyData.map(item => item.orders),
-                borderColor: '#007bff',
-                backgroundColor: 'rgba(0, 123, 255, 0.1)',
-                tension: 0.4
+                borderColor: '#a78bfa',
+                backgroundColor: 'rgba(167, 139, 250, 0.15)',
+                borderWidth: 3,
+                tension: 0.4,
+                fill: true,
+                pointBackgroundColor: '#a78bfa',
+                pointBorderColor: '#fbfbfb',
+                pointBorderWidth: 2,
+                pointRadius: 5,
+                pointHoverRadius: 7
             }, {
                 label: 'Ingresos ($)',
                 data: yearlyData.map(item => item.revenue),
-                borderColor: '#28a745',
-                backgroundColor: 'rgba(40, 167, 69, 0.1)',
+                borderColor: '#6366f1',
+                backgroundColor: 'rgba(99, 102, 241, 0.15)',
+                borderWidth: 3,
                 tension: 0.4,
-                yAxisID: 'y1'
+                fill: true,
+                yAxisID: 'y1',
+                pointBackgroundColor: '#6366f1',
+                pointBorderColor: '#fbfbfb',
+                pointBorderWidth: 2,
+                pointRadius: 5,
+                pointHoverRadius: 7
             }]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#fbfbfb',
+                        font: {
+                            family: 'Inter',
+                            size: 13,
+                            weight: '500'
+                        },
+                        usePointStyle: true,
+                        pointStyle: 'circle',
+                        padding: 15
+                    }
+                },
+                tooltip: {
+                    backgroundColor: '#1a1a1a',
+                    titleColor: '#fbfbfb',
+                    bodyColor: '#fbfbfb',
+                    borderColor: '#5638c3',
+                    borderWidth: 1,
+                    padding: 12
+                }
+            },
             scales: {
                 y: {
                     type: 'linear',
                     display: true,
                     position: 'left',
+                    grid: {
+                        color: 'rgba(251, 251, 251, 0.05)',
+                        drawBorder: false
+                    },
+                    ticks: {
+                        color: '#fbfbfb',
+                        font: {
+                            family: 'Inter',
+                            size: 12
+                        }
+                    }
                 },
                 y1: {
                     type: 'linear',
@@ -174,8 +449,27 @@ function createYearlyChart(yearlyData) {
                         drawOnChartArea: false,
                     },
                     ticks: {
+                        color: '#fbfbfb',
+                        font: {
+                            family: 'Inter',
+                            size: 12
+                        },
                         callback: function(value) {
                             return '$' + value.toLocaleString();
+                        }
+                    }
+                },
+                x: {
+                    grid: {
+                        color: 'rgba(251, 251, 251, 0.05)',
+                        drawBorder: false
+                    },
+                    ticks: {
+                        color: '#fbfbfb',
+                        font: {
+                            family: 'Inter',
+                            size: 12,
+                            weight: '500'
                         }
                     }
                 }
@@ -825,4 +1119,85 @@ async function bulkUpdateStatus() {
         console.error('Error in bulk update:', error);
         showAlert('Error al actualizar las órdenes', 'danger');
     }
+}
+
+// ============================================================================
+// CHATBOT FUNCTIONALITY
+// ============================================================================
+
+function toggleChatbot() {
+    const chatbot = document.getElementById('chatbotContainer');
+    chatbot.classList.toggle('open');
+
+    // Focus input when opening
+    if (chatbot.classList.contains('open')) {
+        document.getElementById('chatbotInput').focus();
+    }
+}
+
+function addChatbotMessage(message, isUser = false) {
+    const messagesContainer = document.getElementById('chatbotMessages');
+
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `chatbot-message ${isUser ? 'user' : 'bot'}`;
+
+    const avatarDiv = document.createElement('div');
+    avatarDiv.className = 'chatbot-avatar';
+    avatarDiv.innerHTML = isUser ? '<i class="fas fa-user"></i>' : '<i class="fas fa-robot"></i>';
+
+    const bubbleDiv = document.createElement('div');
+    bubbleDiv.className = 'chatbot-bubble';
+    bubbleDiv.textContent = message;
+
+    messageDiv.appendChild(avatarDiv);
+    messageDiv.appendChild(bubbleDiv);
+    messagesContainer.appendChild(messageDiv);
+
+    // Scroll to bottom
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+}
+
+function sendChatbotMessage() {
+    const input = document.getElementById('chatbotInput');
+    const message = input.value.trim();
+
+    if (!message) return;
+
+    // Add user message to chat
+    addChatbotMessage(message, true);
+
+    // Clear input
+    input.value = '';
+
+    // Disable send button
+    const sendBtn = document.getElementById('chatbotSendBtn');
+    sendBtn.disabled = true;
+
+    // Send message via WebSocket
+    if (socket && socket.connected) {
+        socket.emit('chatbot_message', { message: message });
+    } else {
+        // Fallback: show offline message
+        setTimeout(() => {
+            addChatbotMessage('El bot no está disponible en este momento. Por favor verifica tu conexión.', false);
+            sendBtn.disabled = false;
+        }, 500);
+    }
+}
+
+function handleChatbotKeyPress(event) {
+    if (event.key === 'Enter') {
+        sendChatbotMessage();
+    }
+}
+
+// Listen for chatbot responses via WebSocket
+if (socket) {
+    socket.on('chatbot_response', function(data) {
+        console.log('Chatbot response received:', data);
+        addChatbotMessage(data.message, false);
+
+        // Re-enable send button
+        document.getElementById('chatbotSendBtn').disabled = false;
+    });
 }

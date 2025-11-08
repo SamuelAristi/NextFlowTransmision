@@ -7,6 +7,7 @@ import json
 from datetime import datetime
 from flask import Flask, render_template, request, jsonify, send_file
 from flask_cors import CORS
+from flask_socketio import SocketIO, emit
 import pandas as pd
 import plotly.graph_objs as go
 import plotly.utils
@@ -17,6 +18,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
 from src.database.connection import db_connection
 from src.services.order_service import OrderService
 from src.utils.logger import logger
+from src.integrations.n8n_webhook import n8n_webhook
 
 def convert_pandas_types(obj):
     """Convierte tipos de pandas/numpy a tipos nativos de Python para serialización JSON."""
@@ -53,7 +55,9 @@ def convert_pandas_types(obj):
         return obj
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'nextflow-secret-key-2024'
 CORS(app)
+socketio = SocketIO(app, cors_allowed_origins="*")
 
 # Inicializar servicios
 order_service = OrderService()
@@ -389,6 +393,13 @@ def update_order(order_id):
         
         if affected_rows > 0:
             logger.info(f"Order {order_id} updated successfully")
+            # Broadcast the change to all connected clients
+            broadcast_order_change(order_id, 'updated', params)
+            broadcast_notification(f'Orden #{order_id} actualizada', 'info')
+
+            # Send event to n8n
+            n8n_webhook.send_order_updated(order_id, params)
+
             return jsonify({'message': 'Orden actualizada exitosamente', 'order_id': order_id})
         else:
             return jsonify({'error': 'Orden no encontrada'}), 404
@@ -441,6 +452,13 @@ def create_order():
         
         if affected_rows > 0:
             logger.info(f"New order {next_id} created successfully")
+            # Broadcast the change to all connected clients
+            broadcast_order_change(next_id, 'created', params)
+            broadcast_notification(f'Nueva orden #{next_id} creada', 'success')
+
+            # Send event to n8n
+            n8n_webhook.send_order_created(params)
+
             return jsonify({'message': 'Orden creada exitosamente', 'order_id': next_id}), 201
         else:
             return jsonify({'error': 'Error al crear la orden'}), 500
@@ -466,6 +484,13 @@ def delete_order(order_id):
         
         if affected_rows > 0:
             logger.info(f"Order {order_id} deleted successfully")
+            # Broadcast the change to all connected clients
+            broadcast_order_change(order_id, 'deleted')
+            broadcast_notification(f'Orden #{order_id} eliminada', 'warning')
+
+            # Send event to n8n
+            n8n_webhook.send_order_deleted(order_id)
+
             return jsonify({'message': 'Orden eliminada exitosamente', 'order_id': order_id})
         else:
             return jsonify({'error': 'Error al eliminar la orden'}), 500
@@ -540,6 +565,456 @@ def bulk_update_status():
         logger.error(f"Error in bulk status update: {e}")
         return jsonify({'error': str(e)}), 500
 
+# ===== N8N WEBHOOK ENDPOINTS =====
+
+@app.route('/api/n8n/webhook', methods=['POST'])
+def n8n_webhook_handler():
+    """
+    Webhook endpoint for n8n to send commands to NextFlow.
+
+    Expected payload:
+    {
+        "secret": "your-secret-key",
+        "action": "create_order" | "update_order" | "delete_order" | "get_order" | "get_stats",
+        "data": {...}
+    }
+    """
+    try:
+        from src.config.settings import n8n_settings
+
+        data = request.get_json()
+
+        # Verify secret if configured
+        if n8n_settings.secret:
+            provided_secret = data.get('secret') or request.headers.get('X-N8N-Secret')
+            if provided_secret != n8n_settings.secret:
+                logger.warning("Unauthorized n8n webhook attempt")
+                return jsonify({'error': 'Unauthorized'}), 401
+
+        action = data.get('action')
+        payload = data.get('data', {})
+
+        logger.info(f"Received n8n webhook: action={action}")
+
+        # Handle different actions
+        if action == 'create_order':
+            return handle_n8n_create_order(payload)
+
+        elif action == 'update_order':
+            return handle_n8n_update_order(payload)
+
+        elif action == 'delete_order':
+            return handle_n8n_delete_order(payload)
+
+        elif action == 'get_order':
+            return handle_n8n_get_order(payload)
+
+        elif action == 'get_stats':
+            return handle_n8n_get_stats()
+
+        elif action == 'search_orders':
+            return handle_n8n_search_orders(payload)
+
+        else:
+            return jsonify({'error': f'Unknown action: {action}'}), 400
+
+    except Exception as e:
+        logger.error(f"Error processing n8n webhook: {e}")
+        return jsonify({'error': str(e)}), 500
+
+
+def handle_n8n_create_order(data):
+    """Handle order creation from n8n."""
+    try:
+        # Get next ID
+        max_id_query = "SELECT MAX(order_id) as max_id FROM orders"
+        max_id_result = db_connection.execute_query(max_id_query)
+        next_id = (max_id_result[0]['max_id'] or 0) + 1
+
+        insert_query = """
+        INSERT INTO orders (order_id, status, customer_name, order_date, quantity,
+                           subtotal_amount, tax_rate, shipping_cost, category, subcategory)
+        VALUES (%(order_id)s, %(status)s, %(customer_name)s, %(order_date)s, %(quantity)s,
+                %(subtotal_amount)s, %(tax_rate)s, %(shipping_cost)s, %(category)s, %(subcategory)s)
+        """
+
+        params = {
+            'order_id': next_id,
+            'status': data.get('status', 'pending'),
+            'customer_name': data['customer_name'],
+            'order_date': data.get('order_date', datetime.now().strftime('%Y-%m-%d')),
+            'quantity': data['quantity'],
+            'subtotal_amount': data['subtotal_amount'],
+            'tax_rate': data.get('tax_rate', 0.0),
+            'shipping_cost': data.get('shipping_cost', 0.0),
+            'category': data['category'],
+            'subcategory': data['subcategory']
+        }
+
+        affected_rows = db_connection.execute_update(insert_query, params)
+
+        if affected_rows > 0:
+            broadcast_order_change(next_id, 'created', params)
+            broadcast_notification(f'Orden #{next_id} creada desde n8n', 'success')
+            return jsonify({
+                'success': True,
+                'message': 'Order created successfully',
+                'order_id': next_id
+            }), 201
+        else:
+            return jsonify({'error': 'Failed to create order'}), 500
+
+    except Exception as e:
+        logger.error(f"Error creating order from n8n: {e}")
+        return jsonify({'error': str(e)}), 500
+
+
+def handle_n8n_update_order(data):
+    """Handle order update from n8n."""
+    try:
+        order_id = data.get('order_id')
+        if not order_id:
+            return jsonify({'error': 'order_id is required'}), 400
+
+        set_clauses = []
+        params = {"order_id": order_id}
+
+        allowed_fields = ['status', 'customer_name', 'order_date', 'quantity',
+                         'subtotal_amount', 'tax_rate', 'shipping_cost', 'category', 'subcategory']
+
+        for field in allowed_fields:
+            if field in data:
+                set_clauses.append(f"{field} = %({field})s")
+                params[field] = data[field]
+
+        if not set_clauses:
+            return jsonify({'error': 'No fields to update'}), 400
+
+        query = f"UPDATE orders SET {', '.join(set_clauses)} WHERE order_id = %(order_id)s"
+        affected_rows = db_connection.execute_update(query, params)
+
+        if affected_rows > 0:
+            broadcast_order_change(order_id, 'updated', params)
+            broadcast_notification(f'Orden #{order_id} actualizada desde n8n', 'info')
+            return jsonify({
+                'success': True,
+                'message': 'Order updated successfully',
+                'order_id': order_id
+            })
+        else:
+            return jsonify({'error': 'Order not found'}), 404
+
+    except Exception as e:
+        logger.error(f"Error updating order from n8n: {e}")
+        return jsonify({'error': str(e)}), 500
+
+
+def handle_n8n_delete_order(data):
+    """Handle order deletion from n8n."""
+    try:
+        order_id = data.get('order_id')
+        if not order_id:
+            return jsonify({'error': 'order_id is required'}), 400
+
+        delete_query = "DELETE FROM orders WHERE order_id = %(order_id)s"
+        affected_rows = db_connection.execute_update(delete_query, {"order_id": order_id})
+
+        if affected_rows > 0:
+            broadcast_order_change(order_id, 'deleted')
+            broadcast_notification(f'Orden #{order_id} eliminada desde n8n', 'warning')
+            return jsonify({
+                'success': True,
+                'message': 'Order deleted successfully',
+                'order_id': order_id
+            })
+        else:
+            return jsonify({'error': 'Order not found'}), 404
+
+    except Exception as e:
+        logger.error(f"Error deleting order from n8n: {e}")
+        return jsonify({'error': str(e)}), 500
+
+
+def handle_n8n_get_order(data):
+    """Handle order retrieval from n8n."""
+    try:
+        order_id = data.get('order_id')
+        if not order_id:
+            return jsonify({'error': 'order_id is required'}), 400
+
+        query = "SELECT * FROM orders WHERE order_id = %(order_id)s"
+        orders = db_connection.execute_query(query, {"order_id": order_id})
+
+        if orders:
+            return jsonify({
+                'success': True,
+                'order': orders[0]
+            })
+        else:
+            return jsonify({'error': 'Order not found'}), 404
+
+    except Exception as e:
+        logger.error(f"Error getting order from n8n: {e}")
+        return jsonify({'error': str(e)}), 500
+
+
+def handle_n8n_get_stats():
+    """Handle stats retrieval from n8n."""
+    try:
+        total_query = "SELECT COUNT(*) as total FROM orders"
+        total_orders = db_connection.execute_query(total_query)[0]['total']
+
+        status_query = "SELECT status, COUNT(*) as count FROM orders GROUP BY status"
+        status_stats = db_connection.execute_query(status_query)
+
+        return jsonify({
+            'success': True,
+            'stats': {
+                'total_orders': int(total_orders),
+                'by_status': {item['status']: int(item['count']) for item in status_stats}
+            }
+        })
+
+    except Exception as e:
+        logger.error(f"Error getting stats from n8n: {e}")
+        return jsonify({'error': str(e)}), 500
+
+
+def handle_n8n_search_orders(data):
+    """Handle order search from n8n."""
+    try:
+        where_conditions = []
+        params = {}
+
+        if 'status' in data:
+            where_conditions.append("status = %(status)s")
+            params['status'] = data['status']
+
+        if 'customer_name' in data:
+            where_conditions.append("customer_name ILIKE %(customer_name)s")
+            params['customer_name'] = f"%{data['customer_name']}%"
+
+        if 'category' in data:
+            where_conditions.append("category = %(category)s")
+            params['category'] = data['category']
+
+        where_clause = "WHERE " + " AND ".join(where_conditions) if where_conditions else ""
+
+        query = f"SELECT * FROM orders {where_clause} ORDER BY order_id DESC LIMIT 50"
+        orders = db_connection.execute_query(query, params)
+
+        return jsonify({
+            'success': True,
+            'orders': orders,
+            'count': len(orders)
+        })
+
+    except Exception as e:
+        logger.error(f"Error searching orders from n8n: {e}")
+        return jsonify({'error': str(e)}), 500
+
+
+@app.route('/api/n8n/test', methods=['GET'])
+def test_n8n_connection():
+    """Test endpoint for n8n connection."""
+    return jsonify({
+        'status': 'ok',
+        'service': 'NextFlow',
+        'timestamp': datetime.now().isoformat(),
+        'message': 'n8n webhook endpoint is ready'
+    })
+
+
+# ===== WEBSOCKET EVENTS =====
+
+@socketio.on('connect')
+def handle_connect():
+    """Handle client connection."""
+    logger.info(f"Client connected: {request.sid}")
+    emit('connection_response', {'data': 'Connected to NextFlow'})
+
+@socketio.on('disconnect')
+def handle_disconnect():
+    """Handle client disconnection."""
+    logger.info(f"Client disconnected: {request.sid}")
+
+@socketio.on('request_dashboard_update')
+def handle_dashboard_update_request():
+    """Send dashboard stats to client."""
+    try:
+        # Obtener estadísticas básicas
+        total_query = "SELECT COUNT(*) as total FROM orders"
+        total_orders = db_connection.execute_query(total_query)[0]['total']
+
+        # Estadísticas por estado
+        status_query = """
+        SELECT status, COUNT(*) as count
+        FROM orders
+        GROUP BY status
+        """
+        status_stats = db_connection.execute_query(status_query)
+
+        # Estadísticas por categoría
+        category_query = """
+        SELECT category, COUNT(*) as count, SUM(subtotal_amount) as total_amount
+        FROM orders
+        GROUP BY category
+        ORDER BY total_amount DESC
+        """
+        category_stats = db_connection.execute_query(category_query)
+
+        response_data = {
+            'total_orders': int(total_orders),
+            'status_distribution': {item['status']: int(item['count']) for item in status_stats},
+            'category_distribution': {item['category']: int(item['count']) for item in category_stats},
+            'category_revenue': {item['category']: float(item['total_amount']) for item in category_stats}
+        }
+
+        response_data = convert_pandas_types(response_data)
+        emit('dashboard_update', response_data)
+
+    except Exception as e:
+        logger.error(f"Error sending dashboard update: {e}")
+        emit('error', {'message': str(e)})
+
+def broadcast_order_change(order_id, action, data=None):
+    """Broadcast order changes to all connected clients."""
+    try:
+        socketio.emit('order_changed', {
+            'order_id': order_id,
+            'action': action,  # 'created', 'updated', 'deleted'
+            'data': data,
+            'timestamp': datetime.now().isoformat()
+        })
+        logger.info(f"Broadcasted order change: {action} for order {order_id}")
+    except Exception as e:
+        logger.error(f"Error broadcasting order change: {e}")
+
+def broadcast_notification(message, type='info'):
+    """Broadcast notification to all connected clients."""
+    try:
+        socketio.emit('notification', {
+            'message': message,
+            'type': type,  # 'info', 'success', 'warning', 'error'
+            'timestamp': datetime.now().isoformat()
+        })
+        logger.info(f"Broadcasted notification: {message}")
+    except Exception as e:
+        logger.error(f"Error broadcasting notification: {e}")
+
+# ============================================================================
+# CHATBOT ENDPOINTS
+# ============================================================================
+
+@app.route('/api/chatbot/message', methods=['POST'])
+def chatbot_message():
+    """Receive message from user and send to n8n for processing."""
+    try:
+        data = request.get_json()
+        message = data.get('message', '').strip()
+
+        if not message:
+            return jsonify({'error': 'Message is required'}), 400
+
+        # Send message to n8n for processing
+        response = n8n_webhook.send_event('chatbot.message', {
+            'message': message,
+            'user': 'web_user',
+            'timestamp': datetime.now().isoformat()
+        })
+
+        if response:
+            logger.info(f"Chatbot message sent to n8n: {message}")
+            return jsonify({
+                'status': 'sent',
+                'message': 'Mensaje enviado correctamente',
+                'timestamp': datetime.now().isoformat()
+            })
+        else:
+            # If n8n is not available, provide a basic response
+            logger.warning("n8n not available, using fallback response")
+            return jsonify({
+                'status': 'fallback',
+                'message': 'El bot no está disponible en este momento. Por favor intenta más tarde.',
+                'timestamp': datetime.now().isoformat()
+            })
+
+    except Exception as e:
+        logger.error(f"Error processing chatbot message: {e}")
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/chatbot/response', methods=['POST'])
+def chatbot_response():
+    """Receive response from n8n and broadcast to user via WebSocket."""
+    try:
+        # Validate n8n secret
+        secret = request.headers.get('X-N8N-Secret', '')
+        from src.config.settings import n8n_settings
+
+        if n8n_settings.secret and secret != n8n_settings.secret:
+            logger.warning("Invalid n8n secret in chatbot response")
+            return jsonify({'error': 'Invalid or missing secret'}), 401
+
+        data = request.get_json()
+        response_message = data.get('response', '')
+        user = data.get('user', 'bot')
+
+        if not response_message:
+            return jsonify({'error': 'Response message is required'}), 400
+
+        # Broadcast response to user via WebSocket
+        socketio.emit('chatbot_response', {
+            'message': response_message,
+            'user': user,
+            'timestamp': datetime.now().isoformat()
+        })
+
+        logger.info(f"Chatbot response broadcasted: {response_message}")
+        return jsonify({'status': 'ok', 'message': 'Response broadcasted'})
+
+    except Exception as e:
+        logger.error(f"Error processing chatbot response: {e}")
+        return jsonify({'error': str(e)}), 500
+
+# WebSocket event for chatbot
+@socketio.on('chatbot_message')
+def handle_chatbot_message(data):
+    """Handle chatbot message via WebSocket."""
+    try:
+        message = data.get('message', '').strip()
+        if not message:
+            emit('chatbot_response', {
+                'message': 'Por favor escribe un mensaje',
+                'user': 'bot',
+                'timestamp': datetime.now().isoformat()
+            })
+            return
+
+        logger.info(f"Received chatbot message via WebSocket: {message}")
+
+        # Send to n8n for processing
+        response = n8n_webhook.send_event('chatbot.message', {
+            'message': message,
+            'user': 'web_user',
+            'timestamp': datetime.now().isoformat()
+        })
+
+        # If n8n is not available or disabled, provide basic fallback
+        if not response:
+            emit('chatbot_response', {
+                'message': 'El bot no está disponible. Comandos básicos:\n- "crear orden" para crear una nueva orden\n- "ver estadísticas" para ver el resumen\n- "ayuda" para más información',
+                'user': 'bot',
+                'timestamp': datetime.now().isoformat()
+            })
+
+    except Exception as e:
+        logger.error(f"Error handling chatbot message: {e}")
+        emit('chatbot_response', {
+            'message': f'Error: {str(e)}',
+            'user': 'bot',
+            'timestamp': datetime.now().isoformat()
+        })
+
 if __name__ == '__main__':
-    logger.info("Starting web application...")
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    logger.info("Starting web application with WebSocket support...")
+    socketio.run(app, debug=True, host='0.0.0.0', port=5000, allow_unsafe_werkzeug=True)
