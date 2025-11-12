@@ -64,6 +64,7 @@ class StoreService:
                     product_id=product_id,
                     product_name=product["name"],
                     product_price=Decimal(str(product["price"])),
+                    product_image=product.get("image_url"),
                     quantity=quantity,
                     subtotal=Decimal(str(product["price"])) * quantity,
                 )

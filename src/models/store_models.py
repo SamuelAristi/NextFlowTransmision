@@ -56,6 +56,7 @@ class CartItem(BaseModel):
     product_id: int
     product_name: str
     product_price: Decimal
+    product_image: Optional[str] = None
     quantity: int = Field(..., gt=0)
     subtotal: Decimal
 
