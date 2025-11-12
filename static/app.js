@@ -1157,7 +1157,7 @@ function addChatbotMessage(message, isUser = false) {
     messagesContainer.scrollTop = messagesContainer.scrollHeight;
 }
 
-function sendChatbotMessage() {
+async function sendChatbotMessage() {
     const input = document.getElementById('chatbotInput');
     const message = input.value.trim();
 
@@ -1173,15 +1173,60 @@ function sendChatbotMessage() {
     const sendBtn = document.getElementById('chatbotSendBtn');
     sendBtn.disabled = true;
 
-    // Send message via WebSocket
-    if (socket && socket.connected) {
-        socket.emit('chatbot_message', { message: message });
-    } else {
-        // Fallback: show offline message
-        setTimeout(() => {
-            addChatbotMessage('El bot no está disponible en este momento. Por favor verifica tu conexión.', false);
-            sendBtn.disabled = false;
-        }, 500);
+    // Show "typing" indicator
+    const typingDiv = document.createElement('div');
+    typingDiv.className = 'chatbot-message bot';
+    typingDiv.id = 'typing-indicator';
+    typingDiv.innerHTML = `
+        <div class="chatbot-avatar">
+            <i class="fas fa-robot"></i>
+        </div>
+        <div class="chatbot-bubble">
+            <i class="fas fa-circle-notch fa-spin"></i> Escribiendo...
+        </div>
+    `;
+    document.getElementById('chatbotMessages').appendChild(typingDiv);
+
+    try {
+        // Send message via HTTP POST
+        const response = await fetch('/api/chatbot/message', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ message: message })
+        });
+
+        const data = await response.json();
+
+        // Remove typing indicator
+        const typingIndicator = document.getElementById('typing-indicator');
+        if (typingIndicator) {
+            typingIndicator.remove();
+        }
+
+        // Add bot response
+        if (data.success && data.message) {
+            addChatbotMessage(data.message, false);
+        } else if (data.message) {
+            addChatbotMessage(data.message, false);
+        } else {
+            addChatbotMessage('No pude obtener una respuesta. Verifica que tu workflow de n8n esté activo.', false);
+        }
+
+    } catch (error) {
+        console.error('Error sending chatbot message:', error);
+
+        // Remove typing indicator
+        const typingIndicator = document.getElementById('typing-indicator');
+        if (typingIndicator) {
+            typingIndicator.remove();
+        }
+
+        addChatbotMessage('Error al conectar con el bot. Por favor intenta de nuevo.', false);
+    } finally {
+        // Re-enable send button
+        sendBtn.disabled = false;
     }
 }
 

@@ -19,6 +19,7 @@ from src.database.connection import db_connection
 from src.services.order_service import OrderService
 from src.utils.logger import logger
 from src.integrations.n8n_webhook import n8n_webhook
+from src.config.settings import n8n_settings
 
 def convert_pandas_types(obj):
     """Convierte tipos de pandas/numpy a tipos nativos de Python para serialización JSON."""
@@ -906,42 +907,64 @@ def broadcast_notification(message, type='info'):
 # CHATBOT ENDPOINTS
 # ============================================================================
 
-@app.route('/api/chatbot/message', methods=['POST'])
+@app.route('/api/chatbot/message', methods=['POST', 'GET'])
 def chatbot_message():
     """Receive message from user and send to n8n for processing."""
     try:
+        # Handle GET for testing
+        if request.method == 'GET':
+            return jsonify({
+                'status': 'ok',
+                'message': 'Chatbot API is working. Send POST with {"message": "your message"}',
+                'webhook_enabled': n8n_settings.enabled,
+                'webhook_url': n8n_settings.webhook_url
+            }), 200
+
         data = request.get_json()
         message = data.get('message', '').strip()
 
         if not message:
             return jsonify({'error': 'Message is required'}), 400
 
+        logger.info(f"📨 Sending message to n8n: {message}")
+
         # Send message to n8n for processing
-        response = n8n_webhook.send_event('chatbot.message', {
+        n8n_response = n8n_webhook.send_event('chatbot.message', {
             'message': message,
             'user': 'web_user',
             'timestamp': datetime.now().isoformat()
         })
 
-        if response:
-            logger.info(f"Chatbot message sent to n8n: {message}")
+        if n8n_response:
+            # Extract bot message from n8n response
+            bot_message = n8n_response.get('message') or n8n_response.get('output') or n8n_response.get('response') or str(n8n_response)
+
+            logger.info(f"✅ Received from n8n: {bot_message}")
+
             return jsonify({
+                'success': True,
                 'status': 'sent',
-                'message': 'Mensaje enviado correctamente',
+                'message': bot_message,
+                'n8n_response': n8n_response,
                 'timestamp': datetime.now().isoformat()
-            })
+            }), 200
         else:
             # If n8n is not available, provide a basic response
-            logger.warning("n8n not available, using fallback response")
+            logger.warning("❌ n8n not available or no response")
             return jsonify({
+                'success': False,
                 'status': 'fallback',
-                'message': 'El bot no está disponible en este momento. Por favor intenta más tarde.',
+                'message': 'El bot no está disponible. Verifica:\n1. Que tu workflow de n8n esté ACTIVO\n2. Que el webhook responda con JSON: {"message": "tu respuesta"}',
                 'timestamp': datetime.now().isoformat()
-            })
+            }), 503
 
     except Exception as e:
-        logger.error(f"Error processing chatbot message: {e}")
-        return jsonify({'error': str(e)}), 500
+        logger.error(f"❌ Error processing chatbot message: {e}")
+        return jsonify({
+            'success': False,
+            'error': str(e),
+            'message': f'Error: {str(e)}'
+        }), 500
 
 @app.route('/api/chatbot/response', methods=['POST'])
 def chatbot_response():
@@ -993,16 +1016,28 @@ def handle_chatbot_message(data):
         logger.info(f"Received chatbot message via WebSocket: {message}")
 
         # Send to n8n for processing
-        response = n8n_webhook.send_event('chatbot.message', {
+        n8n_response = n8n_webhook.send_event('chatbot.message', {
             'message': message,
             'user': 'web_user',
             'timestamp': datetime.now().isoformat()
         })
 
-        # If n8n is not available or disabled, provide basic fallback
-        if not response:
+        # Handle n8n response
+        if n8n_response:
+            # Extract message from n8n response
+            bot_message = n8n_response.get('message') or n8n_response.get('output') or str(n8n_response)
+
+            logger.info(f"✅ Received response from n8n: {bot_message}")
+
             emit('chatbot_response', {
-                'message': 'El bot no está disponible. Comandos básicos:\n- "crear orden" para crear una nueva orden\n- "ver estadísticas" para ver el resumen\n- "ayuda" para más información',
+                'message': bot_message,
+                'user': 'bot',
+                'timestamp': datetime.now().isoformat()
+            })
+        else:
+            # If n8n is not available or disabled, provide basic fallback
+            emit('chatbot_response', {
+                'message': 'El bot no está disponible en este momento. Verifica que tu workflow de n8n esté activo y configurado correctamente.',
                 'user': 'bot',
                 'timestamp': datetime.now().isoformat()
             })
@@ -1010,7 +1045,7 @@ def handle_chatbot_message(data):
     except Exception as e:
         logger.error(f"Error handling chatbot message: {e}")
         emit('chatbot_response', {
-            'message': f'Error: {str(e)}',
+            'message': f'Error procesando mensaje: {str(e)}',
             'user': 'bot',
             'timestamp': datetime.now().isoformat()
         })

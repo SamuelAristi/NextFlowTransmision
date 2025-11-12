@@ -20,7 +20,7 @@ class N8NWebhook:
         self.enabled = n8n_settings.enabled
         self.secret = n8n_settings.secret
 
-    def send_event(self, event_type: str, data: Dict[str, Any]) -> bool:
+    def send_event(self, event_type: str, data: Dict[str, Any]) -> Optional[Dict[str, Any]]:
         """
         Send an event to n8n webhook.
 
@@ -29,11 +29,11 @@ class N8NWebhook:
             data: Event data to send
 
         Returns:
-            bool: True if successful, False otherwise
+            Dict: Response data from n8n if successful, None otherwise
         """
         if not self.enabled:
             logger.debug("n8n webhooks are disabled")
-            return False
+            return None
 
         try:
             payload = {
@@ -63,20 +63,23 @@ class N8NWebhook:
 
             if response.status_code in [200, 201, 202]:
                 logger.info(f"✅ Event {event_type} sent successfully to n8n")
-                return True
+                try:
+                    return response.json()
+                except:
+                    return {"status": "success", "message": "Event received"}
             else:
                 logger.warning(f"⚠️ n8n webhook returned status {response.status_code}: {response.text}")
-                return False
+                return None
 
         except requests.exceptions.Timeout:
             logger.error(f"❌ Timeout sending event to n8n: {event_type}")
-            return False
+            return None
         except requests.exceptions.ConnectionError:
             logger.error(f"❌ Connection error sending event to n8n: {event_type}")
-            return False
+            return None
         except Exception as e:
             logger.error(f"❌ Error sending event to n8n: {e}")
-            return False
+            return None
 
     def send_order_created(self, order_data: Dict[str, Any]) -> bool:
         """Send order created event to n8n."""

@@ -2,9 +2,18 @@
 Configuration settings for the database connection and application.
 """
 import os
+from pathlib import Path
 from typing import Optional
 from pydantic import Field
 from pydantic_settings import BaseSettings
+from dotenv import load_dotenv
+
+# Get the project root directory (where .env is located)
+PROJECT_ROOT = Path(__file__).parent.parent.parent
+ENV_FILE = PROJECT_ROOT / ".env"
+
+# Load environment variables from .env file
+load_dotenv(ENV_FILE)
 
 
 class DatabaseSettings(BaseSettings):
@@ -23,7 +32,7 @@ class DatabaseSettings(BaseSettings):
         return f"postgresql://{self.user}:{self.password}@{self.host}:{self.port}/{self.name}"
     
     model_config = {
-        "env_file": ".env",
+        "env_file": str(ENV_FILE),
         "case_sensitive": False,
         "extra": "ignore"
     }
@@ -36,7 +45,7 @@ class LoggingSettings(BaseSettings):
     file_path: str = Field(default="logs/app.log", env="LOG_FILE")
 
     model_config = {
-        "env_file": ".env",
+        "env_file": str(ENV_FILE),
         "case_sensitive": False,
         "extra": "ignore"
     }
@@ -45,15 +54,20 @@ class LoggingSettings(BaseSettings):
 class N8NSettings(BaseSettings):
     """n8n webhook configuration settings."""
 
-    webhook_url: str = Field(default="http://localhost:5678/webhook/nextflow", env="N8N_WEBHOOK_URL")
-    enabled: bool = Field(default=False, env="N8N_WEBHOOK_ENABLED")
-    secret: str = Field(default="", env="N8N_WEBHOOK_SECRET")
+    url: str = Field(default="http://localhost:5678/webhook/nextflow")
+    enabled: bool = Field(default=False)
+    secret: str = Field(default="")
 
     model_config = {
-        "env_file": ".env",
+        "env_prefix": "N8N_WEBHOOK_",
         "case_sensitive": False,
         "extra": "ignore"
     }
+
+    # Keep backward compatibility with webhook_url property
+    @property
+    def webhook_url(self) -> str:
+        return self.url
 
 
 # Global settings instances
