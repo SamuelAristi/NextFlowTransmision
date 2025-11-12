@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Home - NextFlow Store{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="container">
+        <h1>Welcome to NextFlow Store</h1>
+        <p>Discover amazing products at great prices</p>
+        <a href="/products" class="btn btn-primary" style="background-color: white; color: #2563eb; font-size: 1.125rem; padding: 1rem 2rem;">
+            Shop Now
+        </a>
+    </div>
+</section>
+
+<section class="products-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Featured Products</h2>
+            <p style="color: #6b7280;">Check out our bestsellers</p>
+        </div>
+        <div class="products-grid" id="products-grid">
+            <!-- Products will be loaded here -->
+        </div>
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="/products" class="btn btn-primary">View All Products</a>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Load featured products (limit to 6)
+    async function loadFeaturedProducts() {
+        const products = await loadProducts();
+        const featured = products.slice(0, 6);
+        renderProducts(featured);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        loadFeaturedProducts();
+    });
+</script>
+{% endblock %}

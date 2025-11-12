@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+{% block title %}Products - NextFlow Store{% endblock %}
+
+{% block content %}
+<section class="products-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>All Products</h2>
+            <p style="color: #6b7280;">Browse our complete catalog</p>
+        </div>
+
+        <!-- Filters -->
+        <div class="filters">
+            <div class="filters-grid">
+                <div class="filter-group">
+                    <label for="search">Search</label>
+                    <input type="text" id="search" placeholder="Search products...">
+                </div>
+                <div class="filter-group">
+                    <label for="category">Category</label>
+                    <select id="category">
+                        <option value="">All Categories</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="min-price">Min Price</label>
+                    <input type="number" id="min-price" placeholder="$0" min="0" step="10">
+                </div>
+                <div class="filter-group">
+                    <label for="max-price">Max Price</label>
+                    <input type="number" id="max-price" placeholder="Any" min="0" step="10">
+                </div>
+                <div class="filter-group">
+                    <button class="btn btn-primary" onclick="applyFilters()">Apply Filters</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="products-grid" id="products-grid">
+            <!-- Products will be loaded here -->
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    let allProducts = [];
+
+    async function init() {
+        // Load categories
+        const categories = await loadCategories();
+        const categorySelect = document.getElementById('category');
+        categories.forEach(cat => {
+            const option = document.createElement('option');
+            option.value = cat;
+            option.textContent = cat;
+            categorySelect.appendChild(option);
+        });
+
+        // Load all products
+        await applyFilters();
+    }
+
+    async function applyFilters() {
+        const filters = {
+            search: document.getElementById('search').value,
+            category: document.getElementById('category').value,
+            min_price: document.getElementById('min-price').value,
+            max_price: document.getElementById('max-price').value
+        };
+
+        // Remove empty filters
+        Object.keys(filters).forEach(key => {
+            if (!filters[key]) delete filters[key];
+        });
+
+        const products = await loadProducts(filters);
+        renderProducts(products);
+    }
+
+    // Add event listeners for real-time filtering
+    document.addEventListener('DOMContentLoaded', () => {
+        init();
+
+        document.getElementById('search').addEventListener('input', debounce(applyFilters, 500));
+        document.getElementById('category').addEventListener('change', applyFilters);
+    });
+
+    // Debounce function for search
+    function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
+</script>
+{% endblock %}
