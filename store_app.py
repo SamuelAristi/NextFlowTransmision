@@ -5,7 +5,12 @@ Customer-facing e-commerce store running on port 3000
 
 from flask import Flask, render_template, request, jsonify, session
 from flask_cors import CORS
-from flask_session import Session
+try:
+    from flask_session import Session
+except ImportError:
+    # For newer versions of flask-session
+    from cachelib.file import FileSystemCache
+    Session = None
 from decimal import Decimal
 import os
 from datetime import timedelta
@@ -33,9 +38,15 @@ app.config['SESSION_TYPE'] = 'filesystem'
 app.config['SESSION_PERMANENT'] = True
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(days=7)
 app.config['SESSION_COOKIE_NAME'] = 'store_session'
+app.config['SESSION_FILE_DIR'] = os.path.join(os.path.dirname(__file__), 'flask_session')
 
 # Initialize session
-Session(app)
+if Session is not None:
+    Session(app)
+else:
+    # For flask-session >= 0.6.0
+    from flask_session import Session as FlaskSession
+    FlaskSession(app)
 
 # Enable CORS
 CORS(app)

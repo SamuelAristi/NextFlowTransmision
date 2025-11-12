@@ -478,3 +478,1170 @@ LINE 1: SELECT * FROM orders ORDER BY id
 2025-09-25 23:42:49 | INFO     | src.services.order_service:get_all_orders:23 - Retrieved 5498 orders from database
 2025-09-25 23:42:49 | INFO     | src.services.order_service:get_orders_dataframe:45 - Created DataFrame with 5498 rows and 10 columns
 2025-09-25 23:42:49 | INFO     | src.services.order_service:get_data_quality_report:342 - Data quality report generated successfully
+2025-09-25 23:43:28 | INFO     | __main__:create_order:443 - New order 59977 created successfully
+2025-09-25 23:44:35 | INFO     | __main__:update_order:391 - Order 59977 updated successfully
+2025-09-25 23:45:23 | INFO     | src.services.order_service:get_all_orders:23 - Retrieved 5499 orders from database
+2025-09-25 23:45:23 | INFO     | src.services.order_service:get_orders_dataframe:45 - Created DataFrame with 5499 rows and 10 columns
+2025-09-25 23:45:23 | INFO     | src.services.order_service:get_data_quality_report:342 - Data quality report generated successfully
+2025-09-25 23:45:25 | INFO     | src.services.order_service:get_all_orders:23 - Retrieved 5499 orders from database
+2025-09-25 23:45:25 | INFO     | src.services.order_service:get_orders_dataframe:45 - Created DataFrame with 5499 rows and 10 columns
+2025-09-25 23:45:25 | INFO     | src.services.order_service:get_data_quality_report:342 - Data quality report generated successfully
+2025-09-25 23:45:30 | INFO     | src.services.order_service:get_all_orders:23 - Retrieved 5499 orders from database
+2025-09-25 23:45:30 | INFO     | src.services.order_service:get_orders_dataframe:45 - Created DataFrame with 5499 rows and 10 columns
+2025-09-25 23:45:30 | INFO     | src.services.order_service:clean_duplicate_orders:86 - No duplicate orders found
+2025-09-25 23:45:31 | INFO     | src.services.order_service:get_all_orders:23 - Retrieved 5499 orders from database
+2025-09-25 23:45:31 | INFO     | src.services.order_service:get_orders_dataframe:45 - Created DataFrame with 5499 rows and 10 columns
+2025-09-25 23:45:33 | INFO     | src.services.order_service:get_all_orders:23 - Retrieved 5499 orders from database
+2025-09-25 23:45:33 | INFO     | src.services.order_service:get_orders_dataframe:45 - Created DataFrame with 5499 rows and 10 columns
+2025-09-25 23:45:33 | WARNING  | src.services.order_service:validate_data_types:223 - Found 5045 extreme subtotal_amount values (>100,000)
+2025-09-25 23:45:33 | WARNING  | src.services.order_service:validate_data_types:231 - Found 4906 extreme shipping_cost values (>1000)
+2025-09-25 23:45:33 | WARNING  | src.services.order_service:validate_data_types:240 - Found 5499 invalid status values
+2025-09-26 00:13:43 | INFO     | src.services.order_service:get_all_orders:23 - Retrieved 5499 orders from database
+2025-09-26 00:13:43 | INFO     | src.services.order_service:get_orders_dataframe:45 - Created DataFrame with 5499 rows and 10 columns
+2025-09-26 00:13:43 | INFO     | src.services.order_service:clean_duplicate_orders:86 - No duplicate orders found
+2025-09-26 00:13:44 | INFO     | src.services.order_service:get_all_orders:23 - Retrieved 5499 orders from database
+2025-09-26 00:13:44 | INFO     | src.services.order_service:get_orders_dataframe:45 - Created DataFrame with 5499 rows and 10 columns
+2025-09-26 12:59:25 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-09-26 12:59:25 | INFO     | __main__:<module>:544 - Starting web application...
+2025-09-26 12:59:27 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-09-26 12:59:27 | INFO     | __main__:<module>:544 - Starting web application...
+2025-09-26 13:00:52 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-09-26 13:00:52 | INFO     | __main__:<module>:544 - Starting web application...
+2025-09-26 13:00:53 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-09-26 13:00:53 | INFO     | __main__:<module>:544 - Starting web application...
+2025-09-26 13:01:11 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-09-26 13:01:12 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-09-26 18:54:29 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-09-26 18:54:30 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-09-26 19:06:23 | INFO     | src.services.order_service:get_all_orders:23 - Retrieved 5499 orders from database
+2025-09-26 19:06:23 | INFO     | src.services.order_service:get_orders_dataframe:45 - Created DataFrame with 5499 rows and 10 columns
+2025-09-26 19:06:23 | INFO     | src.services.order_service:get_data_quality_report:342 - Data quality report generated successfully
+2025-09-26 19:09:26 | INFO     | src.services.order_service:get_all_orders:23 - Retrieved 5499 orders from database
+2025-09-26 19:09:26 | INFO     | src.services.order_service:get_orders_dataframe:45 - Created DataFrame with 5499 rows and 10 columns
+2025-09-26 19:09:26 | INFO     | src.services.order_service:get_data_quality_report:342 - Data quality report generated successfully
+2025-09-26 19:15:24 | INFO     | src.services.order_service:get_all_orders:23 - Retrieved 5499 orders from database
+2025-09-26 19:15:24 | INFO     | src.services.order_service:get_orders_dataframe:45 - Created DataFrame with 5499 rows and 10 columns
+2025-09-26 19:15:24 | INFO     | src.services.order_service:get_data_quality_report:342 - Data quality report generated successfully
+2025-09-26 19:19:23 | INFO     | src.services.order_service:get_all_orders:23 - Retrieved 5499 orders from database
+2025-09-26 19:19:23 | INFO     | src.services.order_service:get_orders_dataframe:45 - Created DataFrame with 5499 rows and 10 columns
+2025-09-26 19:19:23 | INFO     | src.services.order_service:get_data_quality_report:342 - Data quality report generated successfully
+2025-09-26 19:19:43 | INFO     | src.services.order_service:get_all_orders:23 - Retrieved 5499 orders from database
+2025-09-26 19:19:43 | INFO     | src.services.order_service:get_orders_dataframe:45 - Created DataFrame with 5499 rows and 10 columns
+2025-09-26 19:19:43 | INFO     | src.services.order_service:get_data_quality_report:342 - Data quality report generated successfully
+2025-09-26 19:26:53 | INFO     | src.services.order_service:get_all_orders:23 - Retrieved 5499 orders from database
+2025-09-26 19:26:54 | INFO     | src.services.order_service:get_orders_dataframe:45 - Created DataFrame with 5499 rows and 10 columns
+2025-09-26 19:26:54 | INFO     | src.services.order_service:get_data_quality_report:342 - Data quality report generated successfully
+2025-09-26 19:27:37 | INFO     | src.services.order_service:get_all_orders:23 - Retrieved 5499 orders from database
+2025-09-26 19:27:37 | INFO     | src.services.order_service:get_orders_dataframe:45 - Created DataFrame with 5499 rows and 10 columns
+2025-09-26 19:27:37 | INFO     | src.services.order_service:clean_duplicate_orders:86 - No duplicate orders found
+2025-09-26 19:27:41 | INFO     | src.services.order_service:get_all_orders:23 - Retrieved 5499 orders from database
+2025-09-26 19:27:41 | INFO     | src.services.order_service:get_orders_dataframe:45 - Created DataFrame with 5499 rows and 10 columns
+2025-09-26 19:27:45 | INFO     | src.services.order_service:get_all_orders:23 - Retrieved 5499 orders from database
+2025-09-26 19:27:45 | INFO     | src.services.order_service:get_orders_dataframe:45 - Created DataFrame with 5499 rows and 10 columns
+2025-09-26 19:27:45 | WARNING  | src.services.order_service:validate_data_types:223 - Found 5045 extreme subtotal_amount values (>100,000)
+2025-09-26 19:27:45 | WARNING  | src.services.order_service:validate_data_types:231 - Found 4906 extreme shipping_cost values (>1000)
+2025-09-26 19:27:45 | WARNING  | src.services.order_service:validate_data_types:240 - Found 5499 invalid status values
+2025-09-26 19:28:49 | INFO     | web_app:create_order:443 - New order 59978 created successfully
+2025-09-26 19:29:06 | INFO     | web_app:update_order:391 - Order 59978 updated successfully
+2025-09-26 19:29:26 | INFO     | web_app:update_order:391 - Order 59978 updated successfully
+2025-09-26 19:29:51 | INFO     | src.services.order_service:get_all_orders:23 - Retrieved 5500 orders from database
+2025-11-06 19:08:47 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-06 19:08:48 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-06 19:46:03 | INFO     | src.services.order_service:get_all_orders:23 - Retrieved 5500 orders from database
+2025-11-06 19:46:03 | INFO     | src.services.order_service:get_orders_dataframe:45 - Created DataFrame with 5500 rows and 10 columns
+2025-11-06 19:46:03 | INFO     | src.services.order_service:get_data_quality_report:342 - Data quality report generated successfully
+2025-11-06 21:51:51 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-06 21:51:52 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-06 21:51:52 | INFO     | src.services.order_service:get_all_orders:23 - Retrieved 5500 orders from database
+2025-11-06 21:51:52 | INFO     | src.services.order_service:get_orders_dataframe:45 - Created DataFrame with 5500 rows and 10 columns
+2025-11-06 21:51:52 | INFO     | src.services.order_service:get_data_quality_report:342 - Data quality report generated successfully
+2025-11-06 21:52:26 | INFO     | src.services.order_service:get_all_orders:23 - Retrieved 5500 orders from database
+2025-11-06 21:52:26 | INFO     | src.services.order_service:get_orders_dataframe:45 - Created DataFrame with 5500 rows and 10 columns
+2025-11-06 21:52:26 | INFO     | src.services.order_service:get_data_quality_report:342 - Data quality report generated successfully
+2025-11-06 21:57:00 | INFO     | src.services.order_service:get_all_orders:23 - Retrieved 5500 orders from database
+2025-11-06 21:57:00 | INFO     | src.services.order_service:get_orders_dataframe:45 - Created DataFrame with 5500 rows and 10 columns
+2025-11-06 21:57:00 | INFO     | src.services.order_service:get_data_quality_report:342 - Data quality report generated successfully
+2025-11-06 21:57:14 | INFO     | src.services.order_service:get_all_orders:23 - Retrieved 5500 orders from database
+2025-11-06 21:57:14 | INFO     | src.services.order_service:get_orders_dataframe:45 - Created DataFrame with 5500 rows and 10 columns
+2025-11-06 21:57:14 | INFO     | src.services.order_service:get_data_quality_report:342 - Data quality report generated successfully
+2025-11-06 21:57:30 | INFO     | src.services.order_service:get_all_orders:23 - Retrieved 5500 orders from database
+2025-11-06 21:57:30 | INFO     | src.services.order_service:get_orders_dataframe:45 - Created DataFrame with 5500 rows and 10 columns
+2025-11-06 21:57:30 | INFO     | src.services.order_service:get_data_quality_report:342 - Data quality report generated successfully
+2025-11-06 21:57:39 | INFO     | src.services.order_service:get_all_orders:23 - Retrieved 5500 orders from database
+2025-11-06 21:57:39 | INFO     | src.services.order_service:get_orders_dataframe:45 - Created DataFrame with 5500 rows and 10 columns
+2025-11-06 21:57:39 | INFO     | src.services.order_service:get_data_quality_report:342 - Data quality report generated successfully
+2025-11-06 21:57:53 | INFO     | src.services.order_service:get_all_orders:23 - Retrieved 5500 orders from database
+2025-11-06 21:57:53 | INFO     | src.services.order_service:get_orders_dataframe:45 - Created DataFrame with 5500 rows and 10 columns
+2025-11-06 21:57:54 | INFO     | src.services.order_service:get_data_quality_report:342 - Data quality report generated successfully
+2025-11-06 21:58:39 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-06 21:58:40 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-06 21:58:42 | INFO     | src.services.order_service:get_all_orders:23 - Retrieved 5500 orders from database
+2025-11-06 21:58:42 | INFO     | src.services.order_service:get_orders_dataframe:45 - Created DataFrame with 5500 rows and 10 columns
+2025-11-06 21:58:42 | INFO     | src.services.order_service:get_data_quality_report:342 - Data quality report generated successfully
+2025-11-06 21:59:12 | INFO     | src.services.order_service:get_all_orders:23 - Retrieved 5500 orders from database
+2025-11-06 21:59:12 | INFO     | src.services.order_service:get_orders_dataframe:45 - Created DataFrame with 5500 rows and 10 columns
+2025-11-06 21:59:12 | INFO     | src.services.order_service:get_data_quality_report:342 - Data quality report generated successfully
+2025-11-06 22:08:02 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-06 22:08:03 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-06 22:08:59 | INFO     | src.services.order_service:get_all_orders:23 - Retrieved 5500 orders from database
+2025-11-06 22:08:59 | INFO     | src.services.order_service:get_orders_dataframe:45 - Created DataFrame with 5500 rows and 10 columns
+2025-11-06 22:08:59 | INFO     | src.services.order_service:get_data_quality_report:342 - Data quality report generated successfully
+2025-11-06 22:09:11 | INFO     | src.services.order_service:get_all_orders:23 - Retrieved 5500 orders from database
+2025-11-06 22:10:35 | INFO     | src.services.order_service:get_all_orders:23 - Retrieved 5500 orders from database
+2025-11-06 22:10:35 | INFO     | src.services.order_service:get_orders_dataframe:45 - Created DataFrame with 5500 rows and 10 columns
+2025-11-06 22:10:35 | INFO     | src.services.order_service:get_data_quality_report:342 - Data quality report generated successfully
+2025-11-06 22:12:05 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-06 22:12:32 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-06 22:12:50 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-06 22:13:02 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-06 22:13:18 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-06 22:13:54 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-06 22:16:16 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-06 22:16:17 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-06 22:16:18 | INFO     | web_app:handle_connect:560 - Client connected: zEKBFOQDFztDe3lhAAAB
+2025-11-06 22:16:59 | INFO     | web_app:create_order:449 - New order 59979 created successfully
+2025-11-06 22:16:59 | INFO     | web_app:broadcast_order_change:616 - Broadcasted order change: created for order 59979
+2025-11-06 22:16:59 | INFO     | web_app:broadcast_notification:628 - Broadcasted notification: Nueva orden #59979 creada
+2025-11-06 22:17:04 | INFO     | web_app:handle_disconnect:566 - Client disconnected: zEKBFOQDFztDe3lhAAAB
+2025-11-06 22:17:05 | INFO     | web_app:handle_connect:560 - Client connected: XTDm19JQ0eEBDTzbAAAD
+2025-11-06 22:17:12 | INFO     | web_app:handle_disconnect:566 - Client disconnected: XTDm19JQ0eEBDTzbAAAD
+2025-11-06 22:17:13 | INFO     | web_app:handle_connect:560 - Client connected: zmYUk1C87ydja52_AAAF
+2025-11-06 22:17:47 | INFO     | web_app:create_order:449 - New order 59980 created successfully
+2025-11-06 22:17:47 | INFO     | web_app:broadcast_order_change:616 - Broadcasted order change: created for order 59980
+2025-11-06 22:17:47 | INFO     | web_app:broadcast_notification:628 - Broadcasted notification: Nueva orden #59980 creada
+2025-11-06 22:17:58 | INFO     | web_app:handle_disconnect:566 - Client disconnected: zmYUk1C87ydja52_AAAF
+2025-11-06 22:18:00 | INFO     | web_app:handle_connect:560 - Client connected: IUUAUBkrI4Fp2yVcAAAH
+2025-11-06 22:18:45 | INFO     | web_app:handle_disconnect:566 - Client disconnected: IUUAUBkrI4Fp2yVcAAAH
+2025-11-06 22:18:46 | INFO     | web_app:handle_connect:560 - Client connected: -1glQOhdzCLLvka3AAAJ
+2025-11-06 22:19:31 | INFO     | web_app:handle_disconnect:566 - Client disconnected: -1glQOhdzCLLvka3AAAJ
+2025-11-06 22:19:33 | INFO     | web_app:handle_connect:560 - Client connected: 3t8TpEAdtab98-C7AAAL
+2025-11-06 22:20:02 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-06 22:20:04 | INFO     | web_app:handle_connect:560 - Client connected: NsS1dJ55HuxSQzRxAAAB
+2025-11-06 22:20:49 | INFO     | web_app:handle_disconnect:566 - Client disconnected: NsS1dJ55HuxSQzRxAAAB
+2025-11-06 22:20:51 | INFO     | web_app:handle_connect:560 - Client connected: -ZTorQsaPreTfmv2AAAD
+2025-11-06 22:21:36 | INFO     | web_app:handle_disconnect:566 - Client disconnected: -ZTorQsaPreTfmv2AAAD
+2025-11-06 22:21:37 | INFO     | web_app:handle_connect:560 - Client connected: wy66wbrkLQSKHh-gAAAF
+2025-11-06 22:21:44 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-06 22:21:45 | INFO     | web_app:handle_connect:561 - Client connected: 0V6_jTwbW_-F6MfcAAAB
+2025-11-06 22:22:31 | INFO     | web_app:handle_disconnect:567 - Client disconnected: 0V6_jTwbW_-F6MfcAAAB
+2025-11-06 22:22:32 | INFO     | web_app:handle_connect:561 - Client connected: z4DoyBMkHF8T2iiPAAAD
+2025-11-06 22:22:41 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-06 22:22:43 | INFO     | web_app:handle_connect:565 - Client connected: nOqahlnJ0MrYWu2rAAAB
+2025-11-06 22:23:13 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-06 22:23:15 | INFO     | web_app:handle_connect:569 - Client connected: 4vxvMD8g9tnsUHhaAAAB
+2025-11-06 22:23:48 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-06 22:23:49 | INFO     | web_app:handle_connect:573 - Client connected: yhlaybv4hMcSgFQIAAAB
+2025-11-06 22:23:51 | INFO     | web_app:handle_disconnect:579 - Client disconnected: yhlaybv4hMcSgFQIAAAB
+2025-11-06 22:23:52 | INFO     | web_app:handle_connect:573 - Client connected: NeNnMLxWFmX8YcXkAAAD
+2025-11-06 22:24:00 | INFO     | web_app:handle_connect:573 - Client connected: 29rCiYMbNWN0i1O_AAAF
+2025-11-06 22:24:35 | INFO     | web_app:handle_disconnect:579 - Client disconnected: 29rCiYMbNWN0i1O_AAAF
+2025-11-06 22:24:36 | INFO     | web_app:handle_connect:573 - Client connected: RCYLws-4tJ5AeryTAAAH
+2025-11-06 22:24:37 | INFO     | web_app:handle_disconnect:579 - Client disconnected: NeNnMLxWFmX8YcXkAAAD
+2025-11-06 22:24:37 | INFO     | src.services.order_service:get_all_orders:23 - Retrieved 5502 orders from database
+2025-11-06 22:24:37 | INFO     | src.services.order_service:get_orders_dataframe:45 - Created DataFrame with 5502 rows and 10 columns
+2025-11-06 22:24:37 | INFO     | src.services.order_service:get_data_quality_report:342 - Data quality report generated successfully
+2025-11-06 22:24:38 | INFO     | web_app:handle_connect:573 - Client connected: E1m_1Nuh3KTDlxH1AAAJ
+2025-11-06 22:25:21 | INFO     | web_app:handle_disconnect:579 - Client disconnected: RCYLws-4tJ5AeryTAAAH
+2025-11-06 22:25:22 | INFO     | web_app:handle_connect:573 - Client connected: qtm_cWxsUd_mmQd9AAAL
+2025-11-06 22:25:23 | INFO     | web_app:handle_disconnect:579 - Client disconnected: E1m_1Nuh3KTDlxH1AAAJ
+2025-11-06 22:25:25 | INFO     | web_app:handle_connect:573 - Client connected: LJ1xPVx9tLSrXNQ6AAAN
+2025-11-06 22:25:29 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-06 22:25:31 | INFO     | web_app:handle_connect:833 - Client connected: y0iu_dechhaCXb6IAAAB
+2025-11-06 22:26:16 | INFO     | web_app:handle_disconnect:839 - Client disconnected: y0iu_dechhaCXb6IAAAB
+2025-11-06 22:26:17 | INFO     | web_app:handle_connect:833 - Client connected: sqmOhwmBbIc1CncdAAAD
+2025-11-06 22:27:02 | INFO     | web_app:handle_disconnect:839 - Client disconnected: sqmOhwmBbIc1CncdAAAD
+2025-11-06 22:27:04 | INFO     | web_app:handle_connect:833 - Client connected: 842cDF_94sBNxL0WAAAF
+2025-11-06 22:27:08 | INFO     | web_app:handle_disconnect:839 - Client disconnected: 842cDF_94sBNxL0WAAAF
+2025-11-06 22:27:09 | INFO     | web_app:handle_connect:833 - Client connected: G25gxUv3W0XAtEZyAAAH
+2025-11-06 22:27:54 | INFO     | web_app:handle_disconnect:839 - Client disconnected: G25gxUv3W0XAtEZyAAAH
+2025-11-06 22:27:55 | INFO     | web_app:handle_connect:833 - Client connected: MfJaHfoKISdFIWgmAAAJ
+2025-11-06 22:28:40 | INFO     | web_app:handle_disconnect:839 - Client disconnected: MfJaHfoKISdFIWgmAAAJ
+2025-11-06 22:28:41 | INFO     | web_app:handle_connect:833 - Client connected: kqKb8MKeUEsiejYfAAAL
+2025-11-06 22:29:13 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-06 22:29:14 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-06 22:29:16 | INFO     | web_app:handle_connect:833 - Client connected: laa5djozyYC7k0jeAAAB
+2025-11-06 22:29:57 | INFO     | web_app:handle_disconnect:839 - Client disconnected: laa5djozyYC7k0jeAAAB
+2025-11-06 22:29:58 | INFO     | web_app:handle_connect:833 - Client connected: rdJW7BGXEsg4UAA5AAAD
+2025-11-06 22:30:43 | INFO     | web_app:handle_disconnect:839 - Client disconnected: rdJW7BGXEsg4UAA5AAAD
+2025-11-06 22:30:44 | INFO     | web_app:handle_connect:833 - Client connected: lK8zHWbVx7rilNtdAAAF
+2025-11-06 22:31:29 | INFO     | web_app:handle_disconnect:839 - Client disconnected: lK8zHWbVx7rilNtdAAAF
+2025-11-06 22:31:31 | INFO     | web_app:handle_connect:833 - Client connected: KXqBHNqiH0JGx0ljAAAH
+2025-11-06 22:32:16 | INFO     | web_app:handle_disconnect:839 - Client disconnected: KXqBHNqiH0JGx0ljAAAH
+2025-11-06 22:32:17 | INFO     | web_app:handle_connect:833 - Client connected: -BuXB-mgfybmL4lqAAAJ
+2025-11-06 22:33:02 | INFO     | web_app:handle_disconnect:839 - Client disconnected: -BuXB-mgfybmL4lqAAAJ
+2025-11-06 22:33:03 | INFO     | web_app:handle_connect:833 - Client connected: RAJjVHvX1kfImc09AAAL
+2025-11-06 22:33:38 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-06 22:33:41 | INFO     | web_app:handle_connect:833 - Client connected: Q6gw10TykZWQa_xYAAAB
+2025-11-06 22:33:46 | INFO     | src.services.order_service:get_all_orders:23 - Retrieved 5502 orders from database
+2025-11-06 22:33:46 | INFO     | src.services.order_service:get_orders_dataframe:45 - Created DataFrame with 5502 rows and 10 columns
+2025-11-06 22:33:46 | INFO     | src.services.order_service:get_data_quality_report:342 - Data quality report generated successfully
+2025-11-06 22:34:26 | INFO     | web_app:handle_disconnect:839 - Client disconnected: Q6gw10TykZWQa_xYAAAB
+2025-11-06 22:34:28 | INFO     | web_app:handle_connect:833 - Client connected: o5j_vx4fM9R1Tt_TAAAD
+2025-11-06 22:35:13 | INFO     | web_app:handle_disconnect:839 - Client disconnected: o5j_vx4fM9R1Tt_TAAAD
+2025-11-06 22:35:14 | INFO     | web_app:handle_connect:833 - Client connected: MRYgXh18O1GwhzUoAAAF
+2025-11-06 22:36:17 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-06 22:36:19 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-06 22:36:20 | INFO     | web_app:handle_connect:833 - Client connected: HkhBHczYZ02ZlV4UAAAB
+2025-11-06 22:36:51 | INFO     | web_app:handle_disconnect:839 - Client disconnected: HkhBHczYZ02ZlV4UAAAB
+2025-11-06 22:36:51 | INFO     | web_app:handle_connect:833 - Client connected: 2_IejCRz68g74gtxAAAD
+2025-11-06 22:37:36 | INFO     | web_app:handle_disconnect:839 - Client disconnected: 2_IejCRz68g74gtxAAAD
+2025-11-06 22:37:38 | INFO     | web_app:handle_connect:833 - Client connected: qsWPlDvoss-tjE8DAAAF
+2025-11-06 22:38:23 | INFO     | web_app:handle_disconnect:839 - Client disconnected: qsWPlDvoss-tjE8DAAAF
+2025-11-06 22:38:24 | INFO     | web_app:handle_connect:833 - Client connected: IoEuFmZVgMR-j01LAAAH
+2025-11-06 22:39:09 | INFO     | web_app:handle_disconnect:839 - Client disconnected: IoEuFmZVgMR-j01LAAAH
+2025-11-06 22:39:11 | INFO     | web_app:handle_connect:833 - Client connected: KUwUDH5LMlyanm6QAAAJ
+2025-11-06 22:39:56 | INFO     | web_app:handle_disconnect:839 - Client disconnected: KUwUDH5LMlyanm6QAAAJ
+2025-11-06 22:39:57 | INFO     | web_app:handle_connect:833 - Client connected: 1uGqQIqa3tpTBfnbAAAL
+2025-11-06 22:40:42 | INFO     | web_app:handle_disconnect:839 - Client disconnected: 1uGqQIqa3tpTBfnbAAAL
+2025-11-06 22:40:43 | INFO     | web_app:handle_connect:833 - Client connected: 6UraOGFH5QtMQpmiAAAN
+2025-11-06 22:41:28 | INFO     | web_app:handle_disconnect:839 - Client disconnected: 6UraOGFH5QtMQpmiAAAN
+2025-11-06 22:41:29 | INFO     | web_app:handle_connect:833 - Client connected: MRChgwntZuYf435HAAAP
+2025-11-06 22:41:41 | INFO     | src.services.order_service:get_all_orders:23 - Retrieved 5502 orders from database
+2025-11-06 22:41:41 | INFO     | src.services.order_service:get_orders_dataframe:45 - Created DataFrame with 5502 rows and 10 columns
+2025-11-06 22:41:41 | INFO     | src.services.order_service:get_data_quality_report:342 - Data quality report generated successfully
+2025-11-06 22:41:52 | INFO     | src.services.order_service:get_all_orders:23 - Retrieved 5502 orders from database
+2025-11-06 22:41:52 | INFO     | src.services.order_service:get_orders_dataframe:45 - Created DataFrame with 5502 rows and 10 columns
+2025-11-06 22:41:52 | INFO     | src.services.order_service:get_data_quality_report:342 - Data quality report generated successfully
+2025-11-06 22:42:00 | INFO     | src.services.order_service:get_all_orders:23 - Retrieved 5502 orders from database
+2025-11-06 22:42:00 | INFO     | src.services.order_service:get_orders_dataframe:45 - Created DataFrame with 5502 rows and 10 columns
+2025-11-06 22:42:00 | INFO     | src.services.order_service:get_data_quality_report:342 - Data quality report generated successfully
+2025-11-06 22:42:01 | INFO     | src.services.order_service:get_all_orders:23 - Retrieved 5502 orders from database
+2025-11-06 22:42:01 | INFO     | src.services.order_service:get_orders_dataframe:45 - Created DataFrame with 5502 rows and 10 columns
+2025-11-06 22:42:01 | INFO     | src.services.order_service:get_data_quality_report:342 - Data quality report generated successfully
+2025-11-06 22:42:28 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-06 22:42:29 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-06 22:42:33 | INFO     | web_app:handle_connect:833 - Client connected: vbEEhVhNpdr1GpuxAAAB
+2025-11-06 22:43:18 | INFO     | web_app:handle_disconnect:839 - Client disconnected: vbEEhVhNpdr1GpuxAAAB
+2025-11-06 22:43:19 | INFO     | web_app:handle_connect:833 - Client connected: a0Q6xvKfqcOgqdq9AAAD
+2025-11-06 22:44:04 | INFO     | web_app:handle_disconnect:839 - Client disconnected: a0Q6xvKfqcOgqdq9AAAD
+2025-11-06 22:44:06 | INFO     | web_app:handle_connect:833 - Client connected: O-jij7R71tBs9LAEAAAF
+2025-11-07 19:14:15 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-07 19:14:17 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-07 19:14:49 | INFO     | web_app:handle_connect:833 - Client connected: CAZSaiN7Y-ekxcnYAAAB
+2025-11-07 19:15:30 | INFO     | src.services.order_service:get_all_orders:23 - Retrieved 5502 orders from database
+2025-11-07 19:15:30 | INFO     | src.services.order_service:get_orders_dataframe:45 - Created DataFrame with 5502 rows and 10 columns
+2025-11-07 19:15:30 | INFO     | src.services.order_service:get_data_quality_report:342 - Data quality report generated successfully
+2025-11-07 19:15:34 | INFO     | web_app:handle_disconnect:839 - Client disconnected: CAZSaiN7Y-ekxcnYAAAB
+2025-11-07 19:15:35 | INFO     | web_app:handle_connect:833 - Client connected: mWMH-c7MXcC8QCTRAAAD
+2025-11-07 19:16:20 | INFO     | web_app:handle_disconnect:839 - Client disconnected: mWMH-c7MXcC8QCTRAAAD
+2025-11-07 19:16:21 | INFO     | web_app:handle_connect:833 - Client connected: vbyNC2IYM4YwbrupAAAF
+2025-11-07 19:17:07 | INFO     | web_app:handle_disconnect:839 - Client disconnected: vbyNC2IYM4YwbrupAAAF
+2025-11-07 19:17:08 | INFO     | web_app:handle_connect:833 - Client connected: Uw37tSkK5FeKGlzmAAAH
+2025-11-07 19:17:30 | INFO     | web_app:handle_disconnect:839 - Client disconnected: Uw37tSkK5FeKGlzmAAAH
+2025-11-07 19:17:31 | INFO     | web_app:handle_connect:833 - Client connected: 9ti5ibk1-aapL0SgAAAJ
+2025-11-07 19:17:37 | INFO     | web_app:handle_disconnect:839 - Client disconnected: 9ti5ibk1-aapL0SgAAAJ
+2025-11-07 19:17:38 | INFO     | web_app:handle_connect:833 - Client connected: M1OyQ7u9vUKYC6F1AAAL
+2025-11-07 19:17:50 | INFO     | web_app:handle_connect:833 - Client connected: vsaZZfyq-1t3bAWQAAAN
+2025-11-07 19:17:59 | INFO     | src.services.order_service:get_all_orders:23 - Retrieved 5502 orders from database
+2025-11-07 19:17:59 | INFO     | src.services.order_service:get_orders_dataframe:45 - Created DataFrame with 5502 rows and 10 columns
+2025-11-07 19:17:59 | INFO     | src.services.order_service:get_data_quality_report:342 - Data quality report generated successfully
+2025-11-07 19:18:23 | INFO     | web_app:handle_disconnect:839 - Client disconnected: M1OyQ7u9vUKYC6F1AAAL
+2025-11-07 19:18:24 | INFO     | web_app:handle_connect:833 - Client connected: 748tqeVVU5BJO8jwAAAP
+2025-11-07 19:18:26 | INFO     | src.services.order_service:get_all_orders:23 - Retrieved 5502 orders from database
+2025-11-07 19:18:26 | INFO     | src.services.order_service:get_orders_dataframe:45 - Created DataFrame with 5502 rows and 10 columns
+2025-11-07 19:18:26 | INFO     | src.services.order_service:get_data_quality_report:342 - Data quality report generated successfully
+2025-11-07 19:18:30 | INFO     | src.services.order_service:get_all_orders:23 - Retrieved 5502 orders from database
+2025-11-07 19:18:30 | INFO     | src.services.order_service:get_orders_dataframe:45 - Created DataFrame with 5502 rows and 10 columns
+2025-11-07 19:18:30 | INFO     | src.services.order_service:get_data_quality_report:342 - Data quality report generated successfully
+2025-11-07 19:18:35 | INFO     | web_app:handle_disconnect:839 - Client disconnected: vsaZZfyq-1t3bAWQAAAN
+2025-11-07 19:18:36 | INFO     | web_app:handle_connect:833 - Client connected: N6RXEpNBLgMMFJeCAAAR
+2025-11-07 19:19:09 | INFO     | web_app:handle_disconnect:839 - Client disconnected: 748tqeVVU5BJO8jwAAAP
+2025-11-07 19:19:11 | INFO     | web_app:handle_connect:833 - Client connected: 0h4Fm0BI5XGAo7GGAAAT
+2025-11-07 19:19:15 | INFO     | src.services.order_service:get_all_orders:23 - Retrieved 5502 orders from database
+2025-11-07 19:19:15 | INFO     | src.services.order_service:get_orders_dataframe:45 - Created DataFrame with 5502 rows and 10 columns
+2025-11-07 19:19:15 | INFO     | src.services.order_service:get_data_quality_report:342 - Data quality report generated successfully
+2025-11-07 19:19:21 | INFO     | web_app:handle_disconnect:839 - Client disconnected: N6RXEpNBLgMMFJeCAAAR
+2025-11-07 19:19:56 | INFO     | web_app:handle_disconnect:839 - Client disconnected: 0h4Fm0BI5XGAo7GGAAAT
+2025-11-07 19:19:57 | INFO     | web_app:handle_connect:833 - Client connected: _g7wKT1vBFBNQ6gmAAAV
+2025-11-07 19:20:43 | INFO     | web_app:handle_disconnect:839 - Client disconnected: _g7wKT1vBFBNQ6gmAAAV
+2025-11-07 19:20:45 | INFO     | web_app:handle_connect:833 - Client connected: kN3-jPqQ2gW_OlRGAAAX
+2025-11-07 19:21:30 | INFO     | web_app:handle_disconnect:839 - Client disconnected: kN3-jPqQ2gW_OlRGAAAX
+2025-11-07 19:21:32 | INFO     | web_app:handle_connect:833 - Client connected: qavFpa3GQX_-oAIPAAAZ
+2025-11-07 19:22:17 | INFO     | web_app:handle_disconnect:839 - Client disconnected: qavFpa3GQX_-oAIPAAAZ
+2025-11-07 19:22:18 | INFO     | web_app:handle_connect:833 - Client connected: 4qZqe4v4M3sd9_p8AAAb
+2025-11-07 19:22:58 | INFO     | web_app:handle_connect:833 - Client connected: fWt_SbXJL4-B3BFaAAAd
+2025-11-07 19:23:03 | INFO     | web_app:handle_disconnect:839 - Client disconnected: 4qZqe4v4M3sd9_p8AAAb
+2025-11-07 19:23:04 | INFO     | web_app:handle_connect:833 - Client connected: wj28RZDHK4OpQsdEAAAf
+2025-11-07 19:23:43 | INFO     | web_app:handle_disconnect:839 - Client disconnected: fWt_SbXJL4-B3BFaAAAd
+2025-11-07 19:23:49 | INFO     | web_app:handle_disconnect:839 - Client disconnected: wj28RZDHK4OpQsdEAAAf
+2025-11-07 19:23:50 | INFO     | web_app:handle_connect:833 - Client connected: LsPQhhmdoTo-iAZNAAAh
+2025-11-07 19:24:36 | INFO     | web_app:handle_disconnect:839 - Client disconnected: LsPQhhmdoTo-iAZNAAAh
+2025-11-07 19:24:37 | INFO     | web_app:handle_connect:833 - Client connected: HxqFHQC6o9uFdyzXAAAj
+2025-11-07 19:25:22 | INFO     | web_app:handle_disconnect:839 - Client disconnected: HxqFHQC6o9uFdyzXAAAj
+2025-11-07 19:25:24 | INFO     | web_app:handle_connect:833 - Client connected: hlFtNoPNaT4LeSMXAAAl
+2025-11-07 19:26:09 | INFO     | web_app:handle_disconnect:839 - Client disconnected: hlFtNoPNaT4LeSMXAAAl
+2025-11-07 19:26:10 | INFO     | web_app:handle_connect:833 - Client connected: ngRRj_m0LxVBYXd4AAAn
+2025-11-07 19:26:55 | INFO     | web_app:handle_disconnect:839 - Client disconnected: ngRRj_m0LxVBYXd4AAAn
+2025-11-07 19:26:57 | INFO     | web_app:handle_connect:833 - Client connected: 0fr6USjIzYyh1LGRAAAp
+2025-11-07 19:27:42 | INFO     | web_app:handle_disconnect:839 - Client disconnected: 0fr6USjIzYyh1LGRAAAp
+2025-11-07 19:27:43 | INFO     | web_app:handle_connect:833 - Client connected: V3ifyDCVa9ymrbEUAAAr
+2025-11-07 19:28:28 | INFO     | web_app:handle_disconnect:839 - Client disconnected: V3ifyDCVa9ymrbEUAAAr
+2025-11-07 19:28:30 | INFO     | web_app:handle_connect:833 - Client connected: CAHrx1sb5FZFxJAiAAAt
+2025-11-07 19:29:15 | INFO     | web_app:handle_disconnect:839 - Client disconnected: CAHrx1sb5FZFxJAiAAAt
+2025-11-07 19:29:16 | INFO     | web_app:handle_connect:833 - Client connected: 9IGOo9OhIyy0OOGAAAAv
+2025-11-07 19:30:01 | INFO     | web_app:handle_disconnect:839 - Client disconnected: 9IGOo9OhIyy0OOGAAAAv
+2025-11-07 19:30:03 | INFO     | web_app:handle_connect:833 - Client connected: sjPwgo3LVA4dragHAAAx
+2025-11-07 19:30:48 | INFO     | web_app:handle_disconnect:839 - Client disconnected: sjPwgo3LVA4dragHAAAx
+2025-11-07 19:30:49 | INFO     | web_app:handle_connect:833 - Client connected: y4bt-kAHBx8Ga1mJAAAz
+2025-11-07 19:31:35 | INFO     | web_app:handle_disconnect:839 - Client disconnected: y4bt-kAHBx8Ga1mJAAAz
+2025-11-07 19:31:36 | INFO     | web_app:handle_connect:833 - Client connected: TJj6iexGfD9YJSR1AAA1
+2025-11-07 19:32:21 | INFO     | web_app:handle_disconnect:839 - Client disconnected: TJj6iexGfD9YJSR1AAA1
+2025-11-07 19:32:23 | INFO     | web_app:handle_connect:833 - Client connected: 8MC3ejy5KiF8qCCjAAA3
+2025-11-07 19:33:08 | INFO     | web_app:handle_disconnect:839 - Client disconnected: 8MC3ejy5KiF8qCCjAAA3
+2025-11-07 19:33:09 | INFO     | web_app:handle_connect:833 - Client connected: qlfZJG7ovA-PMWOUAAA5
+2025-11-07 19:33:55 | INFO     | web_app:handle_disconnect:839 - Client disconnected: qlfZJG7ovA-PMWOUAAA5
+2025-11-07 19:33:56 | INFO     | web_app:handle_connect:833 - Client connected: ZGe0eWT4N_9vbkhhAAA7
+2025-11-07 19:34:41 | INFO     | web_app:handle_disconnect:839 - Client disconnected: ZGe0eWT4N_9vbkhhAAA7
+2025-11-07 19:34:42 | INFO     | web_app:handle_connect:833 - Client connected: OI9I9JZlQIPg_NZ4AAA9
+2025-11-07 19:35:27 | INFO     | web_app:handle_disconnect:839 - Client disconnected: OI9I9JZlQIPg_NZ4AAA9
+2025-11-07 19:35:28 | INFO     | web_app:handle_connect:833 - Client connected: QEFR1ynIDR0HoKydAAA_
+2025-11-07 19:36:13 | INFO     | web_app:handle_disconnect:839 - Client disconnected: QEFR1ynIDR0HoKydAAA_
+2025-11-07 19:36:15 | INFO     | web_app:handle_connect:833 - Client connected: YdW2Ki2mLHXcWG7TAABB
+2025-11-07 19:37:00 | INFO     | web_app:handle_disconnect:839 - Client disconnected: YdW2Ki2mLHXcWG7TAABB
+2025-11-07 19:37:01 | INFO     | web_app:handle_connect:833 - Client connected: IMcqxZbMNY7rSuQjAABD
+2025-11-07 19:37:46 | INFO     | web_app:handle_disconnect:839 - Client disconnected: IMcqxZbMNY7rSuQjAABD
+2025-11-07 19:37:47 | INFO     | web_app:handle_connect:833 - Client connected: icPDFKzPc1c3dIFzAABF
+2025-11-07 19:38:32 | INFO     | web_app:handle_disconnect:839 - Client disconnected: icPDFKzPc1c3dIFzAABF
+2025-11-07 19:38:33 | INFO     | web_app:handle_connect:833 - Client connected: ujs5r8AIIutQ71huAABH
+2025-11-07 19:39:18 | INFO     | web_app:handle_disconnect:839 - Client disconnected: ujs5r8AIIutQ71huAABH
+2025-11-07 19:39:21 | INFO     | web_app:handle_connect:833 - Client connected: tjdjvgwGGx0CqCdpAABJ
+2025-11-07 19:40:06 | INFO     | web_app:handle_disconnect:839 - Client disconnected: tjdjvgwGGx0CqCdpAABJ
+2025-11-07 19:40:08 | INFO     | web_app:handle_connect:833 - Client connected: 568tMtS96qC8GnD1AABL
+2025-11-07 19:40:53 | INFO     | web_app:handle_disconnect:839 - Client disconnected: 568tMtS96qC8GnD1AABL
+2025-11-07 19:40:55 | INFO     | web_app:handle_connect:833 - Client connected: PYEIXzdq3Oo186o4AABN
+2025-11-07 19:41:40 | INFO     | web_app:handle_disconnect:839 - Client disconnected: PYEIXzdq3Oo186o4AABN
+2025-11-07 19:41:42 | INFO     | web_app:handle_connect:833 - Client connected: mKy4jmwc3NFOCJupAABP
+2025-11-07 19:42:27 | INFO     | web_app:handle_disconnect:839 - Client disconnected: mKy4jmwc3NFOCJupAABP
+2025-11-07 19:42:29 | INFO     | web_app:handle_connect:833 - Client connected: fiDZiOojNzfUlUgAAABR
+2025-11-07 19:43:14 | INFO     | web_app:handle_disconnect:839 - Client disconnected: fiDZiOojNzfUlUgAAABR
+2025-11-07 19:43:15 | INFO     | web_app:handle_connect:833 - Client connected: Y2XNuBa2svbHHIbVAABT
+2025-11-07 19:44:00 | INFO     | web_app:handle_disconnect:839 - Client disconnected: Y2XNuBa2svbHHIbVAABT
+2025-11-07 19:44:02 | INFO     | web_app:handle_connect:833 - Client connected: 6VXH-RJiyUWXXjb0AABV
+2025-11-07 19:44:46 | INFO     | web_app:handle_disconnect:839 - Client disconnected: 6VXH-RJiyUWXXjb0AABV
+2025-11-07 19:44:48 | INFO     | web_app:handle_connect:833 - Client connected: pFN1aCfWawIJffLAAABX
+2025-11-07 19:45:33 | INFO     | web_app:handle_disconnect:839 - Client disconnected: pFN1aCfWawIJffLAAABX
+2025-11-07 19:45:35 | INFO     | web_app:handle_connect:833 - Client connected: HPZL425ySbHCqBNEAABZ
+2025-11-07 19:46:20 | INFO     | web_app:handle_disconnect:839 - Client disconnected: HPZL425ySbHCqBNEAABZ
+2025-11-07 19:46:22 | INFO     | web_app:handle_connect:833 - Client connected: -FosAHQcH-wlLLmgAABb
+2025-11-07 19:47:07 | INFO     | web_app:handle_disconnect:839 - Client disconnected: -FosAHQcH-wlLLmgAABb
+2025-11-07 19:47:09 | INFO     | web_app:handle_connect:833 - Client connected: BzC8u-IvN77QDj4oAABd
+2025-11-07 19:47:54 | INFO     | web_app:handle_disconnect:839 - Client disconnected: BzC8u-IvN77QDj4oAABd
+2025-11-07 19:47:56 | INFO     | web_app:handle_connect:833 - Client connected: 9XDLLcck7dyAiFxaAABf
+2025-11-07 19:48:41 | INFO     | web_app:handle_disconnect:839 - Client disconnected: 9XDLLcck7dyAiFxaAABf
+2025-11-07 19:48:43 | INFO     | web_app:handle_connect:833 - Client connected: _GtqVKg4_pIr4oRFAABh
+2025-11-07 19:49:28 | INFO     | web_app:handle_disconnect:839 - Client disconnected: _GtqVKg4_pIr4oRFAABh
+2025-11-07 19:49:31 | INFO     | web_app:handle_connect:833 - Client connected: emYbOkXYS8kmVGo2AABj
+2025-11-07 19:50:07 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-07 19:50:08 | INFO     | web_app:handle_connect:833 - Client connected: WQf1AKcDp_k6q_wjAAAB
+2025-11-07 19:50:17 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-07 19:50:17 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-07 19:50:17 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-07 19:50:53 | INFO     | web_app:handle_disconnect:839 - Client disconnected: WQf1AKcDp_k6q_wjAAAB
+2025-11-07 19:50:55 | INFO     | web_app:handle_connect:833 - Client connected: _zTKcC3bROUIjy96AAAD
+2025-11-07 19:51:17 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-07 19:51:18 | INFO     | web_app:handle_connect:833 - Client connected: KG5TDPu5m2O4-mcGAAAB
+2025-11-07 19:51:35 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-07 19:51:37 | INFO     | web_app:handle_connect:833 - Client connected: GIIa3CIrwE6t9sfmAAAB
+2025-11-07 19:51:51 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-07 19:51:52 | INFO     | web_app:handle_connect:833 - Client connected: 4cfIHbPzscyN77_BAAAB
+2025-11-07 19:52:37 | INFO     | web_app:handle_disconnect:839 - Client disconnected: 4cfIHbPzscyN77_BAAAB
+2025-11-07 19:52:39 | INFO     | web_app:handle_connect:833 - Client connected: MjyuJC7U3-K-wrI7AAAD
+2025-11-07 19:52:42 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-07 19:52:44 | INFO     | web_app:handle_connect:833 - Client connected: 0aR538wQk0S09FqgAAAB
+2025-11-07 19:52:55 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-07 19:52:55 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-07 19:52:55 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-07 19:53:29 | INFO     | web_app:handle_disconnect:839 - Client disconnected: 0aR538wQk0S09FqgAAAB
+2025-11-07 19:53:31 | INFO     | web_app:handle_connect:833 - Client connected: en7qpj6hxba4lvPpAAAD
+2025-11-07 19:54:16 | INFO     | web_app:handle_disconnect:839 - Client disconnected: en7qpj6hxba4lvPpAAAD
+2025-11-07 19:54:17 | INFO     | web_app:handle_connect:833 - Client connected: 8v2Kk0hEVdRwlwERAAAF
+2025-11-07 19:54:19 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-07 19:54:19 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-07 19:54:19 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-07 19:54:19 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-07 19:54:19 | INFO     | src.database.connection:test_connection:87 - Database connection test successful
+2025-11-07 19:54:19 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-07 19:54:20 | ERROR    | src.database.connection:get_connection:58 - Database connection error: 0
+2025-11-07 19:55:03 | INFO     | web_app:handle_disconnect:839 - Client disconnected: 8v2Kk0hEVdRwlwERAAAF
+2025-11-07 19:55:05 | INFO     | web_app:handle_connect:833 - Client connected: HWgynlApXjJYef5xAAAH
+2025-11-07 19:55:26 | INFO     | web_app:handle_disconnect:839 - Client disconnected: HWgynlApXjJYef5xAAAH
+2025-11-07 19:55:27 | INFO     | web_app:handle_connect:833 - Client connected: zyzXG-71_i6CrBb5AAAJ
+2025-11-07 19:56:12 | INFO     | web_app:handle_disconnect:839 - Client disconnected: zyzXG-71_i6CrBb5AAAJ
+2025-11-07 19:56:15 | INFO     | web_app:handle_connect:833 - Client connected: yrY6-llYSr-rc2IAAAAL
+2025-11-07 19:56:56 | INFO     | web_app:handle_disconnect:839 - Client disconnected: yrY6-llYSr-rc2IAAAAL
+2025-11-07 19:56:57 | INFO     | web_app:handle_connect:833 - Client connected: SskWlHg6Af_rktmvAAAN
+2025-11-07 19:57:42 | INFO     | web_app:handle_disconnect:839 - Client disconnected: SskWlHg6Af_rktmvAAAN
+2025-11-07 19:57:43 | INFO     | web_app:handle_connect:833 - Client connected: qDTnsdM4FGhLJ_ZhAAAP
+2025-11-07 19:58:28 | INFO     | web_app:handle_disconnect:839 - Client disconnected: qDTnsdM4FGhLJ_ZhAAAP
+2025-11-07 19:58:30 | INFO     | web_app:handle_connect:833 - Client connected: McLPxwqlfQY9_FhcAAAR
+2025-11-07 19:59:16 | INFO     | web_app:handle_disconnect:839 - Client disconnected: McLPxwqlfQY9_FhcAAAR
+2025-11-07 19:59:18 | INFO     | web_app:handle_connect:833 - Client connected: Kkmmr_wcgMQENqbrAAAT
+2025-11-07 20:00:03 | INFO     | web_app:handle_disconnect:839 - Client disconnected: Kkmmr_wcgMQENqbrAAAT
+2025-11-07 20:00:05 | INFO     | web_app:handle_connect:833 - Client connected: 4BXqU1vEhEyFbMDSAAAV
+2025-11-07 20:00:50 | INFO     | web_app:handle_disconnect:839 - Client disconnected: 4BXqU1vEhEyFbMDSAAAV
+2025-11-07 20:00:51 | INFO     | web_app:handle_connect:833 - Client connected: B9qto98ZYzkttGTTAAAX
+2025-11-07 20:01:37 | INFO     | web_app:handle_disconnect:839 - Client disconnected: B9qto98ZYzkttGTTAAAX
+2025-11-07 20:01:38 | INFO     | web_app:handle_connect:833 - Client connected: MSzBaf2Q1mrvh2tWAAAZ
+2025-11-07 20:01:44 | INFO     | web_app:handle_disconnect:839 - Client disconnected: MSzBaf2Q1mrvh2tWAAAZ
+2025-11-07 20:01:45 | INFO     | web_app:handle_connect:833 - Client connected: kXt8Ti3YMLGCVkenAAAb
+2025-11-07 20:02:30 | INFO     | web_app:handle_disconnect:839 - Client disconnected: kXt8Ti3YMLGCVkenAAAb
+2025-11-07 20:02:32 | INFO     | web_app:handle_connect:833 - Client connected: 4T_fYkLMwJMWnQwsAAAd
+2025-11-07 20:02:37 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-07 20:02:40 | INFO     | web_app:handle_connect:833 - Client connected: ceFra2biK8Qs77q0AAAB
+2025-11-07 20:03:25 | INFO     | web_app:handle_disconnect:839 - Client disconnected: ceFra2biK8Qs77q0AAAB
+2025-11-07 20:03:27 | INFO     | web_app:handle_connect:833 - Client connected: SVkYXVxESjxRUIOMAAAD
+2025-11-07 20:04:12 | INFO     | web_app:handle_disconnect:839 - Client disconnected: SVkYXVxESjxRUIOMAAAD
+2025-11-07 20:04:13 | INFO     | web_app:handle_connect:833 - Client connected: wAHYRwKds0n49K6ZAAAF
+2025-11-07 20:04:15 | INFO     | web_app:handle_disconnect:839 - Client disconnected: wAHYRwKds0n49K6ZAAAF
+2025-11-07 20:04:16 | INFO     | web_app:handle_connect:833 - Client connected: zsbygTCaoxagEUAAAAAH
+2025-11-07 20:05:01 | INFO     | web_app:handle_disconnect:839 - Client disconnected: zsbygTCaoxagEUAAAAAH
+2025-11-07 20:05:03 | INFO     | web_app:handle_connect:833 - Client connected: h8XXs1DnfT912n0bAAAJ
+2025-11-07 20:05:48 | INFO     | web_app:handle_disconnect:839 - Client disconnected: h8XXs1DnfT912n0bAAAJ
+2025-11-07 20:05:50 | INFO     | web_app:handle_connect:833 - Client connected: E5a2IY0FtQEd9TpwAAAL
+2025-11-07 20:06:04 | INFO     | web_app:handle_disconnect:839 - Client disconnected: E5a2IY0FtQEd9TpwAAAL
+2025-11-07 20:06:04 | INFO     | web_app:handle_connect:833 - Client connected: XcGd4g3a2JLdqC0SAAAN
+2025-11-07 20:06:39 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-07 20:06:42 | INFO     | web_app:handle_connect:833 - Client connected: bp9EVhhs4S_YBQ2OAAAB
+2025-11-07 20:07:27 | INFO     | web_app:handle_disconnect:839 - Client disconnected: bp9EVhhs4S_YBQ2OAAAB
+2025-11-07 20:07:28 | INFO     | web_app:handle_connect:833 - Client connected: IWBLG7AadhHYoAprAAAD
+2025-11-07 20:08:13 | INFO     | web_app:handle_disconnect:839 - Client disconnected: IWBLG7AadhHYoAprAAAD
+2025-11-07 20:08:16 | INFO     | web_app:handle_connect:833 - Client connected: dca_6ksWoI8vuh8AAAAF
+2025-11-07 20:09:01 | INFO     | web_app:handle_disconnect:839 - Client disconnected: dca_6ksWoI8vuh8AAAAF
+2025-11-07 20:09:02 | INFO     | web_app:handle_connect:833 - Client connected: 0vr_kuXWJzN0WFscAAAH
+2025-11-07 20:09:47 | INFO     | web_app:handle_disconnect:839 - Client disconnected: 0vr_kuXWJzN0WFscAAAH
+2025-11-07 20:09:50 | INFO     | web_app:handle_connect:833 - Client connected: sZ5lEtACCHCSpLIbAAAJ
+2025-11-07 20:10:30 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-07 20:10:32 | INFO     | web_app:handle_connect:833 - Client connected: DrIM53wfkkfWXnJ0AAAB
+2025-11-07 20:11:17 | INFO     | web_app:handle_disconnect:839 - Client disconnected: DrIM53wfkkfWXnJ0AAAB
+2025-11-07 20:11:20 | INFO     | web_app:handle_connect:833 - Client connected: 1ik_e2OPJuVxl6L8AAAD
+2025-11-07 20:12:05 | INFO     | web_app:handle_disconnect:839 - Client disconnected: 1ik_e2OPJuVxl6L8AAAD
+2025-11-07 20:12:07 | INFO     | web_app:handle_connect:833 - Client connected: VJl4tbXaQoEBw9w1AAAF
+2025-11-07 20:12:27 | INFO     | web_app:handle_disconnect:839 - Client disconnected: VJl4tbXaQoEBw9w1AAAF
+2025-11-07 20:12:28 | INFO     | web_app:handle_connect:833 - Client connected: 4axXi4EfZYB5vOXUAAAH
+2025-11-07 20:13:13 | INFO     | web_app:handle_disconnect:839 - Client disconnected: 4axXi4EfZYB5vOXUAAAH
+2025-11-07 20:13:15 | INFO     | web_app:handle_connect:833 - Client connected: _eJVUDMC2c2cSZFWAAAJ
+2025-11-07 20:14:00 | INFO     | web_app:handle_disconnect:839 - Client disconnected: _eJVUDMC2c2cSZFWAAAJ
+2025-11-07 20:14:01 | INFO     | web_app:handle_connect:833 - Client connected: qVAnCbRQb12yc5_iAAAL
+2025-11-07 20:14:13 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-07 20:14:16 | INFO     | web_app:handle_connect:833 - Client connected: acgLLCO-cHAPyzDpAAAB
+2025-11-07 20:15:01 | INFO     | web_app:handle_disconnect:839 - Client disconnected: acgLLCO-cHAPyzDpAAAB
+2025-11-07 20:15:02 | INFO     | web_app:handle_connect:833 - Client connected: qvaTOIoqwFrcMWmtAAAD
+2025-11-07 20:15:47 | INFO     | web_app:handle_disconnect:839 - Client disconnected: qvaTOIoqwFrcMWmtAAAD
+2025-11-07 20:15:48 | INFO     | web_app:handle_connect:833 - Client connected: kKdzlT-oL3Be_ON4AAAF
+2025-11-07 20:16:33 | INFO     | web_app:handle_disconnect:839 - Client disconnected: kKdzlT-oL3Be_ON4AAAF
+2025-11-07 20:16:36 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-07 20:16:37 | INFO     | web_app:handle_connect:833 - Client connected: MXbPIxrbTFsrOgqMAAAB
+2025-11-07 20:17:22 | INFO     | web_app:handle_disconnect:839 - Client disconnected: MXbPIxrbTFsrOgqMAAAB
+2025-11-07 20:17:24 | INFO     | web_app:handle_connect:833 - Client connected: BD7eMC8B5q4rzK8OAAAD
+2025-11-07 20:18:09 | INFO     | web_app:handle_disconnect:839 - Client disconnected: BD7eMC8B5q4rzK8OAAAD
+2025-11-07 20:18:10 | INFO     | web_app:handle_connect:833 - Client connected: llhKgutAoQbxTtdyAAAF
+2025-11-07 20:18:55 | INFO     | web_app:handle_disconnect:839 - Client disconnected: llhKgutAoQbxTtdyAAAF
+2025-11-07 20:18:56 | INFO     | web_app:handle_connect:833 - Client connected: Tthytiq9WcNIsXYvAAAH
+2025-11-07 20:19:05 | INFO     | web_app:handle_disconnect:839 - Client disconnected: Tthytiq9WcNIsXYvAAAH
+2025-11-11 10:01:02 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-11 10:01:03 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-11 10:01:29 | INFO     | web_app:handle_connect:833 - Client connected: QaiGkI1eNeXayzZbAAAB
+2025-11-11 10:02:14 | INFO     | web_app:handle_disconnect:839 - Client disconnected: QaiGkI1eNeXayzZbAAAB
+2025-11-11 10:02:16 | INFO     | web_app:handle_connect:833 - Client connected: M8hfNpmi6mqur8HqAAAD
+2025-11-11 10:03:01 | INFO     | web_app:handle_disconnect:839 - Client disconnected: M8hfNpmi6mqur8HqAAAD
+2025-11-11 10:03:03 | INFO     | web_app:handle_connect:833 - Client connected: A40hvO5HgmBTyhbkAAAF
+2025-11-11 10:03:48 | INFO     | web_app:handle_disconnect:839 - Client disconnected: A40hvO5HgmBTyhbkAAAF
+2025-11-11 10:03:50 | INFO     | web_app:handle_connect:833 - Client connected: RWstkh1OW3dhzUKAAAAH
+2025-11-11 10:04:23 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-11 10:04:24 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-11 10:04:35 | INFO     | web_app:handle_disconnect:839 - Client disconnected: RWstkh1OW3dhzUKAAAAH
+2025-11-11 10:04:37 | INFO     | web_app:handle_connect:833 - Client connected: c9w-AMaE8MwgVjfkAAAJ
+2025-11-11 10:05:12 | INFO     | web_app:handle_disconnect:839 - Client disconnected: c9w-AMaE8MwgVjfkAAAJ
+2025-11-11 10:05:13 | INFO     | web_app:handle_connect:833 - Client connected: s7f1pXs9VkpIYT73AAAL
+2025-11-11 10:05:29 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-11 10:05:29 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 10:05:29 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-11 10:05:29 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 10:05:29 | INFO     | src.database.connection:test_connection:87 - Database connection test successful
+2025-11-11 10:05:29 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 10:05:30 | ERROR    | src.database.connection:get_connection:58 - Database connection error: 0
+2025-11-11 10:05:59 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-11 10:06:01 | INFO     | web_app:handle_connect:833 - Client connected: SPrdPPzo12DbX1i8AAAB
+2025-11-11 10:06:31 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-11 10:06:31 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 10:06:31 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-11 10:06:31 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 10:06:31 | INFO     | src.database.connection:test_connection:87 - Database connection test successful
+2025-11-11 10:06:31 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 10:06:31 | ERROR    | src.database.connection:get_connection:58 - Database connection error: 0
+2025-11-11 10:06:32 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 10:06:32 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 10:06:32 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 10:06:32 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-11 10:06:33 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 10:06:33 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-11 10:06:33 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 10:06:33 | INFO     | src.database.connection:test_connection:87 - Database connection test successful
+2025-11-11 10:06:33 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 10:06:33 | ERROR    | src.database.connection:get_connection:58 - Database connection error: 0
+2025-11-11 10:06:34 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 10:06:34 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 10:06:34 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 10:06:46 | INFO     | web_app:handle_disconnect:839 - Client disconnected: SPrdPPzo12DbX1i8AAAB
+2025-11-11 10:06:49 | INFO     | web_app:handle_connect:833 - Client connected: OVzPMBw6YEhKSFr9AAAD
+2025-11-11 10:07:15 | INFO     | src.services.product_service:get_all_products:35 - Retrieved 40 products from database
+2025-11-11 10:07:29 | INFO     | src.services.product_service:get_product_by_id:53 - Retrieved product 6
+2025-11-11 10:07:29 | INFO     | src.services.store_service:process_checkout:230 - Order 15 created successfully for sarisbo2206@gmail.com
+2025-11-11 10:07:29 | ERROR    | src.database.connection:get_connection:58 - Database connection error: 0
+2025-11-11 10:07:29 | ERROR    | src.services.store_service:process_checkout:291 - Error processing checkout: 0
+2025-11-11 10:07:29 | ERROR    | store_app:checkout:325 - Error processing checkout: 0
+2025-11-11 10:07:31 | INFO     | src.services.product_service:get_product_by_id:53 - Retrieved product 6
+2025-11-11 10:07:31 | INFO     | src.services.store_service:process_checkout:230 - Order 16 created successfully for sarisbo2206@gmail.com
+2025-11-11 10:07:31 | ERROR    | src.database.connection:get_connection:58 - Database connection error: 0
+2025-11-11 10:07:31 | ERROR    | src.services.store_service:process_checkout:291 - Error processing checkout: 0
+2025-11-11 10:07:31 | ERROR    | store_app:checkout:325 - Error processing checkout: 0
+2025-11-11 10:07:34 | INFO     | src.services.product_service:get_all_products:35 - Retrieved 40 products from database
+2025-11-11 10:07:34 | INFO     | web_app:handle_disconnect:839 - Client disconnected: OVzPMBw6YEhKSFr9AAAD
+2025-11-11 10:07:37 | INFO     | web_app:handle_connect:833 - Client connected: 7V88TXHR_byC1YQrAAAF
+2025-11-11 10:08:22 | INFO     | web_app:handle_disconnect:839 - Client disconnected: 7V88TXHR_byC1YQrAAAF
+2025-11-11 10:08:25 | INFO     | web_app:handle_connect:833 - Client connected: iKV-qQbdH-cKtVilAAAH
+2025-11-11 10:09:10 | INFO     | web_app:handle_disconnect:839 - Client disconnected: iKV-qQbdH-cKtVilAAAH
+2025-11-11 10:09:12 | INFO     | web_app:handle_connect:833 - Client connected: srMJuBJuwuRH4qf4AAAJ
+2025-11-11 10:09:57 | INFO     | web_app:handle_disconnect:839 - Client disconnected: srMJuBJuwuRH4qf4AAAJ
+2025-11-11 10:09:59 | INFO     | web_app:handle_connect:833 - Client connected: eaiMxSk6HDcfIFT7AAAL
+2025-11-11 10:10:44 | INFO     | web_app:handle_disconnect:839 - Client disconnected: eaiMxSk6HDcfIFT7AAAL
+2025-11-11 10:10:46 | INFO     | web_app:handle_connect:833 - Client connected: hmDYQ8OVdE4vRZgiAAAN
+2025-11-11 10:11:31 | INFO     | web_app:handle_disconnect:839 - Client disconnected: hmDYQ8OVdE4vRZgiAAAN
+2025-11-11 10:11:33 | INFO     | web_app:handle_connect:833 - Client connected: OMQ__7UjedO4zvZGAAAP
+2025-11-11 10:12:18 | INFO     | web_app:handle_disconnect:839 - Client disconnected: OMQ__7UjedO4zvZGAAAP
+2025-11-11 10:12:20 | INFO     | web_app:handle_connect:833 - Client connected: ZG1KgyQZb3AeP4ssAAAR
+2025-11-11 10:13:05 | INFO     | web_app:handle_disconnect:839 - Client disconnected: ZG1KgyQZb3AeP4ssAAAR
+2025-11-11 10:13:07 | INFO     | web_app:handle_connect:833 - Client connected: MBQJcqKidDKdK6kXAAAT
+2025-11-11 10:13:52 | INFO     | web_app:handle_disconnect:839 - Client disconnected: MBQJcqKidDKdK6kXAAAT
+2025-11-11 10:13:55 | INFO     | web_app:handle_connect:833 - Client connected: Kg53f2umKYLY8oLoAAAV
+2025-11-11 10:14:40 | INFO     | web_app:handle_disconnect:839 - Client disconnected: Kg53f2umKYLY8oLoAAAV
+2025-11-11 10:14:42 | INFO     | web_app:handle_connect:833 - Client connected: vIv67pbtETxGFt2LAAAX
+2025-11-11 10:15:27 | INFO     | web_app:handle_disconnect:839 - Client disconnected: vIv67pbtETxGFt2LAAAX
+2025-11-11 10:15:29 | INFO     | web_app:handle_connect:833 - Client connected: MkVvKGcnjI1Ly1dBAAAZ
+2025-11-11 10:16:14 | INFO     | web_app:handle_disconnect:839 - Client disconnected: MkVvKGcnjI1Ly1dBAAAZ
+2025-11-11 10:16:15 | INFO     | web_app:handle_connect:833 - Client connected: 9T8xvAwpYVTCZJWDAAAb
+2025-11-11 10:17:00 | INFO     | web_app:handle_disconnect:839 - Client disconnected: 9T8xvAwpYVTCZJWDAAAb
+2025-11-11 10:17:03 | INFO     | web_app:handle_connect:833 - Client connected: CsTFt8qOoDDql4doAAAd
+2025-11-11 10:17:48 | INFO     | web_app:handle_disconnect:839 - Client disconnected: CsTFt8qOoDDql4doAAAd
+2025-11-11 10:17:50 | INFO     | web_app:handle_connect:833 - Client connected: mbuJoJyWUCEtERh1AAAf
+2025-11-11 10:18:35 | INFO     | web_app:handle_disconnect:839 - Client disconnected: mbuJoJyWUCEtERh1AAAf
+2025-11-11 10:18:38 | INFO     | web_app:handle_connect:833 - Client connected: PXXLVEjfXU56EkWnAAAh
+2025-11-11 10:19:23 | INFO     | web_app:handle_disconnect:839 - Client disconnected: PXXLVEjfXU56EkWnAAAh
+2025-11-11 10:19:25 | INFO     | web_app:handle_connect:833 - Client connected: _LJhS_FbWcPKUVThAAAj
+2025-11-11 10:20:10 | INFO     | web_app:handle_disconnect:839 - Client disconnected: _LJhS_FbWcPKUVThAAAj
+2025-11-11 10:20:12 | INFO     | web_app:handle_connect:833 - Client connected: YR_aaYgstjfnKLeBAAAl
+2025-11-11 10:20:57 | INFO     | web_app:handle_disconnect:839 - Client disconnected: YR_aaYgstjfnKLeBAAAl
+2025-11-11 10:20:59 | INFO     | web_app:handle_connect:833 - Client connected: Z6WTIeH1asfW40oiAAAn
+2025-11-11 10:21:44 | INFO     | web_app:handle_disconnect:839 - Client disconnected: Z6WTIeH1asfW40oiAAAn
+2025-11-11 10:21:45 | INFO     | web_app:handle_connect:833 - Client connected: x_-fawFDHbrDSg3-AAAp
+2025-11-11 10:22:30 | INFO     | web_app:handle_disconnect:839 - Client disconnected: x_-fawFDHbrDSg3-AAAp
+2025-11-11 10:22:32 | INFO     | web_app:handle_connect:833 - Client connected: tZzOYp1F_aZ5VYApAAAr
+2025-11-11 10:23:17 | INFO     | web_app:handle_disconnect:839 - Client disconnected: tZzOYp1F_aZ5VYApAAAr
+2025-11-11 10:23:18 | INFO     | web_app:handle_connect:833 - Client connected: Ug58KROFqNc2EwH5AAAt
+2025-11-11 10:24:03 | INFO     | web_app:handle_disconnect:839 - Client disconnected: Ug58KROFqNc2EwH5AAAt
+2025-11-11 10:24:05 | INFO     | web_app:handle_connect:833 - Client connected: MXYufFpLcQezBpLwAAAv
+2025-11-11 10:24:27 | INFO     | src.services.product_service:get_product_by_id:53 - Retrieved product 1
+2025-11-11 10:24:27 | INFO     | src.services.product_service:get_product_by_id:53 - Retrieved product 1
+2025-11-11 10:24:27 | INFO     | src.services.store_service:add_to_cart:75 - Added 1x product 1 to cart
+2025-11-11 10:24:34 | INFO     | src.services.store_service:remove_from_cart:114 - Removed product 1 from cart
+2025-11-11 10:24:42 | INFO     | src.services.product_service:get_product_by_id:53 - Retrieved product 6
+2025-11-11 10:24:42 | INFO     | src.services.store_service:process_checkout:230 - Order 17 created successfully for sarisbo2206@gmail.com
+2025-11-11 10:24:42 | ERROR    | src.database.connection:get_connection:58 - Database connection error: 0
+2025-11-11 10:24:42 | ERROR    | src.services.store_service:process_checkout:291 - Error processing checkout: 0
+2025-11-11 10:24:42 | ERROR    | store_app:checkout:325 - Error processing checkout: 0
+2025-11-11 10:24:50 | INFO     | web_app:handle_disconnect:839 - Client disconnected: MXYufFpLcQezBpLwAAAv
+2025-11-11 10:24:52 | INFO     | web_app:handle_connect:833 - Client connected: OsqCBxWgmwh357PxAAAx
+2025-11-11 10:24:59 | INFO     | src.services.product_service:get_all_products:35 - Retrieved 40 products from database
+2025-11-11 10:25:37 | INFO     | web_app:handle_disconnect:839 - Client disconnected: OsqCBxWgmwh357PxAAAx
+2025-11-11 10:25:38 | INFO     | web_app:handle_connect:833 - Client connected: UwHgdLGh64zmPBQLAAAz
+2025-11-11 10:26:23 | INFO     | web_app:handle_disconnect:839 - Client disconnected: UwHgdLGh64zmPBQLAAAz
+2025-11-11 10:26:24 | INFO     | web_app:handle_connect:833 - Client connected: qkCUioJr8urFBjeIAAA1
+2025-11-11 10:26:46 | INFO     | src.services.order_service:get_all_orders:23 - Retrieved 5502 orders from database
+2025-11-11 10:26:46 | INFO     | src.services.order_service:get_orders_dataframe:45 - Created DataFrame with 5502 rows and 10 columns
+2025-11-11 10:26:46 | INFO     | src.services.order_service:get_data_quality_report:342 - Data quality report generated successfully
+2025-11-11 10:27:09 | INFO     | web_app:handle_disconnect:839 - Client disconnected: qkCUioJr8urFBjeIAAA1
+2025-11-11 10:27:11 | INFO     | web_app:handle_connect:833 - Client connected: xP_uNMIpZAGA1HWMAAA3
+2025-11-11 10:27:15 | INFO     | src.services.order_service:get_all_orders:23 - Retrieved 5502 orders from database
+2025-11-11 10:27:15 | INFO     | src.services.order_service:get_orders_dataframe:45 - Created DataFrame with 5502 rows and 10 columns
+2025-11-11 10:27:15 | INFO     | src.services.order_service:get_data_quality_report:342 - Data quality report generated successfully
+2025-11-11 10:27:56 | INFO     | web_app:handle_disconnect:839 - Client disconnected: xP_uNMIpZAGA1HWMAAA3
+2025-11-11 10:27:57 | INFO     | web_app:handle_connect:833 - Client connected: ASBOg-yTQPOn4mGjAAA5
+2025-11-11 10:28:13 | INFO     | web_app:update_order:395 - Order 59973 updated successfully
+2025-11-11 10:28:13 | INFO     | web_app:broadcast_order_change:889 - Broadcasted order change: updated for order 59973
+2025-11-11 10:28:13 | INFO     | web_app:broadcast_notification:901 - Broadcasted notification: Orden #59973 actualizada
+2025-11-11 10:28:42 | INFO     | web_app:handle_disconnect:839 - Client disconnected: ASBOg-yTQPOn4mGjAAA5
+2025-11-11 10:28:43 | INFO     | web_app:handle_connect:833 - Client connected: NQC_Zh60J0F9w0HfAAA7
+2025-11-11 10:29:15 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-11 10:29:15 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 10:29:15 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-11 10:29:15 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 10:29:15 | INFO     | src.database.connection:test_connection:87 - Database connection test successful
+2025-11-11 10:29:15 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 10:29:16 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 10:29:16 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 10:29:16 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 10:29:17 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-11 10:29:19 | INFO     | web_app:handle_connect:833 - Client connected: IXwQ0bdLeFzeG3JVAAAB
+2025-11-11 10:29:51 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-11 10:29:51 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 10:29:51 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-11 10:29:51 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 10:29:51 | INFO     | src.database.connection:test_connection:87 - Database connection test successful
+2025-11-11 10:29:51 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 10:29:52 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 10:29:52 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 10:29:52 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 10:29:52 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-11 10:29:53 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 10:29:53 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-11 10:29:53 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 10:29:53 | INFO     | src.database.connection:test_connection:87 - Database connection test successful
+2025-11-11 10:29:53 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 10:29:53 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 10:29:53 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 10:29:53 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 10:30:04 | INFO     | web_app:handle_disconnect:839 - Client disconnected: IXwQ0bdLeFzeG3JVAAAB
+2025-11-11 10:30:05 | INFO     | web_app:handle_connect:833 - Client connected: af3487meAry1w5oMAAAD
+2025-11-11 10:30:50 | INFO     | web_app:handle_disconnect:839 - Client disconnected: af3487meAry1w5oMAAAD
+2025-11-11 10:30:52 | INFO     | web_app:handle_connect:833 - Client connected: jdCGXeiCg79Sy1SAAAAF
+2025-11-11 10:31:37 | INFO     | web_app:handle_disconnect:839 - Client disconnected: jdCGXeiCg79Sy1SAAAAF
+2025-11-11 10:31:39 | INFO     | web_app:handle_connect:833 - Client connected: cVpvGk0alaZ1r_qGAAAH
+2025-11-11 10:32:24 | INFO     | web_app:handle_disconnect:839 - Client disconnected: cVpvGk0alaZ1r_qGAAAH
+2025-11-11 10:32:26 | INFO     | web_app:handle_connect:833 - Client connected: CmAtVLZwbDILG5_7AAAJ
+2025-11-11 10:33:10 | INFO     | web_app:handle_disconnect:839 - Client disconnected: CmAtVLZwbDILG5_7AAAJ
+2025-11-11 10:33:12 | INFO     | web_app:handle_connect:833 - Client connected: 2i-g8xnaX_220eUHAAAL
+2025-11-11 10:33:21 | INFO     | web_app:handle_disconnect:839 - Client disconnected: 2i-g8xnaX_220eUHAAAL
+2025-11-11 10:33:21 | INFO     | web_app:handle_connect:833 - Client connected: vS04H8Xd2dCuY1hYAAAN
+2025-11-11 10:33:37 | INFO     | web_app:handle_disconnect:839 - Client disconnected: vS04H8Xd2dCuY1hYAAAN
+2025-11-11 10:33:38 | INFO     | web_app:handle_connect:833 - Client connected: WmCY14NbtRP_brTyAAAP
+2025-11-11 11:08:11 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-11 11:08:12 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 11:08:12 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-11 11:08:12 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 11:08:12 | INFO     | src.database.connection:test_connection:87 - Database connection test successful
+2025-11-11 11:08:12 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 11:08:12 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 11:08:12 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 11:08:12 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 11:08:12 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-11 11:08:13 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 11:08:13 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-11 11:08:13 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 11:08:13 | INFO     | src.database.connection:test_connection:87 - Database connection test successful
+2025-11-11 11:08:13 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 11:08:13 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 11:08:13 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 11:08:13 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 11:09:30 | INFO     | src.services.product_service:get_all_products:35 - Retrieved 40 products from database
+2025-11-11 11:11:49 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-11 11:11:50 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-11 11:12:06 | INFO     | web_app:handle_connect:833 - Client connected: 3IpSyPPrYVTPoI8sAAAB
+2025-11-11 11:12:51 | INFO     | web_app:handle_disconnect:839 - Client disconnected: 3IpSyPPrYVTPoI8sAAAB
+2025-11-11 11:12:52 | INFO     | web_app:handle_connect:833 - Client connected: rtsmFxPOK8DFmdchAAAD
+2025-11-11 11:13:37 | INFO     | web_app:handle_disconnect:839 - Client disconnected: rtsmFxPOK8DFmdchAAAD
+2025-11-11 11:13:39 | INFO     | web_app:handle_connect:833 - Client connected: yvqsecN0tOUockDMAAAF
+2025-11-11 11:14:24 | INFO     | web_app:handle_disconnect:839 - Client disconnected: yvqsecN0tOUockDMAAAF
+2025-11-11 11:14:26 | INFO     | web_app:handle_connect:833 - Client connected: zTpOX643R0ZbEYrBAAAH
+2025-11-11 11:15:11 | INFO     | web_app:handle_disconnect:839 - Client disconnected: zTpOX643R0ZbEYrBAAAH
+2025-11-11 11:15:13 | INFO     | web_app:handle_connect:833 - Client connected: TtobnidDvK5PFWMlAAAJ
+2025-11-11 11:15:58 | INFO     | web_app:handle_disconnect:839 - Client disconnected: TtobnidDvK5PFWMlAAAJ
+2025-11-11 11:16:00 | INFO     | web_app:handle_connect:833 - Client connected: OsxaSfe5T1K9CUWQAAAL
+2025-11-11 11:16:45 | INFO     | web_app:handle_disconnect:839 - Client disconnected: OsxaSfe5T1K9CUWQAAAL
+2025-11-11 11:16:48 | INFO     | web_app:handle_connect:833 - Client connected: sf16vA7K6iPyS2qVAAAN
+2025-11-11 11:17:33 | INFO     | web_app:handle_disconnect:839 - Client disconnected: sf16vA7K6iPyS2qVAAAN
+2025-11-11 11:17:35 | INFO     | web_app:handle_connect:833 - Client connected: CybXEfYDLbHP-04VAAAP
+2025-11-11 11:18:20 | INFO     | web_app:handle_disconnect:839 - Client disconnected: CybXEfYDLbHP-04VAAAP
+2025-11-11 11:18:23 | INFO     | web_app:handle_connect:833 - Client connected: Tff4aHdXVHl93ka_AAAR
+2025-11-11 11:19:08 | INFO     | web_app:handle_disconnect:839 - Client disconnected: Tff4aHdXVHl93ka_AAAR
+2025-11-11 11:19:10 | INFO     | web_app:handle_connect:833 - Client connected: aXoOSyQV3I1l3uARAAAT
+2025-11-11 11:19:55 | INFO     | web_app:handle_disconnect:839 - Client disconnected: aXoOSyQV3I1l3uARAAAT
+2025-11-11 11:19:57 | INFO     | web_app:handle_connect:833 - Client connected: 6S1Hb1UOx8Ljhwl4AAAV
+2025-11-11 11:20:42 | INFO     | web_app:handle_disconnect:839 - Client disconnected: 6S1Hb1UOx8Ljhwl4AAAV
+2025-11-11 11:20:44 | INFO     | web_app:handle_connect:833 - Client connected: yVKqeH6oPuEoBPUyAAAX
+2025-11-11 11:21:29 | INFO     | web_app:handle_disconnect:839 - Client disconnected: yVKqeH6oPuEoBPUyAAAX
+2025-11-11 11:21:31 | INFO     | web_app:handle_connect:833 - Client connected: hVyZOKzLr_OS2FuDAAAZ
+2025-11-11 11:22:16 | INFO     | web_app:handle_disconnect:839 - Client disconnected: hVyZOKzLr_OS2FuDAAAZ
+2025-11-11 11:22:18 | INFO     | web_app:handle_connect:833 - Client connected: SZ2KNedn8gFYjkXIAAAb
+2025-11-11 11:23:03 | INFO     | web_app:handle_disconnect:839 - Client disconnected: SZ2KNedn8gFYjkXIAAAb
+2025-11-11 11:23:06 | INFO     | web_app:handle_connect:833 - Client connected: cb7OlMgBQTgMb3tnAAAd
+2025-11-11 11:23:51 | INFO     | web_app:handle_disconnect:839 - Client disconnected: cb7OlMgBQTgMb3tnAAAd
+2025-11-11 11:23:53 | INFO     | web_app:handle_connect:833 - Client connected: jaj4ftpbA0qbAzRBAAAf
+2025-11-11 11:24:38 | INFO     | web_app:handle_disconnect:839 - Client disconnected: jaj4ftpbA0qbAzRBAAAf
+2025-11-11 11:24:40 | INFO     | web_app:handle_connect:833 - Client connected: OKf7mro07bzfIS2vAAAh
+2025-11-11 11:25:24 | INFO     | web_app:handle_disconnect:839 - Client disconnected: OKf7mro07bzfIS2vAAAh
+2025-11-11 11:25:27 | INFO     | web_app:handle_connect:833 - Client connected: RvE5ODPo5WNnL6HIAAAj
+2025-11-11 11:26:12 | INFO     | web_app:handle_disconnect:839 - Client disconnected: RvE5ODPo5WNnL6HIAAAj
+2025-11-11 11:26:14 | INFO     | web_app:handle_connect:833 - Client connected: pNJY-RRwQM64bfd0AAAl
+2025-11-11 11:26:59 | INFO     | web_app:handle_disconnect:839 - Client disconnected: pNJY-RRwQM64bfd0AAAl
+2025-11-11 11:27:01 | INFO     | web_app:handle_connect:833 - Client connected: yY4RbNNXugaY1KR_AAAn
+2025-11-11 11:27:46 | INFO     | web_app:handle_disconnect:839 - Client disconnected: yY4RbNNXugaY1KR_AAAn
+2025-11-11 11:27:48 | INFO     | web_app:handle_connect:833 - Client connected: EmnGqjAvV6Vz8epCAAAp
+2025-11-11 11:28:32 | INFO     | web_app:handle_disconnect:839 - Client disconnected: EmnGqjAvV6Vz8epCAAAp
+2025-11-11 11:28:34 | INFO     | web_app:handle_connect:833 - Client connected: 04-Pfz8B8yAX58wsAAAr
+2025-11-11 11:29:19 | INFO     | web_app:handle_disconnect:839 - Client disconnected: 04-Pfz8B8yAX58wsAAAr
+2025-11-11 11:29:21 | INFO     | web_app:handle_connect:833 - Client connected: Tt0BWEmRk6fGlq2cAAAt
+2025-11-11 11:30:06 | INFO     | web_app:handle_disconnect:839 - Client disconnected: Tt0BWEmRk6fGlq2cAAAt
+2025-11-11 11:30:08 | INFO     | web_app:handle_connect:833 - Client connected: nVu30lckjjHvdLXgAAAv
+2025-11-11 11:30:53 | INFO     | web_app:handle_disconnect:839 - Client disconnected: nVu30lckjjHvdLXgAAAv
+2025-11-11 11:30:56 | INFO     | web_app:handle_connect:833 - Client connected: JTOqNLnKpWDTtScuAAAx
+2025-11-11 11:31:41 | INFO     | web_app:handle_disconnect:839 - Client disconnected: JTOqNLnKpWDTtScuAAAx
+2025-11-11 11:31:43 | INFO     | web_app:handle_connect:833 - Client connected: xoPSTGPJicNhqRRUAAAz
+2025-11-11 11:32:28 | INFO     | web_app:handle_disconnect:839 - Client disconnected: xoPSTGPJicNhqRRUAAAz
+2025-11-11 11:32:31 | INFO     | web_app:handle_connect:833 - Client connected: nAN2l27nkcyQ82SGAAA1
+2025-11-11 11:33:16 | INFO     | web_app:handle_disconnect:839 - Client disconnected: nAN2l27nkcyQ82SGAAA1
+2025-11-11 11:33:18 | INFO     | web_app:handle_connect:833 - Client connected: OGb3lRNZC9vgz_AnAAA3
+2025-11-11 11:34:03 | INFO     | web_app:handle_disconnect:839 - Client disconnected: OGb3lRNZC9vgz_AnAAA3
+2025-11-11 11:34:06 | INFO     | web_app:handle_connect:833 - Client connected: oJf3e9AuK-Qr9ZhqAAA5
+2025-11-11 11:34:51 | INFO     | web_app:handle_disconnect:839 - Client disconnected: oJf3e9AuK-Qr9ZhqAAA5
+2025-11-11 11:34:53 | INFO     | web_app:handle_connect:833 - Client connected: jBfqbhj8us8zF5rvAAA7
+2025-11-11 11:35:38 | INFO     | web_app:handle_disconnect:839 - Client disconnected: jBfqbhj8us8zF5rvAAA7
+2025-11-11 11:35:40 | INFO     | web_app:handle_connect:833 - Client connected: VU-UjvIcP0eNf9YIAAA9
+2025-11-11 11:36:25 | INFO     | web_app:handle_disconnect:839 - Client disconnected: VU-UjvIcP0eNf9YIAAA9
+2025-11-11 11:36:27 | INFO     | web_app:handle_connect:833 - Client connected: -a7Y1VWBQZZd1umsAAA_
+2025-11-11 11:37:12 | INFO     | web_app:handle_disconnect:839 - Client disconnected: -a7Y1VWBQZZd1umsAAA_
+2025-11-11 11:37:14 | INFO     | web_app:handle_connect:833 - Client connected: Wmk3jsbfnxKOuaiPAABB
+2025-11-11 11:37:29 | INFO     | web_app:handle_disconnect:839 - Client disconnected: Wmk3jsbfnxKOuaiPAABB
+2025-11-11 23:07:20 | INFO     | web_app:handle_connect:833 - Client connected: 7jKanWVvwSo3bDJ4AABD
+2025-11-11 23:07:26 | INFO     | src.services.order_service:get_all_orders:23 - Retrieved 5502 orders from database
+2025-11-11 23:07:26 | INFO     | src.services.order_service:get_orders_dataframe:45 - Created DataFrame with 5502 rows and 10 columns
+2025-11-11 23:07:26 | INFO     | src.services.order_service:get_data_quality_report:342 - Data quality report generated successfully
+2025-11-11 23:07:35 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-11 23:07:35 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:07:35 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-11 23:07:35 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:07:35 | INFO     | src.database.connection:test_connection:87 - Database connection test successful
+2025-11-11 23:07:35 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:07:35 | ERROR    | __main__:main:176 - Error starting application: cannot import name 'Session' from 'flask_session' (unknown location)
+2025-11-11 23:08:05 | INFO     | web_app:handle_disconnect:839 - Client disconnected: 7jKanWVvwSo3bDJ4AABD
+2025-11-11 23:08:07 | INFO     | web_app:handle_connect:833 - Client connected: chnDCI2rTjWi3sHRAABF
+2025-11-11 23:08:52 | INFO     | web_app:handle_disconnect:839 - Client disconnected: chnDCI2rTjWi3sHRAABF
+2025-11-11 23:08:53 | INFO     | web_app:handle_connect:833 - Client connected: CV6tztWHKAbQtEe6AABH
+2025-11-11 23:09:38 | INFO     | web_app:handle_disconnect:839 - Client disconnected: CV6tztWHKAbQtEe6AABH
+2025-11-11 23:09:40 | INFO     | web_app:handle_connect:833 - Client connected: nW3LI9VmCoWg4Rx-AABJ
+2025-11-11 23:10:25 | INFO     | web_app:handle_disconnect:839 - Client disconnected: nW3LI9VmCoWg4Rx-AABJ
+2025-11-11 23:10:26 | INFO     | web_app:handle_connect:833 - Client connected: 6UIp8aEDBYhjxIIiAABL
+2025-11-11 23:11:11 | INFO     | web_app:handle_disconnect:839 - Client disconnected: 6UIp8aEDBYhjxIIiAABL
+2025-11-11 23:11:12 | INFO     | web_app:handle_connect:833 - Client connected: _kciTfxAFxROniqZAABN
+2025-11-11 23:11:57 | INFO     | web_app:handle_disconnect:839 - Client disconnected: _kciTfxAFxROniqZAABN
+2025-11-11 23:11:58 | INFO     | web_app:handle_connect:833 - Client connected: qONBZmxNeMV_9INUAABP
+2025-11-11 23:12:43 | INFO     | web_app:handle_disconnect:839 - Client disconnected: qONBZmxNeMV_9INUAABP
+2025-11-11 23:12:44 | INFO     | web_app:handle_connect:833 - Client connected: iwy_Ywge0XYIaxGfAABR
+2025-11-11 23:13:29 | INFO     | web_app:handle_disconnect:839 - Client disconnected: iwy_Ywge0XYIaxGfAABR
+2025-11-11 23:13:31 | INFO     | web_app:handle_connect:833 - Client connected: pSMASXjiOBYN_OcMAABT
+2025-11-11 23:14:16 | INFO     | web_app:handle_disconnect:839 - Client disconnected: pSMASXjiOBYN_OcMAABT
+2025-11-11 23:14:17 | INFO     | web_app:handle_connect:833 - Client connected: 4xxBhRdxR9EXlZqWAABV
+2025-11-11 23:15:20 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-11 23:15:21 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:15:21 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-11 23:15:21 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:15:21 | INFO     | src.database.connection:test_connection:87 - Database connection test successful
+2025-11-11 23:15:21 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:15:21 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:15:21 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:15:21 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:15:21 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-11 23:15:21 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:15:21 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-11 23:15:21 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:15:22 | INFO     | src.database.connection:test_connection:87 - Database connection test successful
+2025-11-11 23:15:22 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:15:22 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:15:22 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:15:22 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:15:44 | INFO     | src.services.product_service:get_all_products:35 - Retrieved 40 products from database
+2025-11-11 23:15:49 | ERROR    | src.database.connection:get_connection:58 - Database connection error: 0
+2025-11-11 23:15:49 | ERROR    | src.services.product_service:get_categories:118 - Error getting categories: 0
+2025-11-11 23:15:49 | ERROR    | store_app:get_categories:193 - Error getting categories: 0
+2025-11-11 23:15:50 | INFO     | src.services.product_service:get_all_products:35 - Retrieved 40 products from database
+2025-11-11 23:15:52 | INFO     | src.services.product_service:get_product_by_id:53 - Retrieved product 21
+2025-11-11 23:15:52 | INFO     | src.services.product_service:get_product_by_id:53 - Retrieved product 21
+2025-11-11 23:15:52 | INFO     | src.services.store_service:add_to_cart:75 - Added 1x product 21 to cart
+2025-11-11 23:15:55 | INFO     | src.services.product_service:get_all_products:35 - Retrieved 40 products from database
+2025-11-11 23:16:06 | INFO     | src.services.product_service:get_product_by_id:53 - Retrieved product 6
+2025-11-11 23:16:06 | INFO     | src.services.product_service:get_product_by_id:53 - Retrieved product 21
+2025-11-11 23:16:06 | INFO     | src.services.store_service:process_checkout:230 - Order 18 created successfully for sarisbo2206@gmail.com
+2025-11-11 23:16:06 | ERROR    | src.database.connection:get_connection:58 - Database connection error: 0
+2025-11-11 23:16:06 | ERROR    | src.services.store_service:process_checkout:291 - Error processing checkout: 0
+2025-11-11 23:16:06 | ERROR    | store_app:checkout:336 - Error processing checkout: 0
+2025-11-11 23:19:01 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-11 23:19:01 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:19:01 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-11 23:19:02 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:19:02 | INFO     | src.database.connection:test_connection:87 - Database connection test successful
+2025-11-11 23:19:02 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:19:02 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:19:02 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:19:02 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:19:27 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-11 23:19:27 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:19:27 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-11 23:19:27 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:19:27 | INFO     | src.database.connection:test_connection:87 - Database connection test successful
+2025-11-11 23:19:27 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:19:27 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:19:27 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:19:27 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:19:27 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-11 23:19:28 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:19:28 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-11 23:19:28 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:19:28 | INFO     | src.database.connection:test_connection:87 - Database connection test successful
+2025-11-11 23:19:28 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:19:28 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:19:28 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:19:28 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:20:13 | INFO     | src.services.product_service:get_product_by_id:53 - Retrieved product 6
+2025-11-11 23:20:13 | INFO     | src.services.product_service:get_product_by_id:53 - Retrieved product 21
+2025-11-11 23:20:13 | ERROR    | src.database.connection:get_connection:58 - Database connection error: 'coalesce'
+2025-11-11 23:20:13 | ERROR    | src.services.store_service:process_checkout:292 - Error processing checkout: 'coalesce'
+2025-11-11 23:20:13 | ERROR    | store_app:checkout:336 - Error processing checkout: 'coalesce'
+2025-11-11 23:20:18 | INFO     | src.services.product_service:get_product_by_id:53 - Retrieved product 6
+2025-11-11 23:20:18 | INFO     | src.services.product_service:get_product_by_id:53 - Retrieved product 21
+2025-11-11 23:20:18 | ERROR    | src.database.connection:get_connection:58 - Database connection error: 'coalesce'
+2025-11-11 23:20:18 | ERROR    | src.services.store_service:process_checkout:292 - Error processing checkout: 'coalesce'
+2025-11-11 23:20:18 | ERROR    | store_app:checkout:336 - Error processing checkout: 'coalesce'
+2025-11-11 23:21:07 | INFO     | src.services.product_service:get_product_by_id:53 - Retrieved product 6
+2025-11-11 23:21:08 | INFO     | src.services.product_service:get_product_by_id:53 - Retrieved product 21
+2025-11-11 23:21:08 | ERROR    | src.database.connection:get_connection:58 - Database connection error: 'coalesce'
+2025-11-11 23:21:08 | ERROR    | src.services.store_service:process_checkout:292 - Error processing checkout: 'coalesce'
+2025-11-11 23:21:08 | ERROR    | store_app:checkout:336 - Error processing checkout: 'coalesce'
+2025-11-11 23:26:11 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-11 23:26:11 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:26:11 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-11 23:26:11 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:26:11 | INFO     | src.database.connection:test_connection:87 - Database connection test successful
+2025-11-11 23:26:11 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:26:11 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:26:11 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:26:11 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:26:31 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-11 23:26:31 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:26:31 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-11 23:26:31 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:26:31 | INFO     | src.database.connection:test_connection:87 - Database connection test successful
+2025-11-11 23:26:31 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:26:31 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:26:31 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:26:31 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:26:32 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-11 23:26:32 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:26:32 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-11 23:26:32 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:26:32 | INFO     | src.database.connection:test_connection:87 - Database connection test successful
+2025-11-11 23:26:32 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:26:32 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:26:32 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:26:32 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-11 23:27:17 | INFO     | src.services.product_service:get_product_by_id:53 - Retrieved product 6
+2025-11-11 23:27:17 | INFO     | src.services.product_service:get_product_by_id:53 - Retrieved product 21
+2025-11-11 23:27:17 | INFO     | src.services.store_service:process_checkout:262 - Order 22 created successfully for sarisbo2206@gmail.com
+2025-11-11 23:27:17 | INFO     | src.services.store_service:process_checkout:265 - Created 2 order entries in orders table
+2025-11-11 23:27:17 | INFO     | src.services.store_service:process_checkout:288 - Retrieved order 22 details successfully
+2025-11-11 23:27:17 | INFO     | src.services.store_service:clear_cart:127 - Cart cleared
+2025-11-11 23:30:03 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-11 23:30:05 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-11 23:30:09 | INFO     | web_app:handle_connect:833 - Client connected: EmCmXdHnVbBmvumYAAAB
+2025-11-11 23:30:18 | INFO     | src.services.product_service:get_all_products:35 - Retrieved 40 products from database
+2025-11-11 23:30:23 | INFO     | src.services.product_service:get_product_by_id:53 - Retrieved product 37
+2025-11-11 23:30:23 | INFO     | src.services.product_service:get_product_by_id:53 - Retrieved product 37
+2025-11-11 23:30:23 | INFO     | src.services.store_service:add_to_cart:75 - Added 1x product 37 to cart
+2025-11-11 23:30:32 | INFO     | src.services.product_service:get_product_by_id:53 - Retrieved product 37
+2025-11-11 23:30:32 | INFO     | src.services.store_service:process_checkout:262 - Order 23 created successfully for sarisbo2206@gmail.com
+2025-11-11 23:30:32 | INFO     | src.services.store_service:process_checkout:265 - Created 1 order entries in orders table
+2025-11-11 23:30:32 | INFO     | src.services.store_service:process_checkout:288 - Retrieved order 23 details successfully
+2025-11-11 23:30:32 | INFO     | src.services.store_service:clear_cart:127 - Cart cleared
+2025-11-11 23:30:54 | INFO     | web_app:handle_disconnect:839 - Client disconnected: EmCmXdHnVbBmvumYAAAB
+2025-11-11 23:30:55 | INFO     | web_app:handle_connect:833 - Client connected: PqPvHYz-kWmnI59eAAAD
+2025-11-11 23:31:40 | INFO     | web_app:handle_disconnect:839 - Client disconnected: PqPvHYz-kWmnI59eAAAD
+2025-11-11 23:31:41 | INFO     | web_app:handle_connect:833 - Client connected: 67xsLDI2WpL_h_wOAAAF
+2025-11-11 23:32:26 | INFO     | web_app:handle_disconnect:839 - Client disconnected: 67xsLDI2WpL_h_wOAAAF
+2025-11-11 23:32:27 | INFO     | web_app:handle_connect:833 - Client connected: DMmVt8sKHViMW9vBAAAH
+2025-11-11 23:33:12 | INFO     | web_app:handle_disconnect:839 - Client disconnected: DMmVt8sKHViMW9vBAAAH
+2025-11-11 23:33:13 | INFO     | web_app:handle_connect:833 - Client connected: ogQ3Y08X4O13iBSVAAAJ
+2025-11-11 23:33:58 | INFO     | web_app:handle_disconnect:839 - Client disconnected: ogQ3Y08X4O13iBSVAAAJ
+2025-11-11 23:34:00 | INFO     | web_app:handle_connect:833 - Client connected: Pwrve6GQTWBhQb1fAAAL
+2025-11-11 23:34:45 | INFO     | web_app:handle_disconnect:839 - Client disconnected: Pwrve6GQTWBhQb1fAAAL
+2025-11-11 23:34:47 | INFO     | web_app:handle_connect:833 - Client connected: 48qxx21ob4wT1SrbAAAN
+2025-11-11 23:34:56 | INFO     | web_app:handle_disconnect:839 - Client disconnected: 48qxx21ob4wT1SrbAAAN
+2025-11-11 23:34:57 | INFO     | web_app:handle_connect:833 - Client connected: HmWexpMd968vVh-XAAAP
+2025-11-11 23:35:01 | INFO     | src.services.product_service:get_all_products:35 - Retrieved 40 products from database
+2025-11-11 23:35:42 | INFO     | web_app:handle_disconnect:839 - Client disconnected: HmWexpMd968vVh-XAAAP
+2025-11-11 23:35:44 | INFO     | web_app:handle_connect:833 - Client connected: -eIo0Kv856T1xyRyAAAR
+2025-11-11 23:35:44 | INFO     | web_app:handle_disconnect:839 - Client disconnected: -eIo0Kv856T1xyRyAAAR
+2025-11-11 23:35:45 | INFO     | web_app:handle_connect:833 - Client connected: ywV1NEpzcyr1ltx9AAAT
+2025-11-11 23:36:28 | INFO     | web_app:handle_disconnect:839 - Client disconnected: ywV1NEpzcyr1ltx9AAAT
+2025-11-11 23:36:29 | INFO     | web_app:handle_connect:833 - Client connected: PfrVqfo7Cz8hYbjFAAAV
+2025-11-11 23:37:14 | INFO     | web_app:handle_disconnect:839 - Client disconnected: PfrVqfo7Cz8hYbjFAAAV
+2025-11-11 23:37:15 | INFO     | web_app:handle_connect:833 - Client connected: kq9oSKVgaPB2pMCqAAAX
+2025-11-11 23:37:27 | INFO     | web_app:handle_disconnect:839 - Client disconnected: kq9oSKVgaPB2pMCqAAAX
+2025-11-11 23:37:28 | INFO     | web_app:handle_connect:833 - Client connected: Yd0ewxpIUbum3rMXAAAZ
+2025-11-11 23:37:54 | INFO     | src.services.order_service:get_all_orders:23 - Retrieved 5505 orders from database
+2025-11-11 23:37:54 | INFO     | src.services.order_service:get_orders_dataframe:45 - Created DataFrame with 5505 rows and 10 columns
+2025-11-11 23:37:54 | INFO     | src.services.order_service:get_data_quality_report:342 - Data quality report generated successfully
+2025-11-11 23:38:13 | INFO     | web_app:handle_disconnect:839 - Client disconnected: Yd0ewxpIUbum3rMXAAAZ
+2025-11-11 23:44:38 | INFO     | web_app:handle_connect:833 - Client connected: zwXnxD-nRSUQwFlHAAAb
+2025-11-11 23:45:05 | INFO     | web_app:handle_disconnect:839 - Client disconnected: zwXnxD-nRSUQwFlHAAAb
+2025-11-11 23:45:06 | INFO     | web_app:handle_connect:833 - Client connected: P5qLx4StgUaMYSElAAAd
+2025-11-11 23:45:07 | INFO     | web_app:handle_disconnect:839 - Client disconnected: P5qLx4StgUaMYSElAAAd
+2025-11-11 23:45:08 | INFO     | web_app:handle_connect:833 - Client connected: GUgAy4tQ_9DzIPvaAAAf
+2025-11-11 23:45:53 | INFO     | web_app:handle_disconnect:839 - Client disconnected: GUgAy4tQ_9DzIPvaAAAf
+2025-11-11 23:46:45 | INFO     | web_app:handle_connect:833 - Client connected: MbCPWMsR_85zDIDUAAAh
+2025-11-11 23:46:47 | INFO     | web_app:handle_disconnect:839 - Client disconnected: MbCPWMsR_85zDIDUAAAh
+2025-11-11 23:46:47 | INFO     | web_app:handle_connect:833 - Client connected: wyOlSF864xKE2HpTAAAj
+2025-11-11 23:47:33 | INFO     | web_app:handle_disconnect:839 - Client disconnected: wyOlSF864xKE2HpTAAAj
+2025-11-11 23:50:13 | INFO     | web_app:handle_connect:833 - Client connected: Sg7hfUnNzyd63wb-AAAl
+2025-11-11 23:50:30 | INFO     | web_app:handle_disconnect:839 - Client disconnected: Sg7hfUnNzyd63wb-AAAl
+2025-11-11 23:50:31 | INFO     | web_app:handle_connect:833 - Client connected: q_R1m1ZOkD58RvZzAAAn
+2025-11-11 23:50:33 | INFO     | web_app:handle_disconnect:839 - Client disconnected: q_R1m1ZOkD58RvZzAAAn
+2025-11-11 23:50:33 | INFO     | web_app:handle_connect:833 - Client connected: oqaYbQPZAz_kAJx3AAAp
+2025-11-11 23:50:34 | INFO     | web_app:handle_disconnect:839 - Client disconnected: oqaYbQPZAz_kAJx3AAAp
+2025-11-11 23:50:35 | INFO     | web_app:handle_connect:833 - Client connected: Y4IPJrZYVyBhBqTSAAAr
+2025-11-11 23:50:39 | INFO     | web_app:handle_disconnect:839 - Client disconnected: Y4IPJrZYVyBhBqTSAAAr
+2025-11-11 23:50:39 | INFO     | web_app:handle_connect:833 - Client connected: 9MaSONPbSrcV7a4qAAAt
+2025-11-11 23:50:40 | INFO     | web_app:handle_disconnect:839 - Client disconnected: 9MaSONPbSrcV7a4qAAAt
+2025-11-11 23:50:48 | INFO     | web_app:handle_connect:833 - Client connected: pDZEhGnny6WXWMU4AAAv
+2025-11-11 23:51:33 | INFO     | web_app:handle_disconnect:839 - Client disconnected: pDZEhGnny6WXWMU4AAAv
+2025-11-11 23:53:09 | INFO     | web_app:handle_connect:833 - Client connected: pSCmIExm3fpLhxkdAAAx
+2025-11-11 23:53:54 | INFO     | web_app:handle_disconnect:839 - Client disconnected: pSCmIExm3fpLhxkdAAAx
+2025-11-11 23:54:11 | INFO     | web_app:handle_connect:833 - Client connected: xac1E1Tf3C8PTN2NAAAz
+2025-11-11 23:54:56 | INFO     | web_app:handle_disconnect:839 - Client disconnected: xac1E1Tf3C8PTN2NAAAz
+2025-11-11 23:55:02 | INFO     | web_app:handle_connect:833 - Client connected: fGafqwtxqtYITTNsAAA1
+2025-11-11 23:55:14 | INFO     | web_app:handle_disconnect:839 - Client disconnected: fGafqwtxqtYITTNsAAA1
+2025-11-11 23:55:15 | INFO     | web_app:handle_connect:833 - Client connected: 3ETnPx1cWcrw3UeTAAA3
+2025-11-11 23:55:22 | INFO     | web_app:handle_disconnect:839 - Client disconnected: 3ETnPx1cWcrw3UeTAAA3
+2025-11-11 23:55:22 | INFO     | web_app:handle_connect:833 - Client connected: L9cN0kVGPWW8sT1ZAAA5
+2025-11-11 23:55:28 | INFO     | web_app:handle_disconnect:839 - Client disconnected: L9cN0kVGPWW8sT1ZAAA5
+2025-11-11 23:55:29 | INFO     | web_app:handle_connect:833 - Client connected: qo6WDqNvlO2Qc3tCAAA7
+2025-11-11 23:55:43 | INFO     | web_app:handle_disconnect:839 - Client disconnected: qo6WDqNvlO2Qc3tCAAA7
+2025-11-11 23:55:44 | INFO     | web_app:handle_connect:833 - Client connected: nidRPHwiHQc2D8xUAAA9
+2025-11-11 23:55:45 | INFO     | web_app:handle_disconnect:839 - Client disconnected: nidRPHwiHQc2D8xUAAA9
+2025-11-11 23:55:46 | INFO     | web_app:handle_connect:833 - Client connected: ct9QHrn3oFReKjFZAAA_
+2025-11-11 23:55:52 | INFO     | web_app:handle_disconnect:839 - Client disconnected: ct9QHrn3oFReKjFZAAA_
+2025-11-11 23:55:53 | INFO     | web_app:handle_connect:833 - Client connected: 0EgOCdgYnpX2aTTjAABB
+2025-11-11 23:56:12 | INFO     | web_app:handle_disconnect:839 - Client disconnected: 0EgOCdgYnpX2aTTjAABB
+2025-11-11 23:56:13 | INFO     | web_app:handle_connect:833 - Client connected: EEDYGPjOXaTEyCcQAABD
+2025-11-11 23:56:58 | INFO     | web_app:handle_disconnect:839 - Client disconnected: EEDYGPjOXaTEyCcQAABD
+2025-11-11 23:58:12 | INFO     | web_app:handle_connect:833 - Client connected: hr3i42oHdjaklTDLAABF
+2025-11-11 23:58:18 | INFO     | web_app:handle_disconnect:839 - Client disconnected: hr3i42oHdjaklTDLAABF
+2025-11-11 23:58:19 | INFO     | web_app:handle_connect:833 - Client connected: ZqINGdljAEIm9XU_AABH
+2025-11-11 23:58:28 | INFO     | web_app:handle_disconnect:839 - Client disconnected: ZqINGdljAEIm9XU_AABH
+2025-11-11 23:58:29 | INFO     | web_app:handle_connect:833 - Client connected: hebKqtyeHncZN-qFAABJ
+2025-11-11 23:58:58 | INFO     | web_app:handle_disconnect:839 - Client disconnected: hebKqtyeHncZN-qFAABJ
+2025-11-11 23:58:58 | INFO     | web_app:handle_connect:833 - Client connected: Xvd4KBwly3SVXJwXAABL
+2025-11-11 23:59:43 | INFO     | web_app:handle_disconnect:839 - Client disconnected: Xvd4KBwly3SVXJwXAABL
+2025-11-12 00:14:04 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 00:14:04 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 00:14:04 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 00:14:04 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 00:14:04 | INFO     | src.database.connection:test_connection:87 - Database connection test successful
+2025-11-12 00:14:04 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 00:14:04 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 00:14:04 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 00:14:04 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 00:14:05 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 00:14:30 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 00:14:30 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 00:14:30 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 00:14:30 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 00:14:30 | INFO     | src.database.connection:test_connection:87 - Database connection test successful
+2025-11-12 00:14:30 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 00:14:31 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 00:14:31 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 00:14:31 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 00:14:31 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 00:14:50 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 00:14:51 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 00:16:21 | INFO     | web_app:handle_connect:833 - Client connected: KBr4PJ0KlJwhVd7VAAAB
+2025-11-12 00:17:06 | INFO     | web_app:handle_disconnect:839 - Client disconnected: KBr4PJ0KlJwhVd7VAAAB2025-11-12 00:20:33 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 00:20:33 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 00:20:33 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 00:20:33 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 00:20:33 | INFO     | src.database.connection:test_connection:87 - Database connection test successful
+2025-11-12 00:20:33 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 00:20:34 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 00:20:34 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 00:20:34 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 00:20:35 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 00:20:52 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 00:20:53 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully2025-11-12 00:21:29 | INFO     | web_app:handle_connect:833 - Client connected: PzPjRv4SCJJGZeB_AAAB
+2025-11-12 00:22:14 | INFO     | web_app:handle_disconnect:839 - Client disconnected: PzPjRv4SCJJGZeB_AAAB
+2025-11-12 00:24:01 | ERROR    | web_app:chatbot_message:961 - ❌ Error processing chatbot message: name 'n8n_settings' is not defined
+2025-11-12 00:26:07 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 00:26:07 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 00:26:07 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 00:26:08 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 00:26:08 | INFO     | src.database.connection:test_connection:87 - Database connection test successful
+2025-11-12 00:26:08 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 00:26:08 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 00:26:08 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 00:26:08 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 00:26:08 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 00:26:48 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 00:26:49 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 00:29:48 | INFO     | web_app:chatbot_message:929 - 📨 Sending message to n8n: Hola bot!
+2025-11-12 00:29:48 | WARNING  | web_app:chatbot_message:953 - ❌ n8n not available or no response
+2025-11-12 00:30:30 | INFO     | web_app:chatbot_message:929 - 📨 Sending message to n8n: Hola bot!
+2025-11-12 00:30:30 | WARNING  | web_app:chatbot_message:953 - ❌ n8n not available or no response
+2025-11-12 00:37:13 | INFO     | web_app:chatbot_message:929 - 📨 Sending message to n8n: Hola bot!
+2025-11-12 00:37:13 | WARNING  | web_app:chatbot_message:953 - ❌ n8n not available or no response
+2025-11-12 00:37:27 | INFO     | web_app:chatbot_message:929 - 📨 Sending message to n8n: Hola bot!
+2025-11-12 00:37:27 | WARNING  | web_app:chatbot_message:953 - ❌ n8n not available or no response
+2025-11-12 00:43:12 | INFO     | web_app:handle_connect:834 - Client connected: rLo6mgC-fik85dcXAAAB
+2025-11-12 00:43:42 | ERROR    | web_app:chatbot_message:962 - ❌ Error processing chatbot message: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2025-11-12 00:43:53 | ERROR    | web_app:chatbot_message:962 - ❌ Error processing chatbot message: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2025-11-12 00:43:57 | INFO     | web_app:handle_disconnect:840 - Client disconnected: rLo6mgC-fik85dcXAAAB
+2025-11-12 00:44:06 | ERROR    | web_app:chatbot_message:962 - ❌ Error processing chatbot message: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2025-11-12 00:49:14 | INFO     | web_app:chatbot_message:929 - 📨 Sending message to n8n: hola bot
+2025-11-12 00:49:14 | WARNING  | web_app:chatbot_message:953 - ❌ n8n not available or no response
+2025-11-12 00:49:20 | INFO     | web_app:chatbot_message:929 - 📨 Sending message to n8n: hola bot
+2025-11-12 00:49:20 | WARNING  | web_app:chatbot_message:953 - ❌ n8n not available or no response
+2025-11-12 00:49:55 | INFO     | web_app:chatbot_message:929 - 📨 Sending message to n8n: hola bot
+2025-11-12 00:49:55 | WARNING  | web_app:chatbot_message:953 - ❌ n8n not available or no response
+2025-11-12 00:50:20 | INFO     | web_app:chatbot_message:929 - 📨 Sending message to n8n: hola bot
+2025-11-12 00:50:20 | WARNING  | web_app:chatbot_message:953 - ❌ n8n not available or no response
+2025-11-12 00:52:01 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 00:52:03 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 00:54:01 | INFO     | web_app:handle_connect:834 - Client connected: vGjgAeDs1Fd7HnmnAAAB
+2025-11-12 00:54:46 | INFO     | web_app:handle_disconnect:840 - Client disconnected: vGjgAeDs1Fd7HnmnAAAB
+2025-11-12 01:00:33 | INFO     | web_app:handle_connect:834 - Client connected: 5q-raf72Rqt210cRAAAD
+2025-11-12 01:00:50 | INFO     | web_app:handle_disconnect:840 - Client disconnected: 5q-raf72Rqt210cRAAAD
+2025-11-12 01:00:51 | INFO     | web_app:handle_connect:834 - Client connected: 09KfiYKSA4leAZbpAAAF
+2025-11-12 01:01:36 | INFO     | web_app:handle_disconnect:840 - Client disconnected: 09KfiYKSA4leAZbpAAAF
+2025-11-12 01:03:04 | INFO     | web_app:handle_connect:834 - Client connected: HoV-NwsSQXbarBvUAAAH
+2025-11-12 01:03:42 | INFO     | web_app:handle_disconnect:840 - Client disconnected: HoV-NwsSQXbarBvUAAAH
+2025-11-12 01:03:43 | INFO     | web_app:handle_connect:834 - Client connected: GlGAg3eNR_xgsG5SAAAJ
+2025-11-12 01:03:44 | INFO     | web_app:handle_disconnect:840 - Client disconnected: GlGAg3eNR_xgsG5SAAAJ
+2025-11-12 01:03:45 | INFO     | web_app:handle_connect:834 - Client connected: 3duLDRl7S4MkXVmdAAAL
+2025-11-12 01:04:30 | INFO     | web_app:handle_disconnect:840 - Client disconnected: 3duLDRl7S4MkXVmdAAAL
+2025-11-12 13:40:02 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 13:40:04 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 13:40:07 | INFO     | web_app:handle_connect:834 - Client connected: xe1_wE5qiR7EzvT3AAAB
+2025-11-12 13:40:52 | INFO     | web_app:handle_disconnect:840 - Client disconnected: xe1_wE5qiR7EzvT3AAAB
+2025-11-12 13:45:52 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 13:45:53 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 13:46:21 | INFO     | web_app:chatbot_message:929 - 📨 Sending message to n8n: Hola, esto es una prueba
+2025-11-12 13:46:21 | WARNING  | web_app:chatbot_message:953 - ❌ n8n not available or no response
+2025-11-12 13:46:47 | INFO     | web_app:handle_connect:834 - Client connected: 0ADhj9rmBQnbAfJYAAAB
+2025-11-12 13:47:32 | INFO     | web_app:handle_disconnect:840 - Client disconnected: 0ADhj9rmBQnbAfJYAAAB
+2025-11-12 13:48:13 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 13:48:23 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 13:48:48 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 13:51:16 | INFO     | web_app:handle_connect:834 - Client connected: qchY2LzvsSGNA1U2AAAB
+2025-11-12 13:51:38 | INFO     | web_app:chatbot_message:929 - 📨 Sending message to n8n: hola
+2025-11-12 13:51:38 | WARNING  | web_app:chatbot_message:953 - ❌ n8n not available or no response
+2025-11-12 13:52:01 | INFO     | web_app:handle_disconnect:840 - Client disconnected: qchY2LzvsSGNA1U2AAAB
+2025-11-12 13:52:12 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 13:52:25 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 13:53:03 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 13:53:04 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 13:53:37 | INFO     | web_app:chatbot_message:929 - 📨 Sending message to n8n: Hola, soy un mensaje de prueba
+2025-11-12 13:53:37 | INFO     | src.integrations.n8n_webhook:send_event:55 - Sending chatbot.message event to n8n: https://n8n.srv998948.hstgr.cloud/webhook/43a50d3a-6c9c-41b0-9e66-9e330554be12
+2025-11-12 13:53:38 | INFO     | src.integrations.n8n_webhook:send_event:65 - ✅ Event chatbot.message sent successfully to n8n
+2025-11-12 13:53:38 | INFO     | web_app:chatbot_message:942 - ✅ Received from n8n: Esta Funcionando
+2025-11-12 13:59:05 | INFO     | web_app:handle_connect:834 - Client connected: FTsGECaHt6c7BIZGAAAB
+2025-11-12 13:59:12 | INFO     | web_app:chatbot_message:929 - 📨 Sending message to n8n: hola como estas?
+2025-11-12 13:59:12 | INFO     | src.integrations.n8n_webhook:send_event:55 - Sending chatbot.message event to n8n: https://n8n.srv998948.hstgr.cloud/webhook/43a50d3a-6c9c-41b0-9e66-9e330554be12
+2025-11-12 13:59:15 | INFO     | src.integrations.n8n_webhook:send_event:65 - ✅ Event chatbot.message sent successfully to n8n
+2025-11-12 13:59:15 | INFO     | web_app:chatbot_message:942 - ✅ Received from n8n: Event received
+2025-11-12 13:59:50 | INFO     | web_app:handle_disconnect:840 - Client disconnected: FTsGECaHt6c7BIZGAAAB
+2025-11-12 13:59:58 | INFO     | web_app:chatbot_message:929 - 📨 Sending message to n8n: hola como estas?
+2025-11-12 13:59:58 | INFO     | src.integrations.n8n_webhook:send_event:55 - Sending chatbot.message event to n8n: https://n8n.srv998948.hstgr.cloud/webhook/43a50d3a-6c9c-41b0-9e66-9e330554be12
+2025-11-12 13:59:58 | INFO     | src.integrations.n8n_webhook:send_event:65 - ✅ Event chatbot.message sent successfully to n8n
+2025-11-12 13:59:58 | INFO     | web_app:chatbot_message:942 - ✅ Received from n8n: Event received
+2025-11-12 14:01:00 | INFO     | web_app:chatbot_message:929 - 📨 Sending message to n8n: hola
+2025-11-12 14:01:00 | INFO     | src.integrations.n8n_webhook:send_event:55 - Sending chatbot.message event to n8n: https://n8n.srv998948.hstgr.cloud/webhook/43a50d3a-6c9c-41b0-9e66-9e330554be12
+2025-11-12 14:01:01 | INFO     | src.integrations.n8n_webhook:send_event:65 - ✅ Event chatbot.message sent successfully to n8n
+2025-11-12 14:01:01 | INFO     | web_app:chatbot_message:942 - ✅ Received from n8n: Event received
+2025-11-12 14:05:38 | INFO     | web_app:handle_connect:834 - Client connected: k_NKHA1c7Q7zVrYMAAAD
+2025-11-12 14:05:43 | INFO     | web_app:chatbot_message:929 - 📨 Sending message to n8n: hola
+2025-11-12 14:05:43 | INFO     | src.integrations.n8n_webhook:send_event:55 - Sending chatbot.message event to n8n: https://n8n.srv998948.hstgr.cloud/webhook/43a50d3a-6c9c-41b0-9e66-9e330554be12
+2025-11-12 14:05:43 | INFO     | src.integrations.n8n_webhook:send_event:65 - ✅ Event chatbot.message sent successfully to n8n
+2025-11-12 14:05:43 | INFO     | web_app:chatbot_message:942 - ✅ Received from n8n: Event received
+2025-11-12 14:06:23 | INFO     | web_app:handle_disconnect:840 - Client disconnected: k_NKHA1c7Q7zVrYMAAAD
+2025-11-12 14:08:23 | INFO     | web_app:chatbot_message:929 - 📨 Sending message to n8n: hola
+2025-11-12 14:08:23 | INFO     | src.integrations.n8n_webhook:send_event:55 - Sending chatbot.message event to n8n: https://n8n.srv998948.hstgr.cloud/webhook/43a50d3a-6c9c-41b0-9e66-9e330554be12
+2025-11-12 14:08:24 | INFO     | src.integrations.n8n_webhook:send_event:65 - ✅ Event chatbot.message sent successfully to n8n
+2025-11-12 14:08:24 | INFO     | web_app:chatbot_message:942 - ✅ Received from n8n: {'type': 'error', 'content': 'No session ID found', 'metadata': {'nodeId': '21c5d9a7-438c-4f0c-a4e1-ee2e444f354e', 'nodeName': 'AI Agent', 'runIndex': 0, 'itemIndex': 0}}
+2025-11-12 14:11:04 | INFO     | web_app:chatbot_message:929 - 📨 Sending message to n8n: hola
+2025-11-12 14:11:04 | INFO     | src.integrations.n8n_webhook:send_event:55 - Sending chatbot.message event to n8n: https://n8n.srv998948.hstgr.cloud/webhook/43a50d3a-6c9c-41b0-9e66-9e330554be12
+2025-11-12 14:11:06 | INFO     | src.integrations.n8n_webhook:send_event:65 - ✅ Event chatbot.message sent successfully to n8n
+2025-11-12 14:11:06 | INFO     | web_app:chatbot_message:942 - ✅ Received from n8n: Event received
+2025-11-12 14:15:53 | INFO     | web_app:chatbot_message:929 - 📨 Sending message to n8n: hola
+2025-11-12 14:15:53 | INFO     | src.integrations.n8n_webhook:send_event:55 - Sending chatbot.message event to n8n: https://n8n.srv998948.hstgr.cloud/webhook/43a50d3a-6c9c-41b0-9e66-9e330554be12
+2025-11-12 14:15:54 | INFO     | src.integrations.n8n_webhook:send_event:65 - ✅ Event chatbot.message sent successfully to n8n
+2025-11-12 14:15:54 | INFO     | web_app:chatbot_message:942 - ✅ Received from n8n: Event received
+2025-11-12 14:16:38 | INFO     | web_app:chatbot_message:929 - 📨 Sending message to n8n: hola
+2025-11-12 14:16:38 | INFO     | src.integrations.n8n_webhook:send_event:55 - Sending chatbot.message event to n8n: https://n8n.srv998948.hstgr.cloud/webhook/43a50d3a-6c9c-41b0-9e66-9e330554be12
+2025-11-12 14:16:40 | INFO     | src.integrations.n8n_webhook:send_event:65 - ✅ Event chatbot.message sent successfully to n8n
+2025-11-12 14:16:40 | INFO     | web_app:chatbot_message:942 - ✅ Received from n8n: Event received
+2025-11-12 14:17:16 | INFO     | web_app:chatbot_message:929 - 📨 Sending message to n8n: hola
+2025-11-12 14:17:16 | INFO     | src.integrations.n8n_webhook:send_event:55 - Sending chatbot.message event to n8n: https://n8n.srv998948.hstgr.cloud/webhook/43a50d3a-6c9c-41b0-9e66-9e330554be12
+2025-11-12 14:17:18 | INFO     | src.integrations.n8n_webhook:send_event:65 - ✅ Event chatbot.message sent successfully to n8n
+2025-11-12 14:17:18 | INFO     | web_app:chatbot_message:942 - ✅ Received from n8n: Event received
+2025-11-12 14:20:34 | INFO     | web_app:handle_connect:834 - Client connected: 3aWI3OhWw3A0I-i8AAAF
+2025-11-12 14:20:38 | INFO     | web_app:chatbot_message:929 - 📨 Sending message to n8n: hola
+2025-11-12 14:20:38 | INFO     | src.integrations.n8n_webhook:send_event:55 - Sending chatbot.message event to n8n: https://n8n.srv998948.hstgr.cloud/webhook/43a50d3a-6c9c-41b0-9e66-9e330554be12
+2025-11-12 14:20:40 | INFO     | src.integrations.n8n_webhook:send_event:65 - ✅ Event chatbot.message sent successfully to n8n
+2025-11-12 14:20:40 | INFO     | web_app:chatbot_message:942 - ✅ Received from n8n: Event received
+2025-11-12 14:21:19 | INFO     | web_app:handle_disconnect:840 - Client disconnected: 3aWI3OhWw3A0I-i8AAAF
+2025-11-12 14:23:36 | INFO     | web_app:chatbot_message:929 - 📨 Sending message to n8n: hola como estas
+2025-11-12 14:23:36 | INFO     | src.integrations.n8n_webhook:send_event:55 - Sending chatbot.message event to n8n: https://n8n.srv998948.hstgr.cloud/webhook/43a50d3a-6c9c-41b0-9e66-9e330554be12
+2025-11-12 14:23:39 | INFO     | src.integrations.n8n_webhook:send_event:65 - ✅ Event chatbot.message sent successfully to n8n
+2025-11-12 14:23:39 | INFO     | web_app:chatbot_message:942 - ✅ Received from n8n: ¡Hola! Estoy muy bien, gracias por preguntar 😊. ¿En qué puedo ayudarte hoy con nuestros productos de electrónica, muebles o papelería?
+2025-11-12 14:23:56 | INFO     | web_app:chatbot_message:929 - 📨 Sending message to n8n: cual es el stok de cada uno de ellos
+2025-11-12 14:23:56 | INFO     | src.integrations.n8n_webhook:send_event:55 - Sending chatbot.message event to n8n: https://n8n.srv998948.hstgr.cloud/webhook/43a50d3a-6c9c-41b0-9e66-9e330554be12
+2025-11-12 14:24:00 | INFO     | src.integrations.n8n_webhook:send_event:65 - ✅ Event chatbot.message sent successfully to n8n
+2025-11-12 14:24:00 | INFO     | web_app:chatbot_message:942 - ✅ Received from n8n: Claro, aquí tienes el stock disponible de cada categoría que manejamos:
+
+- **Electrónica:**
+  - Laptop Pro 15": 37-50 unidades (stock moderado)
+  - Monitor 27": 54-60 unidades (stock moderado)
+  - Wireless Mouse: 200 unidades (buen stock)
+  - USB-C Hub: 150 unidades (buen stock)
+  - Webcam HD: 80 unidades (stock moderado)
+  - Mechanical Keyboard: 115-120 unidades (buen stock)
+
+- **Muebles de oficina:**
+  - Office Chair: 75 unidades (stock moderado)
+  - Standing Desk: 30 unidades (stock moderado)
+  - Desk Lamp: 100 unidades (buen stock)
+
+- **Papelería:**
+  - Notebook Set: 300 unidades (buen stock)
+
+¿Quieres saber más detalles de algún producto en particular?
+2025-11-12 14:27:19 | INFO     | web_app:handle_connect:834 - Client connected: QMmdO7jZt6gYb85lAAAH
+2025-11-12 14:27:30 | INFO     | web_app:chatbot_message:929 - 📨 Sending message to n8n: hola como estas?
+2025-11-12 14:27:30 | INFO     | src.integrations.n8n_webhook:send_event:55 - Sending chatbot.message event to n8n: https://n8n.srv998948.hstgr.cloud/webhook/43a50d3a-6c9c-41b0-9e66-9e330554be12
+2025-11-12 14:27:32 | INFO     | src.integrations.n8n_webhook:send_event:65 - ✅ Event chatbot.message sent successfully to n8n
+2025-11-12 14:27:32 | INFO     | web_app:chatbot_message:942 - ✅ Received from n8n: ¡Hola! Estoy bien, gracias 😊. ¿Quieres información sobre laptops, muebles de oficina o papelería?
+2025-11-12 14:27:45 | INFO     | web_app:chatbot_message:929 - 📨 Sending message to n8n: si dime que productos hay disponibles?
+2025-11-12 14:27:45 | INFO     | src.integrations.n8n_webhook:send_event:55 - Sending chatbot.message event to n8n: https://n8n.srv998948.hstgr.cloud/webhook/43a50d3a-6c9c-41b0-9e66-9e330554be12
+2025-11-12 14:27:47 | INFO     | src.integrations.n8n_webhook:send_event:65 - ✅ Event chatbot.message sent successfully to n8n
+2025-11-12 14:27:47 | INFO     | web_app:chatbot_message:942 - ✅ Received from n8n: Tenemos Laptop Pro 15", Monitor 27" 4K y accesorios como Wireless Mouse y teclado mecánico RGB 💻. En muebles, silla ergonómica y escritorio ajustable. También set de cuadernos premium en papelería. ¿Quieres precios o detalles de alguno?
+2025-11-12 14:28:01 | INFO     | web_app:chatbot_message:929 - 📨 Sending message to n8n: si por favor
+2025-11-12 14:28:01 | INFO     | src.integrations.n8n_webhook:send_event:55 - Sending chatbot.message event to n8n: https://n8n.srv998948.hstgr.cloud/webhook/43a50d3a-6c9c-41b0-9e66-9e330554be12
+2025-11-12 14:28:04 | INFO     | web_app:handle_disconnect:840 - Client disconnected: QMmdO7jZt6gYb85lAAAH
+2025-11-12 14:28:04 | INFO     | src.integrations.n8n_webhook:send_event:65 - ✅ Event chatbot.message sent successfully to n8n
+2025-11-12 14:28:04 | INFO     | web_app:chatbot_message:942 - ✅ Received from n8n: El Laptop Pro 15" cuesta $1,299.99 con alta potencia y 16GB RAM. La Silla de Oficina Ergonómica está a $299.99 para comodidad todo el día. El Set de 3 Cuadernos Premium vale $19.99. ¿Quieres saber sobre stock o especificaciones?
+2025-11-12 14:30:00 | INFO     | web_app:handle_connect:834 - Client connected: Q235XQRbGHPY8IVgAAAJ
+2025-11-12 14:30:02 | INFO     | web_app:handle_connect:834 - Client connected: pn_pm2mgvVayCx2jAAAL
+2025-11-12 14:30:08 | INFO     | web_app:chatbot_message:929 - 📨 Sending message to n8n: Hola
+2025-11-12 14:30:08 | INFO     | src.integrations.n8n_webhook:send_event:55 - Sending chatbot.message event to n8n: https://n8n.srv998948.hstgr.cloud/webhook/43a50d3a-6c9c-41b0-9e66-9e330554be12
+2025-11-12 14:30:09 | INFO     | src.integrations.n8n_webhook:send_event:65 - ✅ Event chatbot.message sent successfully to n8n
+2025-11-12 14:30:09 | INFO     | web_app:chatbot_message:942 - ✅ Received from n8n: ¡Hola! ¿Buscas algo en electrónica, muebles o papelería? 😊
+2025-11-12 14:30:12 | INFO     | web_app:chatbot_message:929 - 📨 Sending message to n8n: Hola
+2025-11-12 14:30:12 | INFO     | src.integrations.n8n_webhook:send_event:55 - Sending chatbot.message event to n8n: https://n8n.srv998948.hstgr.cloud/webhook/43a50d3a-6c9c-41b0-9e66-9e330554be12
+2025-11-12 14:30:13 | INFO     | src.integrations.n8n_webhook:send_event:65 - ✅ Event chatbot.message sent successfully to n8n
+2025-11-12 14:30:13 | INFO     | web_app:chatbot_message:942 - ✅ Received from n8n: ¡Hola de nuevo! ¿En qué puedo ayudarte hoy?
+2025-11-12 14:30:28 | INFO     | web_app:chatbot_message:929 - 📨 Sending message to n8n: Que productos hay disponibles?
+2025-11-12 14:30:28 | INFO     | src.integrations.n8n_webhook:send_event:55 - Sending chatbot.message event to n8n: https://n8n.srv998948.hstgr.cloud/webhook/43a50d3a-6c9c-41b0-9e66-9e330554be12
+2025-11-12 14:30:30 | INFO     | src.integrations.n8n_webhook:send_event:65 - ✅ Event chatbot.message sent successfully to n8n
+2025-11-12 14:30:30 | INFO     | web_app:chatbot_message:942 - ✅ Received from n8n: Contamos con Laptop Pro 15", Monitor 27" 4K y accesorios como Wireless Mouse y Webcam HD 💻. En muebles, silla ergonómica y escritorio ajustable. ¿Quieres que te detalle precios o stock?
+2025-11-12 14:30:30 | INFO     | web_app:chatbot_message:929 - 📨 Sending message to n8n: No quiero saber cuanto stok tengo
+2025-11-12 14:30:30 | INFO     | src.integrations.n8n_webhook:send_event:55 - Sending chatbot.message event to n8n: https://n8n.srv998948.hstgr.cloud/webhook/43a50d3a-6c9c-41b0-9e66-9e330554be12
+2025-11-12 14:30:32 | INFO     | src.integrations.n8n_webhook:send_event:65 - ✅ Event chatbot.message sent successfully to n8n
+2025-11-12 14:30:32 | INFO     | web_app:chatbot_message:942 - ✅ Received from n8n: Claro, tenemos Laptop Pro 15", Silla de Oficina Ergonómica y Set de 3 Cuadernos Premium 📓. ¿Quieres información sobre precios o características?
+2025-11-12 14:30:46 | INFO     | web_app:handle_disconnect:840 - Client disconnected: Q235XQRbGHPY8IVgAAAJ
+2025-11-12 14:30:48 | INFO     | web_app:handle_disconnect:840 - Client disconnected: pn_pm2mgvVayCx2jAAAL
+2025-11-12 14:33:49 | INFO     | web_app:handle_connect:834 - Client connected: GDTMfx8-qJpf5jDnAAAN

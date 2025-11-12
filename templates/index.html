@@ -31,41 +31,143 @@
         body {
             background-color: var(--color-black);
             color: var(--color-white);
+            margin: 0;
+            padding: 0;
         }
 
-        .sidebar {
-            min-height: 100vh;
-            background: linear-gradient(180deg, var(--color-purple-dark) 0%, #0d0520 100%);
-            border-right: 1px solid var(--color-border);
+        /* Top Navigation Bar */
+        .top-navbar {
+            background: linear-gradient(135deg, #7c40ff 0%, #322357 100%);
+            border-bottom: 2px solid var(--color-border);
+            box-shadow: 0 4px 20px rgba(118, 81, 239, 0.15);
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
-        .sidebar h4 {
-            color: var(--color-white);
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            font-size: 1.5rem;
+        .navbar-container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0.75rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
         }
 
         .logo-container {
-            padding: 1rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            min-width: 180px;
         }
 
         .logo-img {
-            width: 100%;
-            max-width: 180px;
-            height: auto;
+            width: auto;
+            height: 45px;
             filter: brightness(1.1);
             transition: all 0.3s ease;
         }
 
         .logo-img:hover {
-            filter: brightness(1.3);
+            filter: brightness(1.3) drop-shadow(0 0 10px rgba(111, 66, 255, 0.5));
             transform: scale(1.05);
+            cursor: pointer;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-white);
+            letter-spacing: -0.5px;
+        }
+
+        /* Horizontal Navigation Menu */
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            flex: 1;
+            justify-content: center;
+            flex-wrap: nowrap;
+        }
+
+        .nav-link {
+            color: rgba(251, 251, 251, 0.7);
+            text-decoration: none;
+            padding: 0.75rem 1rem;
+            border-radius: 12px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-weight: 500;
+            font-size: 0.9rem;
+            border: 2px solid transparent;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(111, 66, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .nav-link:hover::before {
+            left: 100%;
+        }
+
+        .nav-link:hover {
+            color: var(--color-white);
+            background: linear-gradient(135deg, rgba(111, 66, 255, 0.2) 0%, rgba(86, 56, 195, 0.15) 100%);
+            border-color: rgba(111, 66, 255, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(111, 66, 255, 0.3);
+        }
+
+        .nav-link.active {
+            color: var(--color-white);
+            background: linear-gradient(135deg, var(--color-purple) 0%, var(--color-indigo) 100%);
+            border-color: var(--color-indigo);
+            font-weight: 600;
+            box-shadow: 0 4px 16px rgba(111, 66, 255, 0.4);
+        }
+
+        .nav-link.active:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(111, 66, 255, 0.5);
+        }
+
+        .nav-link i {
+            font-size: 1.1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-link:hover i {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        /* Right Section */
+        .navbar-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            min-width: 180px;
+            justify-content: flex-end;
         }
 
         .main-content {
             background-color: var(--color-black);
-            min-height: 100vh;
+            min-height: calc(100vh - 80px);
+            padding: 2rem;
         }
 
         .card {
@@ -117,35 +219,6 @@
             opacity: 0.95;
             font-size: 0.95rem;
             letter-spacing: 0.3px;
-        }
-
-        .nav-link {
-            color: rgba(251, 251, 251, 0.7);
-            transition: all 0.3s ease;
-            border-radius: 10px;
-            margin: 4px 0;
-            padding: 12px 16px;
-            font-weight: 500;
-            border: 1px solid transparent;
-        }
-
-        .nav-link:hover {
-            color: var(--color-white);
-            background-color: rgba(111, 66, 255, 0.15);
-            border-color: rgba(111, 66, 255, 0.3);
-            transform: translateX(4px);
-        }
-
-        .nav-link.active {
-            color: var(--color-white);
-            background: linear-gradient(135deg, var(--color-purple) 0%, var(--color-indigo) 100%);
-            border-color: var(--color-indigo);
-            font-weight: 600;
-        }
-
-        .nav-link i {
-            width: 20px;
-            text-align: center;
         }
 
         .loading {
@@ -660,507 +733,544 @@
             opacity: 0.5;
             cursor: not-allowed;
         }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .nav-menu {
+                flex-wrap: wrap;
+                gap: 0.25rem;
+            }
+
+            .nav-link {
+                padding: 0.6rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar-container {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            .nav-menu {
+                width: 100%;
+                justify-content: flex-start;
+            }
+
+            .navbar-actions {
+                width: 100%;
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="row">
-            <!-- Sidebar -->
-            <div class="col-md-3 col-lg-2 sidebar p-0">
-                <div class="p-3">
-                    <div class="logo-container mb-4 text-center">
-                        <img src="/static/images/nextflow-logo.png" alt="NextFlow Logo" class="logo-img">
+    <!-- Top Navigation Bar -->
+    <nav class="top-navbar">
+        <div class="navbar-container">
+            <!-- Logo -->
+            <div class="logo-container">
+                <img src="/static/images/nextflow-logo.png" alt="NextFlow Logo" class="logo-img">
+            </div>
+
+            <!-- Navigation Menu -->
+            <div class="nav-menu">
+                <a class="nav-link active" href="#dashboard" onclick="showSection('dashboard')">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a class="nav-link" href="#data-quality" onclick="showSection('data-quality')">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Calidad</span>
+                </a>
+                <a class="nav-link" href="#data-cleaning" onclick="showSection('data-cleaning')">
+                    <i class="fas fa-broom"></i>
+                    <span>Limpieza</span>
+                </a>
+                <a class="nav-link" href="#orders" onclick="showSection('orders')">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Órdenes</span>
+                </a>
+                <a class="nav-link" href="#order-management" onclick="showSection('order-management')">
+                    <i class="fas fa-edit"></i>
+                    <span>Gestión</span>
+                </a>
+                <a class="nav-link" href="#powerbi" onclick="showSection('powerbi')">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Power BI</span>
+                </a>
+                <a class="nav-link" href="#export" onclick="showSection('export')">
+                    <i class="fas fa-download"></i>
+                    <span>Exportar</span>
+                </a>
+            </div>
+
+            <!-- Actions -->
+            <div class="navbar-actions">
+                <button class="btn btn-outline-primary btn-sm" onclick="refreshData()">
+                    <i class="fas fa-sync-alt me-1"></i>Actualizar
+                </button>
+                <span class="badge bg-success">
+                    <span class="realtime-indicator me-1"></span>
+                    <span id="status-text">Conectando...</span>
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 id="page-title">Dashboard</h2>
+        </div>
+
+        <!-- Dashboard Section -->
+        <div id="dashboard-section" class="section">
+            <!-- Stats Cards -->
+            <div class="row mb-4">
+                <div class="col-md-3 mb-3">
+                    <div class="card stat-card">
+                        <div class="card-body text-center">
+                            <i class="fas fa-shopping-cart fa-2x mb-2"></i>
+                            <h3 id="total-orders">-</h3>
+                            <p class="mb-0">Total Órdenes</p>
+                        </div>
                     </div>
-                    <nav class="nav flex-column">
-                        <a class="nav-link active" href="#dashboard" onclick="showSection('dashboard')">
-                            <i class="fas fa-tachometer-alt me-2"></i>Dashboard
-                        </a>
-                        <a class="nav-link" href="#data-quality" onclick="showSection('data-quality')">
-                            <i class="fas fa-shield-alt me-2"></i>Calidad de Datos
-                        </a>
-                        <a class="nav-link" href="#data-cleaning" onclick="showSection('data-cleaning')">
-                            <i class="fas fa-broom me-2"></i>Limpieza de Datos
-                        </a>
-                        <a class="nav-link" href="#orders" onclick="showSection('orders')">
-                            <i class="fas fa-shopping-cart me-2"></i>Órdenes
-                        </a>
-                        <a class="nav-link" href="#order-management" onclick="showSection('order-management')">
-                            <i class="fas fa-edit me-2"></i>Gestión de Órdenes
-                        </a>
-                        <a class="nav-link" href="#powerbi" onclick="showSection('powerbi')">
-                            <i class="fas fa-chart-line me-2"></i>Power BI
-                        </a>
-                        <a class="nav-link" href="#export" onclick="showSection('export')">
-                            <i class="fas fa-download me-2"></i>Exportar
-                        </a>
-                    </nav>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="card stat-card success">
+                        <div class="card-body text-center">
+                            <i class="fas fa-check-circle fa-2x mb-2"></i>
+                            <h3 id="completed-orders">-</h3>
+                            <p class="mb-0">Órdenes Completadas</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="card stat-card warning">
+                        <div class="card-body text-center">
+                            <i class="fas fa-exclamation-triangle fa-2x mb-2"></i>
+                            <h3 id="duplicates">-</h3>
+                            <p class="mb-0">Duplicados</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="card stat-card info">
+                        <div class="card-body text-center">
+                            <i class="fas fa-chart-line fa-2x mb-2"></i>
+                            <h3 id="categories">-</h3>
+                            <p class="mb-0">Categorías</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Main Content -->
-            <div class="col-md-9 col-lg-10 main-content">
-                <div class="p-4">
-                    <!-- Header -->
-                    <div class="d-flex justify-content-between align-items-center mb-4">
-                        <h2 id="page-title">Dashboard</h2>
-                        <div>
-                            <button class="btn btn-outline-primary me-2" onclick="refreshData()">
-                                <i class="fas fa-sync-alt me-1"></i>Actualizar
+            <!-- Charts -->
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5><i class="fas fa-chart-pie me-2"></i>Distribución por Estado</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-container">
+                                <canvas id="statusChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5><i class="fas fa-chart-bar me-2"></i>Ventas por Categoría</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-container">
+                                <canvas id="categoryChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5><i class="fas fa-chart-line me-2"></i>Evolución Anual</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-container">
+                                <canvas id="yearlyChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Data Quality Section -->
+        <div id="data-quality-section" class="section" style="display: none;">
+            <div class="card">
+                <div class="card-header">
+                    <h5><i class="fas fa-shield-alt me-2"></i>Reporte de Calidad de Datos</h5>
+                </div>
+                <div class="card-body">
+                    <div class="loading text-center">
+                        <div class="spinner-border" role="status">
+                            <span class="visually-hidden">Cargando...</span>
+                        </div>
+                    </div>
+                    <div id="quality-report"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Data Cleaning Section -->
+        <div id="data-cleaning-section" class="section" style="display: none;">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <i class="fas fa-copy fa-3x text-warning mb-3"></i>
+                            <h5>Verificar Duplicados</h5>
+                            <p class="text-muted">Identifica registros duplicados</p>
+                            <button class="btn btn-warning" onclick="checkDuplicates()">
+                                <i class="fas fa-search me-1"></i>Verificar
                             </button>
-                            <span class="badge bg-success" id="connection-status">
-                                <span class="realtime-indicator me-1"></span>
-                                <span id="status-text">Conectando...</span>
-                            </span>
                         </div>
                     </div>
-
-                    <!-- Dashboard Section -->
-                    <div id="dashboard-section" class="section">
-                        <!-- Stats Cards -->
-                        <div class="row mb-4">
-                            <div class="col-md-3 mb-3">
-                                <div class="card stat-card">
-                                    <div class="card-body text-center">
-                                        <i class="fas fa-shopping-cart fa-2x mb-2"></i>
-                                        <h3 id="total-orders">-</h3>
-                                        <p class="mb-0">Total Órdenes</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <div class="card stat-card success">
-                                    <div class="card-body text-center">
-                                        <i class="fas fa-check-circle fa-2x mb-2"></i>
-                                        <h3 id="completed-orders">-</h3>
-                                        <p class="mb-0">Órdenes Completadas</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <div class="card stat-card warning">
-                                    <div class="card-body text-center">
-                                        <i class="fas fa-exclamation-triangle fa-2x mb-2"></i>
-                                        <h3 id="duplicates">-</h3>
-                                        <p class="mb-0">Duplicados</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <div class="card stat-card info">
-                                    <div class="card-body text-center">
-                                        <i class="fas fa-chart-line fa-2x mb-2"></i>
-                                        <h3 id="categories">-</h3>
-                                        <p class="mb-0">Categorías</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Charts -->
-                        <div class="row">
-                            <div class="col-md-6 mb-4">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h5><i class="fas fa-chart-pie me-2"></i>Distribución por Estado</h5>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="chart-container">
-                                            <canvas id="statusChart"></canvas>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-4">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h5><i class="fas fa-chart-bar me-2"></i>Ventas por Categoría</h5>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="chart-container">
-                                            <canvas id="categoryChart"></canvas>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h5><i class="fas fa-chart-line me-2"></i>Evolución Anual</h5>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="chart-container">
-                                            <canvas id="yearlyChart"></canvas>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <i class="fas fa-exclamation-circle fa-3x text-danger mb-3"></i>
+                            <h5>Registros Incompletos</h5>
+                            <p class="text-muted">Encuentra datos faltantes</p>
+                            <button class="btn btn-danger" onclick="checkIncomplete()">
+                                <i class="fas fa-search me-1"></i>Verificar
+                            </button>
                         </div>
                     </div>
-
-                    <!-- Data Quality Section -->
-                    <div id="data-quality-section" class="section" style="display: none;">
-                        <div class="card">
-                            <div class="card-header">
-                                <h5><i class="fas fa-shield-alt me-2"></i>Reporte de Calidad de Datos</h5>
-                            </div>
-                            <div class="card-body">
-                                <div class="loading text-center">
-                                    <div class="spinner-border" role="status">
-                                        <span class="visually-hidden">Cargando...</span>
-                                    </div>
-                                </div>
-                                <div id="quality-report"></div>
-                            </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <i class="fas fa-check-circle fa-3x text-info mb-3"></i>
+                            <h5>Validar Tipos</h5>
+                            <p class="text-muted">Verifica tipos de datos</p>
+                            <button class="btn btn-info" onclick="validateData()">
+                                <i class="fas fa-search me-1"></i>Verificar
+                            </button>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div id="cleaning-results"></div>
+        </div>
 
-                    <!-- Data Cleaning Section -->
-                    <div id="data-cleaning-section" class="section" style="display: none;">
-                        <div class="row">
-                            <div class="col-md-4 mb-3">
-                                <div class="card">
-                                    <div class="card-body text-center">
-                                        <i class="fas fa-copy fa-3x text-warning mb-3"></i>
-                                        <h5>Verificar Duplicados</h5>
-                                        <p class="text-muted">Identifica registros duplicados</p>
-                                        <button class="btn btn-warning" onclick="checkDuplicates()">
-                                            <i class="fas fa-search me-1"></i>Verificar
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <div class="card">
-                                    <div class="card-body text-center">
-                                        <i class="fas fa-exclamation-circle fa-3x text-danger mb-3"></i>
-                                        <h5>Registros Incompletos</h5>
-                                        <p class="text-muted">Encuentra datos faltantes</p>
-                                        <button class="btn btn-danger" onclick="checkIncomplete()">
-                                            <i class="fas fa-search me-1"></i>Verificar
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <div class="card">
-                                    <div class="card-body text-center">
-                                        <i class="fas fa-check-circle fa-3x text-info mb-3"></i>
-                                        <h5>Validar Tipos</h5>
-                                        <p class="text-muted">Verifica tipos de datos</p>
-                                        <button class="btn btn-info" onclick="validateData()">
-                                            <i class="fas fa-search me-1"></i>Verificar
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="cleaning-results"></div>
+        <!-- Orders Section -->
+        <div id="orders-section" class="section" style="display: none;">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5><i class="fas fa-shopping-cart me-2"></i>Gestión de Órdenes</h5>
+                    <div>
+                        <select class="form-select me-2" id="status-filter" onchange="filterOrders()">
+                            <option value="">Todos los estados</option>
+                            <option value="Order Finished">Order Finished</option>
+                            <option value="Order Returned">Order Returned</option>
+                            <option value="Order Cancelled">Order Cancelled</option>
+                        </select>
+                        <select class="form-select" id="category-filter" onchange="filterOrders()">
+                            <option value="">Todas las categorías</option>
+                            <option value="Technology">Technology</option>
+                            <option value="Furniture">Furniture</option>
+                            <option value="Office Supplies">Office Supplies</option>
+                        </select>
                     </div>
-
-                    <!-- Orders Section -->
-                    <div id="orders-section" class="section" style="display: none;">
-                        <div class="card">
-                            <div class="card-header d-flex justify-content-between align-items-center">
-                                <h5><i class="fas fa-shopping-cart me-2"></i>Gestión de Órdenes</h5>
-                                <div>
-                                    <select class="form-select me-2" id="status-filter" onchange="filterOrders()">
-                                        <option value="">Todos los estados</option>
-                                        <option value="Order Finished">Order Finished</option>
-                                        <option value="Order Returned">Order Returned</option>
-                                        <option value="Order Cancelled">Order Cancelled</option>
-                                    </select>
-                                    <select class="form-select" id="category-filter" onchange="filterOrders()">
-                                        <option value="">Todas las categorías</option>
-                                        <option value="Technology">Technology</option>
-                                        <option value="Furniture">Furniture</option>
-                                        <option value="Office Supplies">Office Supplies</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div class="table-container">
-                                    <table class="table table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>Cliente</th>
-                                                <th>Fecha</th>
-                                                <th>Estado</th>
-                                                <th>Categoría</th>
-                                                <th>Monto</th>
-                                                <th>Cantidad</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="orders-table">
-                                            <tr>
-                                                <td colspan="7" class="text-center">Cargando...</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <nav aria-label="Paginación">
-                                    <ul class="pagination justify-content-center" id="pagination">
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-container">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Cliente</th>
+                                    <th>Fecha</th>
+                                    <th>Estado</th>
+                                    <th>Categoría</th>
+                                    <th>Monto</th>
+                                    <th>Cantidad</th>
+                                </tr>
+                            </thead>
+                            <tbody id="orders-table">
+                                <tr>
+                                    <td colspan="7" class="text-center">Cargando...</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
+                    <nav aria-label="Paginación">
+                        <ul class="pagination justify-content-center" id="pagination">
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
 
-                    <!-- Power BI Section -->
-                    <div id="powerbi-section" class="section" style="display: none;">
-                        <div class="row">
-                            <div class="col-md-6 mb-4">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h5><i class="fas fa-link me-2"></i>Conexión Power BI</h5>
-                                    </div>
-                                    <div class="card-body">
-                                        <p>URLs para conectar con Power BI:</p>
-                                        <div class="mb-3">
-                                            <label class="form-label">Datos de Órdenes:</label>
-                                            <div class="input-group">
-                                                <input type="text" class="form-control" id="orders-url" 
-                                                       value="http://localhost:5000/api/powerbi/orders" readonly>
-                                                <button class="btn btn-outline-secondary" onclick="copyToClipboard('orders-url')">
-                                                    <i class="fas fa-copy"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label class="form-label">Resumen de Datos:</label>
-                                            <div class="input-group">
-                                                <input type="text" class="form-control" id="summary-url" 
-                                                       value="http://localhost:5000/api/powerbi/summary" readonly>
-                                                <button class="btn btn-outline-secondary" onclick="copyToClipboard('summary-url')">
-                                                    <i class="fas fa-copy"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
+        <!-- Power BI Section -->
+        <div id="powerbi-section" class="section" style="display: none;">
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5><i class="fas fa-link me-2"></i>Conexión Power BI</h5>
+                        </div>
+                        <div class="card-body">
+                            <p>URLs para conectar con Power BI:</p>
+                            <div class="mb-3">
+                                <label class="form-label">Datos de Órdenes:</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="orders-url"
+                                           value="http://localhost:5000/api/powerbi/orders" readonly>
+                                    <button class="btn btn-outline-secondary" onclick="copyToClipboard('orders-url')">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
                                 </div>
                             </div>
-                            <div class="col-md-6 mb-4">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h5><i class="fas fa-info-circle me-2"></i>Instrucciones</h5>
-                                    </div>
-                                    <div class="card-body">
-                                        <ol>
-                                            <li>En Power BI, selecciona "Obtener datos"</li>
-                                            <li>Elige "Web" como fuente</li>
-                                            <li>Pega la URL correspondiente</li>
-                                            <li>Configura la autenticación si es necesario</li>
-                                            <li>Importa los datos</li>
-                                        </ol>
-                                        <div class="alert alert-info">
-                                            <i class="fas fa-lightbulb me-2"></i>
-                                            <strong>Tip:</strong> Los datos se actualizan en tiempo real desde la base de datos.
-                                        </div>
-                                    </div>
+                            <div class="mb-3">
+                                <label class="form-label">Resumen de Datos:</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="summary-url"
+                                           value="http://localhost:5000/api/powerbi/summary" readonly>
+                                    <button class="btn btn-outline-secondary" onclick="copyToClipboard('summary-url')">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Order Management Section -->
-                    <div id="order-management-section" class="section" style="display: none;">
-                        <div class="row mb-4">
-                            <div class="col-md-6">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h5><i class="fas fa-plus me-2"></i>Crear Nueva Orden</h5>
-                                    </div>
-                                    <div class="card-body">
-                                        <form id="create-order-form">
-                                            <div class="row">
-                                                <div class="col-md-6 mb-3">
-                                                    <label class="form-label">Cliente</label>
-                                                    <input type="text" class="form-control" id="create-customer-name" required>
-                                                </div>
-                                                <div class="col-md-6 mb-3">
-                                                    <label class="form-label">Fecha</label>
-                                                    <input type="date" class="form-control" id="create-order-date" required>
-                                                </div>
-                                                <div class="col-md-6 mb-3">
-                                                    <label class="form-label">Estado</label>
-                                                    <select class="form-select" id="create-status" required>
-                                                        <option value="Order Finished">Order Finished</option>
-                                                        <option value="Order Returned">Order Returned</option>
-                                                        <option value="Order Cancelled">Order Cancelled</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-6 mb-3">
-                                                    <label class="form-label">Cantidad</label>
-                                                    <input type="number" class="form-control" id="create-quantity" min="1" required>
-                                                </div>
-                                                <div class="col-md-6 mb-3">
-                                                    <label class="form-label">Monto Subtotal</label>
-                                                    <input type="number" class="form-control" id="create-subtotal" step="0.01" min="0" required>
-                                                </div>
-                                                <div class="col-md-6 mb-3">
-                                                    <label class="form-label">Tasa de Impuesto</label>
-                                                    <input type="number" class="form-control" id="create-tax-rate" step="0.0001" min="0" max="1" required>
-                                                </div>
-                                                <div class="col-md-6 mb-3">
-                                                    <label class="form-label">Costo de Envío</label>
-                                                    <input type="number" class="form-control" id="create-shipping" step="0.01" min="0" required>
-                                                </div>
-                                                <div class="col-md-6 mb-3">
-                                                    <label class="form-label">Categoría</label>
-                                                    <select class="form-select" id="create-category" required>
-                                                        <option value="Technology">Technology</option>
-                                                        <option value="Furniture">Furniture</option>
-                                                        <option value="Office Supplies">Office Supplies</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-12 mb-3">
-                                                    <label class="form-label">Subcategoría</label>
-                                                    <input type="text" class="form-control" id="create-subcategory" required>
-                                                </div>
-                                            </div>
-                                            <button type="submit" class="btn btn-success">
-                                                <i class="fas fa-plus me-1"></i>Crear Orden
-                                            </button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h5><i class="fas fa-search me-2"></i>Buscar y Editar Orden</h5>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="mb-3">
-                                            <label class="form-label">ID de Orden</label>
-                                            <div class="input-group">
-                                                <input type="number" class="form-control" id="search-order-id" placeholder="Ingresa el ID">
-                                                <button class="btn btn-primary" onclick="searchOrder()">
-                                                    <i class="fas fa-search me-1"></i>Buscar
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div id="order-edit-form" style="display: none;">
-                                            <form id="edit-order-form">
-                                                <div class="row">
-                                                    <div class="col-md-6 mb-3">
-                                                        <label class="form-label">Cliente</label>
-                                                        <input type="text" class="form-control" id="edit-customer-name" required>
-                                                    </div>
-                                                    <div class="col-md-6 mb-3">
-                                                        <label class="form-label">Fecha</label>
-                                                        <input type="date" class="form-control" id="edit-order-date" required>
-                                                    </div>
-                                                    <div class="col-md-6 mb-3">
-                                                        <label class="form-label">Estado</label>
-                                                        <select class="form-select" id="edit-status" required>
-                                                            <option value="Order Finished">Order Finished</option>
-                                                            <option value="Order Returned">Order Returned</option>
-                                                            <option value="Order Cancelled">Order Cancelled</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-md-6 mb-3">
-                                                        <label class="form-label">Cantidad</label>
-                                                        <input type="number" class="form-control" id="edit-quantity" min="1" required>
-                                                    </div>
-                                                    <div class="col-md-6 mb-3">
-                                                        <label class="form-label">Monto Subtotal</label>
-                                                        <input type="number" class="form-control" id="edit-subtotal" step="0.01" min="0" required>
-                                                    </div>
-                                                    <div class="col-md-6 mb-3">
-                                                        <label class="form-label">Tasa de Impuesto</label>
-                                                        <input type="number" class="form-control" id="edit-tax-rate" step="0.0001" min="0" max="1" required>
-                                                    </div>
-                                                    <div class="col-md-6 mb-3">
-                                                        <label class="form-label">Costo de Envío</label>
-                                                        <input type="number" class="form-control" id="edit-shipping" step="0.01" min="0" required>
-                                                    </div>
-                                                    <div class="col-md-6 mb-3">
-                                                        <label class="form-label">Categoría</label>
-                                                        <select class="form-select" id="edit-category" required>
-                                                            <option value="Technology">Technology</option>
-                                                            <option value="Furniture">Furniture</option>
-                                                            <option value="Office Supplies">Office Supplies</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-12 mb-3">
-                                                        <label class="form-label">Subcategoría</label>
-                                                        <input type="text" class="form-control" id="edit-subcategory" required>
-                                                    </div>
-                                                </div>
-                                                <div class="d-flex gap-2">
-                                                    <button type="submit" class="btn btn-primary">
-                                                        <i class="fas fa-save me-1"></i>Guardar Cambios
-                                                    </button>
-                                                    <button type="button" class="btn btn-danger" onclick="deleteOrder()">
-                                                        <i class="fas fa-trash me-1"></i>Eliminar
-                                                    </button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5><i class="fas fa-info-circle me-2"></i>Instrucciones</h5>
+                        </div>
+                        <div class="card-body">
+                            <ol>
+                                <li>En Power BI, selecciona "Obtener datos"</li>
+                                <li>Elige "Web" como fuente</li>
+                                <li>Pega la URL correspondiente</li>
+                                <li>Configura la autenticación si es necesario</li>
+                                <li>Importa los datos</li>
+                            </ol>
+                            <div class="alert alert-info">
+                                <i class="fas fa-lightbulb me-2"></i>
+                                <strong>Tip:</strong> Los datos se actualizan en tiempo real desde la base de datos.
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                        <!-- Bulk Status Update -->
-                        <div class="card">
-                            <div class="card-header">
-                                <h5><i class="fas fa-tasks me-2"></i>Actualización Masiva de Estados</h5>
-                            </div>
-                            <div class="card-body">
+        <!-- Order Management Section -->
+        <div id="order-management-section" class="section" style="display: none;">
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5><i class="fas fa-plus me-2"></i>Crear Nueva Orden</h5>
+                        </div>
+                        <div class="card-body">
+                            <form id="create-order-form">
                                 <div class="row">
-                                    <div class="col-md-6">
-                                        <label class="form-label">IDs de Órdenes (separados por comas)</label>
-                                        <textarea class="form-control" id="bulk-order-ids" rows="3" placeholder="Ejemplo: 1, 2, 3, 4, 5"></textarea>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Cliente</label>
+                                        <input type="text" class="form-control" id="create-customer-name" required>
                                     </div>
-                                    <div class="col-md-6">
-                                        <label class="form-label">Nuevo Estado</label>
-                                        <select class="form-select" id="bulk-new-status">
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Fecha</label>
+                                        <input type="date" class="form-control" id="create-order-date" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Estado</label>
+                                        <select class="form-select" id="create-status" required>
                                             <option value="Order Finished">Order Finished</option>
                                             <option value="Order Returned">Order Returned</option>
                                             <option value="Order Cancelled">Order Cancelled</option>
                                         </select>
-                                        <button class="btn btn-warning mt-3" onclick="bulkUpdateStatus()">
-                                            <i class="fas fa-sync-alt me-1"></i>Actualizar Estados
-                                        </button>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Cantidad</label>
+                                        <input type="number" class="form-control" id="create-quantity" min="1" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Monto Subtotal</label>
+                                        <input type="number" class="form-control" id="create-subtotal" step="0.01" min="0" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Tasa de Impuesto</label>
+                                        <input type="number" class="form-control" id="create-tax-rate" step="0.0001" min="0" max="1" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Costo de Envío</label>
+                                        <input type="number" class="form-control" id="create-shipping" step="0.01" min="0" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Categoría</label>
+                                        <select class="form-select" id="create-category" required>
+                                            <option value="Technology">Technology</option>
+                                            <option value="Furniture">Furniture</option>
+                                            <option value="Office Supplies">Office Supplies</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <label class="form-label">Subcategoría</label>
+                                        <input type="text" class="form-control" id="create-subcategory" required>
                                     </div>
                                 </div>
+                                <button type="submit" class="btn btn-success">
+                                    <i class="fas fa-plus me-1"></i>Crear Orden
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5><i class="fas fa-search me-2"></i>Buscar y Editar Orden</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label class="form-label">ID de Orden</label>
+                                <div class="input-group">
+                                    <input type="number" class="form-control" id="search-order-id" placeholder="Ingresa el ID">
+                                    <button class="btn btn-primary" onclick="searchOrder()">
+                                        <i class="fas fa-search me-1"></i>Buscar
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="order-edit-form" style="display: none;">
+                                <form id="edit-order-form">
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">Cliente</label>
+                                            <input type="text" class="form-control" id="edit-customer-name" required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">Fecha</label>
+                                            <input type="date" class="form-control" id="edit-order-date" required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">Estado</label>
+                                            <select class="form-select" id="edit-status" required>
+                                                <option value="Order Finished">Order Finished</option>
+                                                <option value="Order Returned">Order Returned</option>
+                                                <option value="Order Cancelled">Order Cancelled</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">Cantidad</label>
+                                            <input type="number" class="form-control" id="edit-quantity" min="1" required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">Monto Subtotal</label>
+                                            <input type="number" class="form-control" id="edit-subtotal" step="0.01" min="0" required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">Tasa de Impuesto</label>
+                                            <input type="number" class="form-control" id="edit-tax-rate" step="0.0001" min="0" max="1" required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">Costo de Envío</label>
+                                            <input type="number" class="form-control" id="edit-shipping" step="0.01" min="0" required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">Categoría</label>
+                                            <select class="form-select" id="edit-category" required>
+                                                <option value="Technology">Technology</option>
+                                                <option value="Furniture">Furniture</option>
+                                                <option value="Office Supplies">Office Supplies</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12 mb-3">
+                                            <label class="form-label">Subcategoría</label>
+                                            <input type="text" class="form-control" id="edit-subcategory" required>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <button type="submit" class="btn btn-primary">
+                                            <i class="fas fa-save me-1"></i>Guardar Cambios
+                                        </button>
+                                        <button type="button" class="btn btn-danger" onclick="deleteOrder()">
+                                            <i class="fas fa-trash me-1"></i>Eliminar
+                                        </button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
 
-                    <!-- Export Section -->
-                    <div id="export-section" class="section" style="display: none;">
-                        <div class="card">
-                            <div class="card-header">
-                                <h5><i class="fas fa-download me-2"></i>Exportar Datos</h5>
-                            </div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <h6>Exportar a CSV</h6>
-                                        <p class="text-muted">Descarga todos los datos en formato CSV</p>
-                                        <button class="btn btn-success" onclick="exportCSV()">
-                                            <i class="fas fa-file-csv me-1"></i>Exportar CSV
-                                        </button>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <h6>API Endpoints</h6>
-                                        <p class="text-muted">URLs para integración con otras herramientas</p>
-                                        <div class="list-group">
-                                            <a href="/api/orders" class="list-group-item list-group-item-action" target="_blank">
-                                                <i class="fas fa-shopping-cart me-2"></i>/api/orders
-                                            </a>
-                                            <a href="/api/dashboard/stats" class="list-group-item list-group-item-action" target="_blank">
-                                                <i class="fas fa-chart-bar me-2"></i>/api/dashboard/stats
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
+            <!-- Bulk Status Update -->
+            <div class="card">
+                <div class="card-header">
+                    <h5><i class="fas fa-tasks me-2"></i>Actualización Masiva de Estados</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="form-label">IDs de Órdenes (separados por comas)</label>
+                            <textarea class="form-control" id="bulk-order-ids" rows="3" placeholder="Ejemplo: 1, 2, 3, 4, 5"></textarea>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Nuevo Estado</label>
+                            <select class="form-select" id="bulk-new-status">
+                                <option value="Order Finished">Order Finished</option>
+                                <option value="Order Returned">Order Returned</option>
+                                <option value="Order Cancelled">Order Cancelled</option>
+                            </select>
+                            <button class="btn btn-warning mt-3" onclick="bulkUpdateStatus()">
+                                <i class="fas fa-sync-alt me-1"></i>Actualizar Estados
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Export Section -->
+        <div id="export-section" class="section" style="display: none;">
+            <div class="card">
+                <div class="card-header">
+                    <h5><i class="fas fa-download me-2"></i>Exportar Datos</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6>Exportar a CSV</h6>
+                            <p class="text-muted">Descarga todos los datos en formato CSV</p>
+                            <button class="btn btn-success" onclick="exportCSV()">
+                                <i class="fas fa-file-csv me-1"></i>Exportar CSV
+                            </button>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>API Endpoints</h6>
+                            <p class="text-muted">URLs para integración con otras herramientas</p>
+                            <div class="list-group">
+                                <a href="/api/orders" class="list-group-item list-group-item-action" target="_blank">
+                                    <i class="fas fa-shopping-cart me-2"></i>/api/orders
+                                </a>
+                                <a href="/api/dashboard/stats" class="list-group-item list-group-item-action" target="_blank">
+                                    <i class="fas fa-chart-bar me-2"></i>/api/dashboard/stats
+                                </a>
                             </div>
                         </div>
                     </div>

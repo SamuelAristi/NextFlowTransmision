@@ -225,18 +225,14 @@ class StoreService:
                             (item.quantity, item.product_id, item.quantity),
                         )
 
-                    conn.commit()
-
-                    logger.info(
-                        f"Order {order_id} created successfully for {customer_info.customer_email}"
-                    )
-
                     # Also create entries in the main 'orders' table for admin dashboard
                     # Each item becomes a separate order in the orders table
+                    # IMPORTANT: Do this BEFORE commit to keep in same transaction
 
                     # Get the next order_id (max + 1)
-                    cursor.execute("SELECT COALESCE(MAX(order_id), 0) + 1 FROM orders")
-                    next_order_id = cursor.fetchone()[0]
+                    cursor.execute("SELECT COALESCE(MAX(order_id), 0) + 1 as next_id FROM orders")
+                    next_order_id_result = cursor.fetchone()
+                    next_order_id = next_order_id_result["next_id"] if next_order_id_result else 1
 
                     for item in cart.items:
                         cursor.execute(
@@ -260,7 +256,12 @@ class StoreService:
                         )
                         next_order_id += 1  # Increment for next item
 
+                    # Commit all changes in one transaction
                     conn.commit()
+
+                    logger.info(
+                        f"Order {order_id} created successfully for {customer_info.customer_email}"
+                    )
                     logger.info(f"Created {len(cart.items)} order entries in orders table")
 
                     # Get complete order details within the same connection

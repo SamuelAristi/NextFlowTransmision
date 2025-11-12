@@ -259,3 +259,7 @@ Consulta `requirements.txt` para el listado completo y versiones.
 7. Revisa `logs/app.log` para detalles de ejecución y diagnósticos
 
 ---
+
+ curl -X POST https://n8n.srv998948.hstgr.cloud/webhook/43a50d3a-6c9c-41b0-9e66-9e330554be12 \
+    -H "Content-Type: application/json" \
+    -d "{\"message\": \"test\"}"

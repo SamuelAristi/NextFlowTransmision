@@ -35,6 +35,12 @@
     </footer>
 
     <script src="{{ url_for('static', filename='js/store.js') }}"></script>
+    <script>
+        // Update cart badge on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCartBadge();
+        });
+    </script>
     {% block extra_js %}{% endblock %}
 
     <style>
