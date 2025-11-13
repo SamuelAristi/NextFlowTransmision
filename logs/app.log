@@ -1645,3 +1645,205 @@ LINE 1: SELECT * FROM orders ORDER BY id
 2025-11-12 14:30:46 | INFO     | web_app:handle_disconnect:840 - Client disconnected: Q235XQRbGHPY8IVgAAAJ
 2025-11-12 14:30:48 | INFO     | web_app:handle_disconnect:840 - Client disconnected: pn_pm2mgvVayCx2jAAAL
 2025-11-12 14:33:49 | INFO     | web_app:handle_connect:834 - Client connected: GDTMfx8-qJpf5jDnAAAN
+2025-11-12 14:34:34 | INFO     | web_app:handle_disconnect:840 - Client disconnected: GDTMfx8-qJpf5jDnAAAN
+2025-11-12 14:36:13 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 14:36:13 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:36:13 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 14:36:13 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:36:13 | INFO     | src.database.connection:test_connection:87 - Database connection test successful
+2025-11-12 14:36:13 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:36:14 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:36:14 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:36:14 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:36:14 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 14:36:14 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:36:14 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 14:36:14 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:36:14 | INFO     | src.database.connection:test_connection:87 - Database connection test successful
+2025-11-12 14:36:14 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:36:15 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:36:15 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:36:15 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:36:48 | INFO     | src.services.product_service:get_all_products:35 - Retrieved 40 products from database
+2025-11-12 14:36:51 | INFO     | src.services.product_service:get_product_by_id:53 - Retrieved product 1
+2025-11-12 14:36:51 | INFO     | src.services.product_service:get_product_by_id:53 - Retrieved product 1
+2025-11-12 14:36:51 | INFO     | src.services.store_service:add_to_cart:75 - Added 1x product 1 to cart
+2025-11-12 14:36:57 | INFO     | src.services.product_service:get_all_products:35 - Retrieved 40 products from database
+2025-11-12 14:37:09 | INFO     | web_app:handle_connect:834 - Client connected: L4iWjrwC6ZZmJ19MAAAP
+2025-11-12 14:37:21 | INFO     | web_app:handle_disconnect:840 - Client disconnected: L4iWjrwC6ZZmJ19MAAAP
+2025-11-12 14:37:22 | INFO     | web_app:handle_connect:834 - Client connected: 03hySudEAyfRqMxQAAAR
+2025-11-12 14:37:29 | ERROR    | src.database.connection:get_connection:58 - Database connection error: 0
+2025-11-12 14:37:29 | ERROR    | src.services.product_service:get_categories:118 - Error getting categories: 0
+2025-11-12 14:37:29 | ERROR    | store_app:get_categories:193 - Error getting categories: 0
+2025-11-12 14:37:31 | INFO     | src.services.product_service:get_product_by_id:53 - Retrieved product 1
+2025-11-12 14:37:31 | INFO     | src.services.store_service:process_checkout:262 - Order 24 created successfully for sarisbo2206@gmail.com
+2025-11-12 14:37:31 | INFO     | src.services.store_service:process_checkout:265 - Created 1 order entries in orders table
+2025-11-12 14:37:31 | INFO     | src.services.store_service:process_checkout:288 - Retrieved order 24 details successfully
+2025-11-12 14:37:31 | INFO     | src.services.store_service:clear_cart:127 - Cart cleared
+2025-11-12 14:37:35 | INFO     | web_app:handle_disconnect:840 - Client disconnected: 03hySudEAyfRqMxQAAAR
+2025-11-12 14:37:36 | INFO     | web_app:handle_connect:834 - Client connected: G8nR81KFUVADIl-sAAAT
+2025-11-12 14:37:45 | ERROR    | src.database.connection:get_connection:58 - Database connection error: 0
+2025-11-12 14:37:45 | ERROR    | src.services.product_service:get_categories:118 - Error getting categories: 0
+2025-11-12 14:37:45 | ERROR    | store_app:get_categories:193 - Error getting categories: 0
+2025-11-12 14:37:48 | ERROR    | src.database.connection:get_connection:58 - Database connection error: 0
+2025-11-12 14:37:48 | ERROR    | src.services.product_service:get_categories:118 - Error getting categories: 0
+2025-11-12 14:37:48 | ERROR    | store_app:get_categories:193 - Error getting categories: 0
+2025-11-12 14:38:21 | INFO     | web_app:handle_disconnect:840 - Client disconnected: G8nR81KFUVADIl-sAAAT
+2025-11-12 14:39:17 | INFO     | src.services.product_service:get_all_products:35 - Retrieved 40 products from database
+2025-11-12 14:39:47 | INFO     | src.services.product_service:get_all_products:35 - Retrieved 40 products from database
+2025-11-12 14:40:24 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 14:40:24 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:40:24 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 14:40:24 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 14:40:24 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:40:24 | INFO     | src.database.connection:test_connection:87 - Database connection test successful
+2025-11-12 14:40:24 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:40:24 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:40:24 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:40:24 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:40:51 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 14:40:51 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:40:51 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 14:40:51 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:40:51 | INFO     | src.database.connection:test_connection:87 - Database connection test successful
+2025-11-12 14:40:51 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:40:51 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:40:51 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:40:51 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:40:52 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 14:41:13 | INFO     | src.services.product_service:get_all_products:35 - Retrieved 40 products from database
+2025-11-12 14:41:34 | INFO     | src.services.product_service:get_all_products:35 - Retrieved 40 products from database
+2025-11-12 14:41:36 | INFO     | src.services.product_service:get_all_products:35 - Retrieved 40 products from database
+2025-11-12 14:42:17 | INFO     | src.services.product_service:get_all_products:35 - Retrieved 40 products from database
+2025-11-12 14:42:20 | INFO     | src.services.product_service:get_product_by_id:53 - Retrieved product 21
+2025-11-12 14:42:21 | INFO     | src.services.product_service:get_product_by_id:53 - Retrieved product 21
+2025-11-12 14:42:21 | INFO     | src.services.store_service:add_to_cart:75 - Added 1x product 21 to cart
+2025-11-12 14:42:58 | ERROR    | src.database.connection:get_connection:58 - Database connection error: 0
+2025-11-12 14:42:58 | ERROR    | src.services.product_service:get_categories:118 - Error getting categories: 0
+2025-11-12 14:42:58 | ERROR    | store_app:get_categories:193 - Error getting categories: 0
+2025-11-12 14:43:00 | INFO     | src.services.product_service:get_all_products:35 - Retrieved 40 products from database
+2025-11-12 14:44:38 | INFO     | src.services.product_service:get_all_products:35 - Retrieved 40 products from database
+2025-11-12 14:44:39 | INFO     | src.services.product_service:get_all_products:35 - Retrieved 40 products from database
+2025-11-12 14:44:44 | ERROR    | src.database.connection:get_connection:58 - Database connection error: 0
+2025-11-12 14:44:44 | ERROR    | src.services.product_service:get_categories:118 - Error getting categories: 0
+2025-11-12 14:44:44 | ERROR    | store_app:get_categories:193 - Error getting categories: 0
+2025-11-12 14:44:48 | INFO     | src.services.product_service:get_all_products:35 - Retrieved 40 products from database
+2025-11-12 14:45:19 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 14:45:19 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:45:19 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 14:45:19 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:45:19 | INFO     | src.database.connection:test_connection:87 - Database connection test successful
+2025-11-12 14:45:19 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:45:19 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:45:19 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:45:19 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:45:19 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 14:45:22 | ERROR    | src.database.connection:get_connection:58 - Database connection error: 0
+2025-11-12 14:45:22 | ERROR    | src.services.product_service:get_categories:118 - Error getting categories: 0
+2025-11-12 14:45:22 | ERROR    | store_app:get_categories:193 - Error getting categories: 0
+2025-11-12 14:45:23 | INFO     | src.services.product_service:get_all_products:35 - Retrieved 40 products from database
+2025-11-12 14:45:27 | ERROR    | src.database.connection:get_connection:58 - Database connection error: 0
+2025-11-12 14:45:27 | ERROR    | src.services.product_service:get_categories:118 - Error getting categories: 0
+2025-11-12 14:45:27 | ERROR    | store_app:get_categories:193 - Error getting categories: 0
+2025-11-12 14:45:28 | INFO     | src.services.product_service:get_all_products:35 - Retrieved 40 products from database
+2025-11-12 14:45:37 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 14:45:37 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:45:37 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 14:45:37 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 14:45:37 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:45:37 | INFO     | src.database.connection:test_connection:87 - Database connection test successful
+2025-11-12 14:45:37 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:45:37 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:45:37 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:45:37 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:45:39 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 14:45:40 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:45:40 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 14:45:40 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:45:40 | INFO     | src.database.connection:test_connection:87 - Database connection test successful
+2025-11-12 14:45:40 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:45:40 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:45:40 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:45:40 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:45:41 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 14:45:42 | ERROR    | src.database.connection:get_connection:58 - Database connection error: 0
+2025-11-12 14:45:42 | ERROR    | src.services.product_service:get_categories:118 - Error getting categories: 0
+2025-11-12 14:45:42 | ERROR    | store_app:get_categories:193 - Error getting categories: 0
+2025-11-12 14:45:43 | INFO     | src.services.product_service:get_all_products:35 - Retrieved 40 products from database
+2025-11-12 14:46:55 | ERROR    | src.database.connection:get_connection:58 - Database connection error: 0
+2025-11-12 14:46:55 | ERROR    | src.services.product_service:get_categories:118 - Error getting categories: 0
+2025-11-12 14:46:55 | ERROR    | store_app:get_categories:193 - Error getting categories: 0
+2025-11-12 14:46:55 | INFO     | src.services.product_service:get_all_products:35 - Retrieved 10 products from database
+2025-11-12 14:47:08 | INFO     | src.services.store_service:remove_from_cart:114 - Removed product 21 from cart
+2025-11-12 14:47:10 | ERROR    | src.database.connection:get_connection:58 - Database connection error: 0
+2025-11-12 14:47:10 | ERROR    | src.services.product_service:get_categories:118 - Error getting categories: 0
+2025-11-12 14:47:10 | ERROR    | store_app:get_categories:193 - Error getting categories: 0
+2025-11-12 14:47:10 | INFO     | src.services.product_service:get_all_products:35 - Retrieved 10 products from database
+2025-11-12 14:47:15 | INFO     | src.services.product_service:get_product_by_id:53 - Retrieved product 6
+2025-11-12 14:47:15 | INFO     | src.services.product_service:get_product_by_id:53 - Retrieved product 6
+2025-11-12 14:47:15 | INFO     | src.services.store_service:add_to_cart:75 - Added 1x product 6 to cart
+2025-11-12 14:47:16 | INFO     | src.services.product_service:get_product_by_id:53 - Retrieved product 3
+2025-11-12 14:47:16 | INFO     | src.services.product_service:get_product_by_id:53 - Retrieved product 3
+2025-11-12 14:47:16 | INFO     | src.services.store_service:add_to_cart:75 - Added 1x product 3 to cart
+2025-11-12 14:47:17 | INFO     | src.services.product_service:get_product_by_id:53 - Retrieved product 1
+2025-11-12 14:47:17 | INFO     | src.services.product_service:get_product_by_id:53 - Retrieved product 1
+2025-11-12 14:47:17 | INFO     | src.services.store_service:add_to_cart:75 - Added 1x product 1 to cart
+2025-11-12 14:47:18 | INFO     | src.services.product_service:get_product_by_id:53 - Retrieved product 7
+2025-11-12 14:47:18 | INFO     | src.services.product_service:get_product_by_id:53 - Retrieved product 7
+2025-11-12 14:47:18 | INFO     | src.services.store_service:add_to_cart:75 - Added 1x product 7 to cart
+2025-11-12 14:47:19 | INFO     | src.services.product_service:get_product_by_id:53 - Retrieved product 9
+2025-11-12 14:47:19 | INFO     | src.services.product_service:get_product_by_id:53 - Retrieved product 9
+2025-11-12 14:47:19 | INFO     | src.services.store_service:add_to_cart:75 - Added 1x product 9 to cart
+2025-11-12 14:47:20 | INFO     | src.services.product_service:get_product_by_id:53 - Retrieved product 2
+2025-11-12 14:47:20 | INFO     | src.services.product_service:get_product_by_id:53 - Retrieved product 2
+2025-11-12 14:47:20 | INFO     | src.services.store_service:add_to_cart:75 - Added 1x product 2 to cart
+2025-11-12 14:47:21 | INFO     | src.services.product_service:get_product_by_id:53 - Retrieved product 8
+2025-11-12 14:47:21 | INFO     | src.services.product_service:get_product_by_id:53 - Retrieved product 8
+2025-11-12 14:47:21 | INFO     | src.services.store_service:add_to_cart:75 - Added 1x product 8 to cart
+2025-11-12 14:47:22 | INFO     | src.services.product_service:get_product_by_id:53 - Retrieved product 4
+2025-11-12 14:47:22 | INFO     | src.services.product_service:get_product_by_id:53 - Retrieved product 4
+2025-11-12 14:47:22 | INFO     | src.services.store_service:add_to_cart:75 - Added 1x product 4 to cart
+2025-11-12 14:47:23 | INFO     | src.services.product_service:get_product_by_id:53 - Retrieved product 5
+2025-11-12 14:47:23 | INFO     | src.services.product_service:get_product_by_id:53 - Retrieved product 5
+2025-11-12 14:47:23 | INFO     | src.services.store_service:add_to_cart:75 - Added 1x product 5 to cart
+2025-11-12 14:47:24 | INFO     | src.services.product_service:get_product_by_id:53 - Retrieved product 10
+2025-11-12 14:47:24 | INFO     | src.services.product_service:get_product_by_id:53 - Retrieved product 10
+2025-11-12 14:47:24 | INFO     | src.services.store_service:add_to_cart:75 - Added 1x product 10 to cart
+2025-11-12 14:49:07 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 14:49:07 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:49:07 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 14:49:07 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:49:08 | INFO     | src.database.connection:test_connection:87 - Database connection test successful
+2025-11-12 14:49:08 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:49:08 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:49:08 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:49:08 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:49:08 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 14:49:46 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 14:49:46 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:49:46 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 14:49:46 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:49:47 | INFO     | src.database.connection:test_connection:87 - Database connection test successful
+2025-11-12 14:49:47 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:49:47 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:49:47 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:49:47 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:49:48 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 14:50:12 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 14:50:12 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:50:12 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 14:50:13 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:50:13 | INFO     | src.database.connection:test_connection:87 - Database connection test successful
+2025-11-12 14:50:13 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:50:13 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:50:13 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:50:13 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:50:13 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 14:50:13 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:50:13 | INFO     | src.utils.logger:setup_logging:39 - Logging configured successfully
+2025-11-12 14:50:13 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:50:13 | INFO     | src.database.connection:test_connection:87 - Database connection test successful
+2025-11-12 14:50:13 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:50:14 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:50:14 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
+2025-11-12 14:50:14 | INFO     | src.database.connection:_initialize_engine:38 - Database engine initialized successfully
