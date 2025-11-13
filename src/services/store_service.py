@@ -245,7 +245,7 @@ class StoreService:
                             """,
                             (
                                 next_order_id,
-                                "pending",
+                                "Order Finished",
                                 customer_info.customer_name,
                                 item.quantity,
                                 item.subtotal,

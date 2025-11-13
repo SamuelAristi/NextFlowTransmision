@@ -735,6 +735,7 @@
         }
 
         /* Responsive */
+        /* Tablets and medium screens */
         @media (max-width: 1200px) {
             .nav-menu {
                 flex-wrap: wrap;
@@ -745,8 +746,32 @@
                 padding: 0.6rem 1rem;
                 font-size: 0.9rem;
             }
+
+            .chart-container {
+                height: 350px;
+            }
         }
 
+        /* Tablets */
+        @media (max-width: 992px) {
+            .logo-text {
+                font-size: 1.2rem;
+            }
+
+            .nav-link span {
+                font-size: 0.85rem;
+            }
+
+            .chart-container {
+                height: 300px;
+            }
+
+            .table-container {
+                max-height: 400px;
+            }
+        }
+
+        /* Mobile devices */
         @media (max-width: 768px) {
             .navbar-container {
                 flex-direction: column;
@@ -754,14 +779,396 @@
                 padding: 1rem;
             }
 
+            .logo-container {
+                min-width: auto;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .logo-img {
+                height: 35px;
+            }
+
+            .logo-text {
+                font-size: 1.1rem;
+            }
+
             .nav-menu {
                 width: 100%;
                 justify-content: flex-start;
+                flex-wrap: wrap;
+            }
+
+            .nav-link {
+                padding: 0.6rem 0.8rem;
+                font-size: 0.85rem;
+                flex: 1 1 auto;
+                min-width: 120px;
+                text-align: center;
             }
 
             .navbar-actions {
                 width: 100%;
                 justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            /* Chatbot responsive */
+            .chatbot-toggle {
+                width: 50px;
+                height: 50px;
+                bottom: 15px;
+                right: 15px;
+                font-size: 20px;
+            }
+
+            .chatbot-container {
+                width: calc(100vw - 20px);
+                height: calc(100vh - 280px);
+                right: 10px;
+                bottom: 75px;
+                top: 200px;
+                max-width: 95%;
+                border-radius: 12px;
+            }
+
+            .chatbot-header {
+                padding: 12px 16px;
+            }
+
+            .chatbot-header h5 {
+                font-size: 14px;
+            }
+
+            .chatbot-messages {
+                padding: 12px;
+                gap: 10px;
+            }
+
+            .chatbot-bubble {
+                max-width: 75%;
+                font-size: 13px;
+                padding: 8px 12px;
+            }
+
+            .chatbot-avatar {
+                width: 28px;
+                height: 28px;
+                font-size: 14px;
+            }
+
+            .chatbot-input-container {
+                padding: 12px;
+                gap: 6px;
+            }
+
+            .chatbot-input {
+                font-size: 13px;
+                padding: 8px 14px;
+            }
+
+            .chatbot-send {
+                width: 36px;
+                height: 36px;
+            }
+
+            /* Stats cards full width on mobile */
+            .col-md-3, .col-md-4, .col-md-6 {
+                max-width: 100%;
+                flex: 0 0 100%;
+            }
+
+            /* Card adjustments */
+            .card {
+                margin-bottom: 1rem;
+            }
+
+            .card-header {
+                padding: 1rem;
+            }
+
+            .card-header h5 {
+                font-size: 1.1rem;
+            }
+
+            .card-body {
+                padding: 1rem;
+            }
+
+            /* Chart containers */
+            .chart-container {
+                height: 250px;
+                padding: 0.5rem;
+            }
+
+            /* Table responsive */
+            .table-container {
+                overflow-x: auto;
+                max-height: 350px;
+            }
+
+            .table {
+                font-size: 0.85rem;
+                min-width: 600px;
+            }
+
+            .table thead th {
+                padding: 0.75rem 0.5rem;
+                font-size: 0.8rem;
+            }
+
+            .table tbody td {
+                padding: 0.75rem 0.5rem;
+            }
+
+            /* Buttons */
+            .btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .btn-sm {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.8rem;
+            }
+
+            /* Stat numbers */
+            .stat-number {
+                font-size: 1.8rem;
+            }
+
+            /* Forms */
+            .form-label {
+                font-size: 0.9rem;
+            }
+
+            .form-control, .form-select {
+                font-size: 0.9rem;
+                padding: 0.5rem 0.75rem;
+            }
+
+            /* Modal adjustments */
+            .modal-dialog {
+                margin: 0.5rem;
+            }
+
+            .modal-content {
+                border-radius: 12px;
+            }
+
+            .modal-header {
+                padding: 1rem;
+            }
+
+            .modal-body {
+                padding: 1rem;
+            }
+
+            .modal-footer {
+                padding: 1rem;
+            }
+        }
+
+        /* Small mobile devices */
+        @media (max-width: 576px) {
+            .navbar-container {
+                padding: 0.75rem;
+            }
+
+            .logo-img {
+                height: 30px;
+            }
+
+            .logo-text {
+                font-size: 1rem;
+            }
+
+            .nav-link {
+                padding: 0.5rem 0.6rem;
+                font-size: 0.75rem;
+                min-width: 100px;
+            }
+
+            .nav-link i {
+                font-size: 0.9rem;
+            }
+
+            .card-header h5 {
+                font-size: 1rem;
+            }
+
+            .chart-container {
+                height: 220px;
+            }
+
+            .table {
+                font-size: 0.75rem;
+            }
+
+            .table thead th,
+            .table tbody td {
+                padding: 0.5rem 0.4rem;
+            }
+
+            .btn {
+                font-size: 0.85rem;
+                padding: 0.45rem 0.9rem;
+            }
+
+            .stat-number {
+                font-size: 1.5rem;
+            }
+
+            /* Hide table columns on very small screens */
+            .table th:not(:first-child):not(:nth-child(2)),
+            .table td:not(:first-child):not(:nth-child(2)) {
+                display: none;
+            }
+
+            /* Show important columns only */
+            .table th:first-child,
+            .table th:nth-child(2),
+            .table td:first-child,
+            .table td:nth-child(2) {
+                display: table-cell;
+            }
+
+            /* Chatbot for small mobile */
+            .chatbot-toggle {
+                width: 45px;
+                height: 45px;
+                bottom: 12px;
+                right: 12px;
+                font-size: 18px;
+            }
+
+            .chatbot-container {
+                width: calc(100vw - 16px);
+                height: calc(100vh - 250px);
+                right: 8px;
+                bottom: 65px;
+                top: 180px;
+                border-radius: 10px;
+            }
+
+            .chatbot-header {
+                padding: 10px 12px;
+            }
+
+            .chatbot-header h5 {
+                font-size: 13px;
+            }
+
+            .chatbot-close {
+                font-size: 18px;
+                width: 20px;
+                height: 20px;
+            }
+
+            .chatbot-messages {
+                padding: 10px;
+                gap: 8px;
+            }
+
+            .chatbot-bubble {
+                max-width: 80%;
+                font-size: 12px;
+                padding: 7px 10px;
+                border-radius: 10px;
+            }
+
+            .chatbot-avatar {
+                width: 26px;
+                height: 26px;
+                font-size: 12px;
+            }
+
+            .chatbot-input-container {
+                padding: 10px;
+            }
+
+            .chatbot-input {
+                font-size: 12px;
+                padding: 7px 12px;
+                border-radius: 18px;
+            }
+
+            .chatbot-send {
+                width: 32px;
+                height: 32px;
+                font-size: 14px;
+            }
+        }
+
+        /* Extra small devices */
+        @media (max-width: 400px) {
+            .logo-text {
+                display: none;
+            }
+
+            .nav-link span {
+                display: none;
+            }
+
+            .nav-link {
+                min-width: 60px;
+                padding: 0.6rem;
+            }
+
+            .nav-link i {
+                font-size: 1.2rem;
+            }
+
+            /* Chatbot for extra small devices */
+            .chatbot-toggle {
+                width: 42px;
+                height: 42px;
+                bottom: 10px;
+                right: 10px;
+                font-size: 16px;
+            }
+
+            .chatbot-container {
+                width: calc(100vw - 12px);
+                height: calc(100vh - 220px);
+                right: 6px;
+                bottom: 60px;
+                top: 155px;
+                border-radius: 8px;
+            }
+
+            .chatbot-header {
+                padding: 8px 10px;
+            }
+
+            .chatbot-header h5 {
+                font-size: 12px;
+            }
+
+            .chatbot-messages {
+                padding: 8px;
+            }
+
+            .chatbot-bubble {
+                font-size: 11px;
+                padding: 6px 9px;
+            }
+
+            .chatbot-avatar {
+                width: 24px;
+                height: 24px;
+                font-size: 11px;
+            }
+
+            .chatbot-input {
+                font-size: 11px;
+                padding: 6px 10px;
+            }
+
+            .chatbot-send {
+                width: 30px;
+                height: 30px;
+                font-size: 12px;
             }
         }
     </style>
@@ -984,12 +1391,14 @@
                             <option value="Order Finished">Order Finished</option>
                             <option value="Order Returned">Order Returned</option>
                             <option value="Order Cancelled">Order Cancelled</option>
+                            <option value="pending">Pending</option>
                         </select>
                         <select class="form-select" id="category-filter" onchange="filterOrders()">
                             <option value="">Todas las categorías</option>
                             <option value="Technology">Technology</option>
                             <option value="Furniture">Furniture</option>
                             <option value="Office Supplies">Office Supplies</option>
+                            <option value="Store Order">Store Order</option>
                         </select>
                     </div>
                 </div>

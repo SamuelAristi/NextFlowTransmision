@@ -16,17 +16,23 @@ function showNotification(message, type = 'success') {
     const notification = document.createElement('div');
     notification.className = `notification notification-${type}`;
     notification.textContent = message;
+    const bgColor = type === 'success'
+        ? 'linear-gradient(135deg, #10b981 0%, #059669 100%)'
+        : 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+
     notification.style.cssText = `
         position: fixed;
         top: 20px;
         right: 20px;
         padding: 1rem 1.5rem;
-        background-color: ${type === 'success' ? '#10b981' : '#ef4444'};
+        background: ${bgColor};
         color: white;
-        border-radius: 0.5rem;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(111, 66, 255, 0.3);
+        border: 1px solid rgba(251, 251, 251, 0.1);
         z-index: 1000;
         animation: slideIn 0.3s ease;
+        font-weight: 500;
     `;
 
     document.body.appendChild(notification);
@@ -157,16 +163,120 @@ async function loadCategories() {
     }
 }
 
+// Global carousel state
+let currentCarouselIndex = 0;
+let carouselProducts = [];
+const ITEMS_PER_PAGE = 3;
+let carouselAutoScrollInterval = null;
+
 function renderProducts(products) {
     const grid = document.getElementById('products-grid');
     if (!grid) return;
 
     if (products.length === 0) {
-        grid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; padding: 2rem;">No products found</p>';
+        grid.innerHTML = '<p style="text-align: center; padding: 2rem; color: rgba(251, 251, 251, 0.7);">No products found</p>';
         return;
     }
 
-    grid.innerHTML = products.map(product => `
+    carouselProducts = products;
+    currentCarouselIndex = 0;
+
+    // Create carousel container with navigation zones
+    grid.innerHTML = `
+        <div class="products-carousel-container" id="carousel-container">
+            <div class="carousel-nav-zone left" id="nav-left">
+                <div class="carousel-nav-arrow">‹</div>
+            </div>
+            <div class="carousel-nav-zone right" id="nav-right">
+                <div class="carousel-nav-arrow">›</div>
+            </div>
+            <div class="products-carousel" id="products-carousel"></div>
+        </div>
+        <div class="carousel-indicators" id="carousel-indicators"></div>
+    `;
+
+    setupCarouselNavigation();
+    renderCarouselPage();
+}
+
+function setupCarouselNavigation() {
+    const leftZone = document.getElementById('nav-left');
+    const rightZone = document.getElementById('nav-right');
+
+    if (leftZone && rightZone) {
+        // Left zone - go to previous
+        leftZone.addEventListener('mouseenter', () => {
+            startCarouselAutoScroll('prev');
+        });
+        leftZone.addEventListener('mouseleave', () => {
+            stopCarouselAutoScroll();
+        });
+
+        // Right zone - go to next
+        rightZone.addEventListener('mouseenter', () => {
+            startCarouselAutoScroll('next');
+        });
+        rightZone.addEventListener('mouseleave', () => {
+            stopCarouselAutoScroll();
+        });
+    }
+}
+
+function startCarouselAutoScroll(direction) {
+    stopCarouselAutoScroll(); // Clear any existing interval
+
+    // First immediate scroll
+    if (direction === 'next') {
+        nextCarousel();
+    } else {
+        prevCarousel();
+    }
+
+    // Then continue scrolling every 4000ms while hovering
+    carouselAutoScrollInterval = setInterval(() => {
+        if (direction === 'next') {
+            nextCarousel();
+        } else {
+            prevCarousel();
+        }
+    }, 4000);
+}
+
+function stopCarouselAutoScroll() {
+    if (carouselAutoScrollInterval) {
+        clearInterval(carouselAutoScrollInterval);
+        carouselAutoScrollInterval = null;
+    }
+}
+
+function renderCarouselPage(direction = null) {
+    const carousel = document.getElementById('products-carousel');
+    const indicators = document.getElementById('carousel-indicators');
+    const leftZone = document.getElementById('nav-left');
+    const rightZone = document.getElementById('nav-right');
+
+    if (!carousel) return;
+
+    const totalPages = Math.ceil(carouselProducts.length / ITEMS_PER_PAGE);
+    const startIndex = currentCarouselIndex * ITEMS_PER_PAGE;
+    const endIndex = Math.min(startIndex + ITEMS_PER_PAGE, carouselProducts.length);
+    const pageProducts = carouselProducts.slice(startIndex, endIndex);
+
+    // Remove all animation classes first
+    carousel.classList.remove('slide-next', 'slide-prev');
+
+    // Force reflow to restart animation
+    void carousel.offsetWidth;
+
+    // Apply animation class based on direction
+    if (direction === 'next') {
+        carousel.classList.add('slide-next');
+    } else if (direction === 'prev') {
+        carousel.classList.add('slide-prev');
+    }
+
+    // Render products
+    carousel.innerHTML = pageProducts.map(product => `
         <div class="product-card">
             <img src="${product.image_url || '/static/images/placeholder.png'}"
                  alt="${product.name}"
@@ -192,6 +302,52 @@ function renderProducts(products) {
             </div>
         </div>
     `).join('');
+
+    // Update indicators
+    if (indicators) {
+        indicators.innerHTML = Array.from({length: totalPages}, (_, i) => `
+            <div class="carousel-dot ${i === currentCarouselIndex ? 'active' : ''}"
+                 onclick="goToCarouselPage(${i})"></div>
+        `).join('');
+    }
+
+    // Update navigation zones states
+    if (leftZone) {
+        if (currentCarouselIndex === 0) {
+            leftZone.classList.add('disabled');
+        } else {
+            leftZone.classList.remove('disabled');
+        }
+    }
+
+    if (rightZone) {
+        if (currentCarouselIndex >= totalPages - 1) {
+            rightZone.classList.add('disabled');
+        } else {
+            rightZone.classList.remove('disabled');
+        }
+    }
+}
+
+function nextCarousel() {
+    const totalPages = Math.ceil(carouselProducts.length / ITEMS_PER_PAGE);
+    if (currentCarouselIndex < totalPages - 1) {
+        currentCarouselIndex++;
+        renderCarouselPage('next');
+    }
+}
+
+function prevCarousel() {
+    if (currentCarouselIndex > 0) {
+        currentCarouselIndex--;
+        renderCarouselPage('prev');
+    }
+}
+
+function goToCarouselPage(index) {
+    const direction = index > currentCarouselIndex ? 'next' : 'prev';
+    currentCarouselIndex = index;
+    renderCarouselPage(direction);
 }
 
 function getStockClass(stock) {

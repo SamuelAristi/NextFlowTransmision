@@ -806,7 +806,8 @@ function getStatusColor(status) {
     const colors = {
         'Order Finished': 'success',
         'Order Returned': 'warning',
-        'Order Cancelled': 'danger'
+        'Order Cancelled': 'danger',
+        'pending': 'info'
     };
     return colors[status] || 'secondary';
 }
